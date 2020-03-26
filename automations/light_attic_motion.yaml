@@ -1,0 +1,45 @@
+- alias: Turn on attic bright
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_attic, binary_sensor.tradfri_motion_sensor_attic_wall
+    to: 'on'
+  condition:
+    condition: time
+    after: '09:00:00'
+    before: '22:00:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.attic
+      brightness: 255
+  - service: timer.start
+    data:
+      entity_id: timer.attic_light
+
+- alias: Turn on attic dimmed
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_attic, binary_sensor.tradfri_motion_sensor_attic_wall
+    to: 'on'
+  condition:
+    condition: time
+    after: '22:00:00'
+    before: '09:00:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.attic
+      brightness: 178
+  - service: timer.start
+    data:
+      entity_id: timer.attic_light
+
+- alias: Turn off attic light 3 minutes after last movement
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.attic_light
+  action:
+    service: light.turn_off
+    entity_id: light.attic

@@ -1,0 +1,232 @@
+utility_meter:
+  utility_meter_power_daily:
+    source: sensor.power_consumption_total
+    cycle: daily
+  utility_meter_power_weekly:
+    source: sensor.power_consumption_total
+    cycle: weekly
+  utility_meter_power_monthly:
+    source: sensor.power_consumption_total
+    cycle: monthly
+  utility_meter_gas_daily:
+    source: sensor.gas_consumption
+    cycle: daily
+  utility_meter_gas_weekly:
+    source: sensor.gas_consumption
+    cycle: weekly
+  utility_meter_gas_monthly:
+    source: sensor.gas_consumption
+    cycle: monthly
+  washer_power_hourly:
+    source: sensor.tp_link_washer_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  washer_power_daily:
+    source: sensor.tp_link_washer_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  washer_power_weekly:
+    source: sensor.tp_link_washer_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  washer_power_monthly:
+    source: sensor.tp_link_washer_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  mediacenter_power_hourly:
+    source: sensor.tp_link_mediacenter_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  mediacenter_power_daily:
+    source: sensor.tp_link_mediacenter_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  mediacenter_power_weekly:
+    source: sensor.tp_link_mediacenter_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  mediacenter_power_monthly:
+    source: sensor.tp_link_mediacenter_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  coffeemachine_power_hourly:
+    source: sensor.tp_link_coffeemachine_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  coffeemachine_power_daily:
+    source: sensor.tp_link_coffeemachine_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  coffeemachine_power_weekly:
+    source: sensor.tp_link_coffeemachine_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  coffeemachine_power_monthly:
+    source: sensor.tp_link_coffeemachine_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  brontosaurus_power_hourly:
+    source: sensor.tp_link_brontosaurus_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  brontosaurus_power_daily:
+    source: sensor.tp_link_brontosaurus_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  brontosaurus_power_weekly:
+    source: sensor.tp_link_brontosaurus_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  brontosaurus_power_monthly:
+    source: sensor.tp_link_brontosaurus_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  dryer_power_hourly:
+    source: sensor.tp_link_dryer_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  dryer_power_daily:
+    source: sensor.tp_link_dryer_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  dryer_power_weekly:
+    source: sensor.tp_link_dryer_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  dryer_power_monthly:
+    source: sensor.tp_link_dryer_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  quooker_power_hourly:
+    source: sensor.tp_link_quooker_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  quooker_power_daily:
+    source: sensor.tp_link_quooker_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  quooker_power_weekly:
+    source: sensor.tp_link_quooker_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  quooker_power_monthly:
+    source: sensor.tp_link_quooker_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  triceratops_power_hourly:
+    source: sensor.tp_link_triceratops_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  triceratops_power_daily:
+    source: sensor.tp_link_triceratops_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  triceratops_power_weekly:
+    source: sensor.tp_link_triceratops_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  triceratops_power_monthly:
+    source: sensor.tp_link_triceratops_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  corona_netherlands_daily:
+    source: sensor.netherlands_coronavirus_confirmed
+    cycle: daily
+  corona_germany_daily:
+    source: sensor.germany_coronavirus_confirmed
+    cycle: daily
+  corona_belgium_daily:
+    source: sensor.belgium_coronavirus_confirmed
+    cycle: daily
+  dsmr_hourly_power_offpeak:
+    source: sensor.dsmr_reading_electricity_delivered_1
+    cycle: hourly
+  dsmr_hourly_power_peak:
+    source: sensor.dsmr_reading_electricity_delivered_2
+    cycle: hourly
+  dsmr_hourly_gas:
+    source: sensor.dsmr_consumption_gas_delivered
+    cycle: hourly
+  dsmr_daily_power_offpeak:
+    source: sensor.dsmr_reading_electricity_delivered_1
+    cycle: daily
+  dsmr_daily_power_peak:
+    source: sensor.dsmr_reading_electricity_delivered_2
+    cycle: daily
+  dsmr_daily_gas:
+    source: sensor.dsmr_consumption_gas_delivered
+    cycle: daily
+  dsmr_weekly_power_offpeak:
+    source: sensor.dsmr_reading_electricity_delivered_1
+    cycle: weekly
+  dsmr_weekly_power_peak:
+    source: sensor.dsmr_reading_electricity_delivered_2
+    cycle: weekly
+  dsmr_weekly_gas:
+    source: sensor.dsmr_consumption_gas_delivered
+    cycle: weekly
+  dsmr_monthly_power_offpeak:
+    source: sensor.dsmr_reading_electricity_delivered_1
+    cycle: monthly
+  dsmr_monthly_power_peak:
+    source: sensor.dsmr_reading_electricity_delivered_2
+    cycle: monthly
+  dsmr_monthly_gas:
+    source: sensor.dsmr_consumption_gas_delivered
+    cycle: monthly

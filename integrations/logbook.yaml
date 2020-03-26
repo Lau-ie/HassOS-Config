@@ -1,0 +1,21 @@
+  
+logbook:
+  exclude:
+    entities:
+      - sensor.node_red
+      - input_boolean.node_red
+      - sensor.pachy_map
+      - sensor.dsmr_reading_electricity_currently_delivered
+      - sensor.dsmr_reading_electricity_currently_returned
+      - sensor.dsmr_current_electricity_cost
+      - sensor.dsmr_current_electricity_watts
+      - sensor.dsmr_reading_phase_currently_delivered_l1
+      - sensor.dsmr_reading_phase_currently_delivered_l2
+      - sensor.dsmr_reading_phase_currently_delivered_l3
+      - sensor.dsmr_reading_phase_currently_returned_l1
+      - sensor.dsmr_reading_phase_currently_returned_l2
+      - sensor.dsmr_reading_phase_currently_returned_l3
+      - sensor.dsmr_current_gas_cost
+      - sensor.dsmr_current_gas_cost_per_hour
+      - sensor.dsmr_consumption_gas_currently_delivered
+      - sun.sun

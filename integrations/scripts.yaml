@@ -1,0 +1,192 @@
+script:
+  shutdown_brontosaurus:
+    sequence:
+    - service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: Brontosaurus
+  shutdown_velociraptor:
+    sequence:
+    - service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: Velociraptor
+  harmony_pc:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: shortpress
+        topic: harmony/pc
+  harmony_ziggo:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: shortpress
+        topic: harmony/tv
+  harmony_console:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: shortpress
+        topic: harmony/console
+  harmony_shieldtv:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: shortpress
+        topic: harmony/shieldtv
+  harmony_pc_long:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: longpress
+        topic: harmony/pc
+  harmony_ziggo_long:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: longpress
+        topic: harmony/tv
+  harmony_console_long:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: longpress
+        topic: harmony/console
+  harmony_shieldtv_long:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: longpress
+        topic: harmony/shieldtv
+  selfheal_initiate:
+    sequence:
+    - data:
+        payload: selfheal_inititate
+        topic: selfheal/button/push
+      service: mqtt.publish
+  selfheal_protocol:
+    sequence:
+    - data:
+        addon: core_mosquitto
+      service: hassio.addon_restart
+  powerflow_brontosaurus_button:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: powerflow/brontosaurus/button
+  powerflow_velociraptor_button:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: powerflow/velociraptor/button
+  powerflow_resume_auto:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: powerflow/resume_auto
+  power_brontosaurus_button:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: power/brontosaurus/button
+  power_velociraptor_button:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: power/velociraptor/button
+  pachy_clean:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: vacuum/button/clean
+  pachy_pause:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: vacuum/button/pause
+  pachy_dock:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: vacuum/button/dock
+  pachy_quiet:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: vacuum/button/quiet
+  pachy_stop:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: vacuum/button/stop
+  harmony_light_1:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: harmony/lightbutton1
+  harmony_light_2:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: harmony/lightbutton2
+  harmony_socket_1:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: harmony/socketbutton1
+  harmony_socket_2:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: harmony/socketbutton2
+  thermostat_increase_click:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: thermostat/increase
+  thermostat_decrease_click:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: thermostat/decrease
+  thermostat_mode_click:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: thermostat/mode_button
+  hassiocontrol_homeassistant_restart:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: hassiocontrol/homeassistant/restart
+  hassiocontrol_nodered_restart:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: hassiocontrol/nodered/restart
+  hassiocontrol_zigbee2mqtt_restart:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: hassiocontrol/zigbee2mqtt/restart

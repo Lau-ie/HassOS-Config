@@ -1,0 +1,58 @@
+type: custom:vertical-style-card
+title: Temps & Humidity
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+  - type: custom:mini-graph-card
+    entities:
+    - sensor.netatmo_home_outside_temperature
+    graph: line
+    name: Outside
+    align_header: left
+    align_state: left
+    show:
+      fill: true
+      icon: false
+    line_color: 
+    - var(--icon-color-red)
+  - type: custom:mini-graph-card
+    entities:
+    - sensor.netatmo_home_outside_humidity
+    graph: line
+    name: Outside
+    align_header: left
+    align_state: left
+    show:
+      fill: true
+      icon: false
+    line_color: 
+    - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+  - type: custom:mini-graph-card
+    entities:
+    - sensor.netatmo_home_inside_temperature
+    name: Livingroom
+    graph: line
+    align_header: left
+    align_state: left
+    show:
+      fill: true
+      icon: false
+    line_color: 
+    - var(--icon-color-red)
+  - type: custom:mini-graph-card
+    entities:
+    - sensor.netatmo_home_inside_humidity
+    name: Livingroom
+    graph: line
+    align_header: left
+    align_state: left
+    show:
+      fill: true
+      icon: false
+    line_color: 
+    - var(--icon-color-blue)

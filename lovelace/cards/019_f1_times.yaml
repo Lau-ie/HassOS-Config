@@ -1,0 +1,77 @@
+type: custom:vertical-style-card
+title: Formula 1
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:triplevalue-card"
+      title_entity: sensor.f1_race_days_readable
+      entity: sensor.f1_next_race
+      subtitle_entity: sensor.f1_location
+      scale: 15px
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      icon: mdi:timer
+      name: 'Qualifying'
+      show_name: true
+      show_label: false
+      show_state: true
+      action: more_info
+      color_type: icon
+      layout: icon_state_name2nd
+      entity: sensor.f1_quali_time
+      label_template: >
+        return states['sensor.f1_quali_day'].state
+      style:
+      - color: var(--icon-off-color)
+      state:
+      - value: 'on'
+        color: var(--icon-color-blue)
+      - value: 'off'
+        color: var(--icon-off-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      icon: mdi:flag-checkered
+      name: 'Race'
+      show_name: true
+      show_label: false
+      show_state: true
+      action: more_info
+      color_type: icon
+      layout: icon_state_name2nd
+      entity: sensor.f1_race_time
+      label_template: >
+        return states['sensor.f1_race_day'].state
+      style:
+      - color: var(--icon-off-color)
+      state:
+      - value: 'on'
+        color: var(--icon-color-blue)
+      - value: 'off'
+        color: var(--icon-off-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png

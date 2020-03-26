@@ -1,0 +1,115 @@
+default-modded:
+  # Shadows
+  box-shadow: 0 0 0 0
+  primary-text-color: '#3E3E3E'
+  paper-item-icon-color: '#3E3E3E'
+  element-accent-color: '#F5F5F5'
+  icon-off-color: '#3E3E3E'
+  light-icon-off-color: '#BDBDBD'
+  icon-color-orange: '#FF8100'
+  icon-color-red: '#f44336'
+  icon-color-green: '#4caf50'
+  icon-color-blue: '#2196f3'
+  icon-color-lightblue: '#71d1fd'
+  icon-color-grey: '#9e9e9e'
+  icon-color-teal: '#009688'
+  icon-color-light-blue: '#03a9f4'
+  icon-color-amber: '#ffc107'
+  icon-color-yellow: '#ffeb3b'
+  button-color-style-no-text: 'card'
+  button-color-style-with-text: 'icon'
+  button-backgroun-color-icon-type: '#F5F5F5'
+
+midnight2:
+# Main colors
+  primary-color: '#5294E2'                                                        # Header
+  accent-color: '#E45E65'                                                         # Accent color
+  dark-primary-color: 'var(--accent-color)'                                       # Hyperlinks                                         
+  light-primary-color: 'var(--accent-color)'                                      # Horizontal line in about
+  ha-card-border-radius: '5px'   
+  ha-card-background: '#434954'
+  icon-color-lightblue: '#71d1fd'
+  icon-off-color: '#FFFFFF'
+  light-icon-off-color: '#BDBDBD'
+  icon-color-orange: '#FF8100'
+  icon-color-deep-orange: '#FF5722'
+  icon-color-red: '#f44336'
+  icon-color-green: '#4caf50'
+  icon-color-blue: '#2196f3'
+  icon-color-grey: '#9e9e9e'
+  icon-color-teal: '#009688'
+  icon-color-light-blue: '#03a9f4'
+  icon-color-amber: '#ffc107'
+  icon-color-yellow: '#ffeb3b'
+  icon-color-pink: '#E91E63'
+  icon-color-purple: '#9C27B0'
+  icon-color-deep-purple: '#673AB7'
+  icon-color-indigo: '#3F51B5'  
+  icon-color-cyan: '#00BCD4'  
+  icon-color-light-green: '#8BC34A'  
+  icon-color-blue-grey: '#607D8B'
+  icon-color-deep-red: '#B71C1C'
+  card-background-color: "var(--paper-card-background-color)"
+
+# Shadows
+  ha-card-box-shadow: '0px 0px 0px 0px'
+
+# Text colors                                                                  
+  primary-text-color: '#FFFFFF'                                                   # Primary text colour, here is referencing dark-primary-color
+  text-primary-color: 'var(--primary-text-color)'                                 # Primary text colour
+  secondary-text-color: '#FFFFFF'                                                 # For secondary titles in more info boxes etc.
+  disabled-text-color: '#7F848E'                                                  # Disabled text colour
+  label-badge-border-color: 'green'                                               # Label badge border, just a reference value   
+
+# Background colors                                                            
+  primary-background-color: '#383C45'                                             # Settings background
+  secondary-background-color: '#383C45'                                           # Main card UI background  
+  divider-color: 'rgba(0, 0, 0, .12)'                                             # Divider 
+
+# Table rows                                                                   
+  table-row-background-color: '#353840'                                           # Table row
+  table-row-alternative-background-color: '#3E424B'                               # Table row alternative
+
+# Nav Menu                                                                   
+  paper-listbox-color: 'var(--primary-color)'                                     # Navigation menu selection hoover
+  paper-listbox-background-color: '#2E333A'                                       # Navigation menu background
+  paper-grey-50: 'var(--primary-text-color)'                                   
+  paper-grey-200: '#414A59'                                                       # Navigation menu selection
+
+# Paper card                                                               
+  paper-card-header-color: 'var(--accent-color)'                                  # Card header text colour
+  paper-card-background-color: '#434954'                                           # Card background colour
+  paper-dialog-background-color: '#434954'                                        # Card dialog background colour
+  paper-item-icon-color: '#ffffff'                                                # Icon color
+  paper-item-icon-active-color: '#ffc107'                                         # Icon color active
+  paper-item-icon_-_color: 'green'           
+  paper-item-selected_-_background-color: '#434954'                               # Popup item select                      
+  paper-tabs-selection-bar-color: 'green'
+
+# Labels 
+  label-badge-red: 'var(--accent-color)'                                          # References the brand colour label badge border
+  label-badge-text-color: 'var(--primary-text-color)'                             # Now same as label badge border but that's a matter of taste
+  label-badge-background-color: '#2E333A'                                         # Same, but can also be set to transparent here
+  label-badge-background: 'rgba(255, 255, 255, 0.1)'
+
+# Switches
+  paper-toggle-button-checked-button-color: 'var(--accent-color)'
+  paper-toggle-button-checked-bar-color: 'var(--accent-color)'
+  paper-toggle-button-checked-ink-color: 'var(--accent-color)'
+  paper-toggle-button-unchecked-button-color: 'var(--disabled-text-color)'
+  paper-toggle-button-unchecked-bar-color: 'var(--disabled-text-color)'
+  paper-toggle-button-unchecked-ink-color: 'var(--disabled-text-color)'  
+
+# Sliders
+  paper-slider-knob-color: 'var(--accent-color)'
+  paper-slider-knob-start-color: 'var(--accent-color)'
+  paper-slider-pin-color: 'var(--accent-color)'
+  paper-slider-active-color: 'var(--accent-color)'
+  paper-slider-container-color: 'linear-gradient(var(--primary-background-color), var(--secondary-background-color)) no-repeat'
+  paper-slider-secondary-color: 'var(--secondary-background-color)'
+  paper-slider-disabled-active-color: 'var(--disabled-text-color)'
+  paper-slider-disabled-secondary-color: 'var(--disabled-text-color)'
+
+# Google colors
+  google-red-500: '#E45E65'
+  google-green-500: '#39E949'

@@ -1,0 +1,56 @@
+type: custom:vertical-style-card
+title: Drives
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      title: Total Size
+      scale: 15px
+      entity: sensor.drivepool_size
+    - type: "custom:bignumber-card"
+      title: Used space
+      scale: 15px
+      entity: sensor.drivepool_used
+    - type: "custom:bignumber-card"
+      title: Freespace
+      scale: 15px
+      entity: sensor.drivepool_free
+    - type: "custom:bignumber-card"
+      title: "% Used"
+      scale: 15px
+      entity: sensor.drivepool_usedpercent
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      title: Total Size
+      scale: 15px
+      entity: sensor.quick_size
+    - type: "custom:bignumber-card"
+      title: Used space
+      scale: 15px
+      entity: sensor.quick_used
+    - type: "custom:bignumber-card"
+      title: Free space
+      scale: 15px
+      entity: sensor.quick_free
+    - type: "custom:bignumber-card"
+      title: "% Used"
+      scale: 15px
+      entity: sensor.quick_usedpercent
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png

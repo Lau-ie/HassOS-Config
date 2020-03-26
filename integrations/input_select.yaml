@@ -1,0 +1,18 @@
+input_select:
+  laurens_status:
+    name: Laurens
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away
+      - At Work
+  katrin_status:
+    name: Katrin
+    options:
+      - Home
+      - Just Arrived
+      - Just Left
+      - Away
+      - Extended Away

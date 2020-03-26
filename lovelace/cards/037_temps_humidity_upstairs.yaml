@@ -1,0 +1,102 @@
+type: custom:vertical-style-card
+title: Upstairs
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_bedroom
+      name: Bedroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_bedroom
+      name: Bedroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_small_bedroom
+      name: Small Bedroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_small_bedroom
+      name: Small Bedroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_bathroom
+      name: Bathroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_bathroom
+      name: Bathroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_guestroom
+      name: Guestroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_guestroom
+      name: Guestroom
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)

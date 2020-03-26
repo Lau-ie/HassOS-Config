@@ -1,0 +1,20 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: metric
+  time_zone: !secret time_zone
+  packages: !include_dir_named integrations
+
+zone:
+- name: home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 250
+  icon: mdi:home
+- name: office
+  latitude: !secret office_latitude
+  longitude: !secret office_longitude
+  radius: 250
+  icon: mdi:office-building

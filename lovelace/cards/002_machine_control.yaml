@@ -1,0 +1,414 @@
+type: custom:vertical-style-card
+title: Machine Control
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      color_type: icon
+      show_name: false
+      entity: sensor.power_velociraptor
+      tap_action:
+        action: call-service
+        service: script.power_velociraptor_button
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-v-circle-outline
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:alpha-v-circle
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      show_name: false
+      color_type: icon
+      entity: sensor.power_brontosaurus
+      tap_action:
+        action: call-service
+        service: script.power_brontosaurus_button
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-b-circle-outline
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:alpha-b-circle
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      show_name: false
+      color_type: icon
+      entity: switch.triceratops
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-t-circle-outline
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:alpha-t-circle
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      color_type: icon
+      entity: sensor.powerflow_velociraptor
+      show_name: false
+      color_off: var(--icon-off-color)
+      tap_action:
+        action: call-service
+        service: script.powerflow_velociraptor_button
+      hold_action:
+        action: call-service
+        service: script.powerflow_resume_auto
+      state:
+      - value: 'manually-activated'
+        color: var(--icon-color-green)
+        icon: mdi:toggle-switch
+      - value: 'manually-deactivated'
+        color: var(--icon-color-red)
+        icon: mdi:toggle-switch-off
+      - value: 'auto-activated'
+        color: var(--icon-color-amber)
+        icon: mdi:toggle-switch
+      - value: 'auto-deactivated'
+        color: var(--icon-off-color)
+        icon: mdi:toggle-switch-off-outline
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      color_type: icon
+      entity: sensor.powerflow_brontosaurus
+      show_name: false
+      color_off: var(--icon-off-color)
+      tap_action:
+        action: call-service
+        service: script.powerflow_brontosaurus_button
+      hold_action:
+        action: call-service
+        service: script.powerflow_resume_auto
+      state:
+      - value: 'manually-activated'
+        color: var(--icon-color-green)
+        icon: mdi:toggle-switch
+      - value: 'manually-deactivated'
+        color: var(--icon-color-red)
+        icon: mdi:toggle-switch-off
+      - value: 'auto-activated'
+        color: var(--icon-color-amber)
+        icon: mdi:toggle-switch
+      - value: 'auto-deactivated'
+        color: var(--icon-off-color)
+        icon: mdi:toggle-switch-off-outline
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      show_name: false
+      color_type: icon
+      entity: sensor.node_red
+      tap_action:
+        action: call-service
+      service: script.selfheal_initiate
+      state:
+      - value: 'OK'
+        color: var(--icon-color-amber)
+        icon: mdi:state-machine
+      - value: 'unknown'
+        color: var(--icon-color-red)
+        icon: mdi:electric-switch
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: NZBget
+      color_type: icon
+      entity: sensor.brontosaurus_nzbget_status
+      tap_action: 
+        action: more-info
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-n-circle-outline
+      - value: 'downloading'
+        color: var(--icon-color-green)
+        icon: mdi:download-network
+      - value: 'idle'
+        color: var(--icon-color-amber)
+        icon: mdi:download-network
+      - value: 'paused'
+        color: var(--icon-color-orange)
+        icon: mdi:download-network
+      - value: 'stalled'
+        color: var(--icon-color-orange)
+        icon: mdi:alert-circle
+      - value: 'postprocessing'
+        color: var(--icon-color-green)
+        icon: mdi:download-network
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      name: QBT
+      color_type: icon
+      entity: sensor.brontosaurus_qbt_status
+      tap_action: 
+        action: more-info
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-q-circle-outline
+      - value: 'downloading'
+        color: var(--icon-color-green)
+        icon: mdi:download-network
+      - value: 'stalled'
+        color: var(--icon-color-orange)
+        icon: mdi:alert-circle
+      - value: 'seeding'
+        color: var(--icon-color-blue)
+        icon: mdi:download-network
+      - value: 'stalledup'
+        color: var(--icon-color-lightblue)
+        icon: mdi:download-network
+      - value: 'error'
+        color: var(--icon-color-red)
+        icon: mdi:download-network
+      - value: 'idle'
+        color: var(--icon-color-amber)
+        icon: mdi:download-network
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      name: Plex
+      color_type: icon
+      entity: sensor.brontosaurus_plex_status
+      tap_action: 
+        action: more-info
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-p-circle-outline
+      - value: 'idle'
+        color: var(--icon-color-amber)
+        icon: mdi:plex
+      - value: 'streaming'
+        color: var(--icon-color-green)
+        icon: mdi:play-circle
+      - value: 'paused'
+        color: var(--icon-color-orange)
+        icon: mdi:pause-circle
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:button-card"
+      name: VPN
+      color_type: icon
+      entity: sensor.brontosaurus_pia_vpn
+      tap_action: 
+        action: more-info
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+      - color: var(--icon-off-color)
+      - background-color: var(--element-accent-color)
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:alpha-v-circle-outline
+        - value: 'up'
+          color: var(--icon-color-amber)
+          icon: mdi:key
+        - value: 'down'
+          color: var(--icon-color-red)
+          icon: mdi:alert-circle
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: Sonarr
+      color_type: icon
+      entity: sensor.brontosaurus_sonarr
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:alpha-s-circle-outline
+        - value: 'running'
+          color: var(--icon-color-amber)
+          icon: mdi:basketball
+        - value: 'not running'
+          color: var(--icon-color-red)
+          icon: mdi:alert-circle
+    - type: "custom:button-card"
+      name: Radarr
+      color_type: icon
+      entity: sensor.brontosaurus_radarr
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:alpha-r-circle-outline
+        - value: 'running'
+          color: var(--icon-color-amber)
+          icon: mdi:basketball
+        - value: 'not running'
+          color: var(--icon-color-red)
+          icon: mdi:alert-circle
+    - type: "custom:button-card"
+      name: Hydra
+      color_type: icon
+      entity: sensor.brontosaurus_hydra2
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:alpha-h-circle-outline
+        - value: 'running'
+          color: var(--icon-color-amber)
+          icon: mdi:database-search
+        - value: 'paused'
+          color: var(--icon-off-orange)
+          icon: mdi:alert-circle
+        - value: 'restarting'
+          color: var(--icon-color-orange)
+          icon: mdi:alpha-h-circle
+        - value: 'exited'
+          color: var(--icon-color-blue)
+          icon: mdi:alpha-h-circle
+        - value: 'dead'
+          color: var((--icon-color-red)
+          icon: mdi:alert-circle
+        - value: 'created'
+          color: var(--icon-color-yellow)
+          icon: mdi:alpha-h-circle
+    - type: "custom:button-card"
+      name: Jackett
+      color_type: icon
+      entity: sensor.brontosaurus_jackett
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:alpha-j-circle-outline
+        - value: 'running'
+          color: var(--icon-color-amber)
+          icon: mdi:database-search
+        - value: 'paused'
+          color: var(--icon-off-orange)
+          icon: mdi:alert-circle
+        - value: 'restarting'
+          color: var(--icon-color-orange)
+          icon: mdi:alpha-j-circle
+        - value: 'exited'
+          color: var(--icon-color-blue)
+          icon: mdi:alpha-j-circle
+        - value: 'dead'
+          color: var((--icon-color-red)
+          icon: mdi:alert-circle
+        - value: 'created'
+          color: var(--icon-color-yellow)
+          icon: mdi:alpha-j-circle
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: Cachedrive
+      title_position: inside
+      unit_of_measurement: "%"
+      entity: sensor.quick_usedpercentfloat
+      padding: 2px
+      indicator: right
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      bar_style:
+      - align-items: left
+      font-size: 8px
+      severity:
+      - value: 15
+        color: var(--icon-color-green)
+      - value: 25
+        color: var(--icon-color-light-green)
+      - value: 35
+        color: var(--icon-color-yellow)
+      - value: 50
+        color: var(--icon-color-orange)
+      - value: 75
+        color: var(--icon-color-red)
+      - value: 100
+        color: var(--icon-color-deep-red)
+    - type: "custom:bignumber-card"
+      title: Freespace
+      scale: 15px
+      entity: sensor.drivepool_free
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

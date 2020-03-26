@@ -1,0 +1,96 @@
+input_boolean:
+  home_occupied:
+    name: Home Occupied
+    icon: mdi:home-account
+  house_guests:
+    name: House Guests
+    icon: mdi:account-multiple
+  on_holiday:
+    name: On Holiday
+    icon: mdi:beach
+  alarm_state:
+    name: Alarm State
+    icon: mdi:alarm-light
+  alarm_invisible:
+    name: Alarm Invisible
+    icon: mdi:alarm-light
+  light_schedule:
+    name: Light Schedule
+    icon: mdi:calendar
+  thermostat_schedule:
+    name: Thermostat Schedule
+    icon: mdi:calendar
+  thermostat_active:
+    name: Thermostat Schedule
+    icon: mdi:home-thermometer
+  thermostat_active_bumper:
+    name: Thermostat Schedule Bumper
+    icon: mdi:home-thermometer
+  washingmachine:
+    name: Laundry running
+    icon: mdi:washing-machine
+  dryer:
+    name: Dryer running
+    icon: mdi:tumble-dryer
+  node_red:
+    name: Node Red Watchdog
+    initial: on
+  auto_poweroff:
+    name: Auto Power Off
+  always_off:
+    name: Always Off
+  gft_afval:
+    name: GFT-Afval
+  restafval:
+    name: Restafval & Plastic
+  papier_afval:
+    name: Papier
+  afval_notification_sent:
+    name: Afval Notification Sent
+  bronto_power_start_kwh:
+    name: bronto_power_start_kwh
+  vacuum_autorun:
+    name: vacuum autorun
+  sleeping:
+    name: sleeping
+  harmony_light_1:
+    name: harmony light 1
+  harmony_light_2:
+    name: harmony light 2
+  harmony_socket_1:
+    name: harmony socket 1
+  harmony_socket_2:
+    name: harmony socket 2
+  harmony_light_plus:
+    name: harmony light plus
+  harmony_light_minus:
+    name: harmony light minus
+  reboot_host:
+    name: reboot_host
+    initial: off
+  restart_homeassistant:
+    name: restart_homeassistant
+    initial: off
+  restart_nodered:
+    name: restart_nodered
+    initial: off
+  restart_zigbee2mqtt:
+    name: restart_zigbee2mqtt
+    initial: off
+  vacuum_ran_today:
+    name: vacuum_ran_today
+    initial: off
+  showering_bathroom:
+    name: showering_bathroom
+  motion_garage:
+    name: motion_garage
+  motion_kitchen:
+    name: motion_kitchen
+  motion_attic:
+    name: motion_attic
+  motion_hallway_toggle:
+    name: motion_hallway_toggle
+  motion_bathroom_toggle:
+    name: motion_bathroom_toggle
+  motion_ventilation_toggle:
+    name: ventilation_after_shower

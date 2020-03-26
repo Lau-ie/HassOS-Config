@@ -1,0 +1,4 @@
+evohome:
+  username: !secret evohome_username
+  password: !secret evohome_password
+  scan_interval: 300

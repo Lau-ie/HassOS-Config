@@ -1,0 +1,40 @@
+- alias: Turn on hallway bright
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_hallway
+    to: 'on'
+  condition:
+    condition: time
+    after: '09:00:00'
+    before: '22:00:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hallway
+      brightness: 255
+
+- alias: Turn on hallway dimmed
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_hallway
+    to: 'on'
+  condition:
+    condition: time
+    after: '22:00:00'
+    before: '09:00:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hallway
+      brightness: 178
+
+- alias: Turn off hallway light 3 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_hallway
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+    service: light.turn_off
+    entity_id: light.hallway

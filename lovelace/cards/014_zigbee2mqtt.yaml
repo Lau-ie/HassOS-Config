@@ -1,0 +1,74 @@
+type: custom:vertical-style-card
+title: Zigbee2MQTT
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+     - type: "custom:button-card"
+       entity: sensor.bridge_state
+       icon: mdi:router-wireless
+       show_name: false
+       show_label: false
+       color_type: card
+       size: 30%
+       state:
+         - value: 'online'
+           color: var(--icon-color-green)
+         - value: 'unavailable'
+           color: var(--element-accent-color)
+       action: service
+       service:
+         domain: hassio
+         action: addon_restart
+         data:
+           addon: 7ad98f9c_zigbee2mqtt
+       style:
+        - color: var(--icon-off-color)
+     - type: "custom:button-card"
+       icon: mdi:access-point-network
+       show_name: false
+       show_label: false
+       color_type: card
+       color: var(--icon-color-green)
+       color_off: var(--element-accent-color)
+       size: 30%
+       entity: input_boolean.zigbee_permit_join
+       style:
+        - color: var(--icon-off-color)
+     - type: "custom:button-card"
+       icon: mdi:reload
+       show_name: false
+       show_label: false
+       color_type: card
+       color: var(--icon-color-green)
+       color_off: var(--element-accent-color)
+       size: 30%
+       entity: input_boolean.always_off
+       action: service
+       tap_action:
+        action: call-service
+        service: script.renew_zigbee_map
+       style:
+        - color: var(--icon-off-color)
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+     - type: "custom:bignumber-card"
+       entity: sensor.permit_join_countdown
+       title: Time Remaining
+       scale: 20px
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png

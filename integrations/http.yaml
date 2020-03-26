@@ -1,0 +1,12 @@
+http:
+  trusted_proxies: 
+    - !secret trusted_proxy_1
+    - !secret trusted_proxy_2
+    - !secret trusted_proxy_3
+    - !secret trusted_proxy_4
+    - !secret trusted_proxy_5
+    - !secret trusted_proxy_6
+  use_x_forwarded_for: true
+  base_url: !secret http_base_url
+  ip_ban_enabled: True
+  login_attempts_threshold: 3

@@ -1,0 +1,11 @@
+light:
+  platform: group
+  name: Lightgroup Livingroom
+  entities:
+    - light.hue_floorlight_livingroom
+    - light.hue_livingroom_spot_1
+    - light.hue_livingroom_spot_2
+    - light.hue_livingroom_spot_3
+    - light.hue_livingroom_spot_4
+    - light.hue_divide_spot_1
+    - light.hue_divide_spot_2

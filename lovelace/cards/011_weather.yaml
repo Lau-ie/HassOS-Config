@@ -1,0 +1,3 @@
+type: custom:weather-card
+entity: weather.dark_sky
+icons: "/local/icons/weather_icons/animated/"

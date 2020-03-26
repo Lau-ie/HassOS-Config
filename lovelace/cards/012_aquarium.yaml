@@ -1,0 +1,154 @@
+type: custom:vertical-style-card
+title: Aquarium
+style:
+  font_size: 24px
+  border: true
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          show_name: false
+          show_label: false
+          icon: mdi:white-balance-sunny
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.aquarium_daylight_state
+          tap_action: 
+           action: more-info
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:palette
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-orange)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.aquarium_rgblight_state
+          tap_action: 
+           action: more-info
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:weather-night
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-blue)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.aquarium_moonlight_state
+          tap_action: 
+           action: more-info
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:periodic-table-co2
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-green)
+          color_off: var(--element-accent-color)
+          entity: switch.0x7cb03eaa0a010fc8_switch
+          tap_action: 
+           action: more-info
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:bignumber-card"
+          entity: sensor.temperature_aquarium
+          scale: 15px
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          icon: mdi:white-balance-sunny
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.always_off
+          tap_action:
+            action: call-service
+            service: script.aquarium_light_day
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:plus
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.always_off
+          tap_action:
+            action: call-service
+            service: script.aquarium_light_day_increase
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:minus
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.always_off
+          tap_action:
+            action: call-service
+            service: script.aquarium_light_day_decrease
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:weather-night
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.always_off
+          tap_action:
+            action: call-service
+            service: script.aquarium_light_moonlight
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:power
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.always_off
+          action: service
+          tap_action:
+            action: call-service
+            service: script.aquarium_light_rgb
+          style:
+           - color: var(--icon-off-color)
+        - type: "custom:button-card"
+          icon: mdi:palette
+          show_name: false
+          show_label: false
+          color_type: card
+          color: var(--icon-color-amber)
+          color_off: var(--element-accent-color)
+          entity: input_boolean.always_off
+          tap_action:
+            action: call-service
+            service: script.aquarium_light_orange
+          style:
+           - color: var(--icon-off-color)
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png

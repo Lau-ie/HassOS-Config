@@ -1,0 +1,37 @@
+- alias: Brightness Livingroom Up
+  description: ''
+  trigger:
+  - device_id: a76275d0f39d4025bd32aaefe371086c
+    domain: deconz
+    platform: device
+    subtype: left
+    type: remote_button_rotated
+  action:
+    service: light.turn_on
+    data:
+      brightness_step_pct: 10
+      entity_id:
+      - light.hue_livingroom_spot_1
+      - light.hue_livingroom_spot_2
+      - light.hue_livingroom_spot_3
+      - light.hue_livingroom_spot_4
+      - light.hue_floorlight_livingroom
+
+- alias: Brightness Livingroom Down
+  description: ''
+  trigger:
+  - device_id: a76275d0f39d4025bd32aaefe371086c
+    domain: deconz
+    platform: device
+    subtype: right
+    type: remote_button_rotated
+  action:
+    service: light.turn_on
+    data:
+      brightness_step_pct: -10
+      entity_id:
+      - light.hue_livingroom_spot_1
+      - light.hue_livingroom_spot_2
+      - light.hue_livingroom_spot_3
+      - light.hue_livingroom_spot_4
+      - light.hue_floorlight_livingroom

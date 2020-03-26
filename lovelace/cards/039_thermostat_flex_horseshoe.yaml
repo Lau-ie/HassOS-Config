@@ -1,0 +1,322 @@
+type: custom:vertical-style-card
+title: Thermostat
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: 'custom:flex-horseshoe-card'
+    entities:
+      - entity: climate.woonkamer
+        attribute: current_temperature
+        decimals: 1
+        unit: '°C'
+        area: "Livingroom"
+        tap_action:
+          action: more-info
+      - entity: climate.woonkamer
+        attribute: temperature
+        decimals: 1
+        unit: '°C'
+        area: "Livingroom"
+        tap_action:
+          action: more-info
+    show:
+      horseshoe_style: 'colorstop'
+    layout:
+      hlines:
+      - id: 0
+        xpos: 50
+        ypos: 50
+        length: 40
+        styles:
+        - stroke: var(--primary-text-color);
+        - stroke-width: 5;
+        - stroke-linecap: round;
+        - opacity: 0.7;
+      states:
+      - id: 0
+        entity_index: 0
+        xpos: 50
+        ypos: 42
+        styles:
+        - font-size: 3.5em;
+        - stroke: var(--primary-text-color);
+      - id: 1
+        entity_index: 1
+        xpos: 50
+        ypos: 70
+        styles:
+        - font-size: 3em;
+      areas:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 100
+          styles:
+            - font-size: 2em;
+    horseshoe_scale:
+      min: 0
+      max: 40
+    color_stops:
+      0: 'var(--icon-color-purple)'
+      18: 'var(--icon-color-blue)'
+      20: 'var(--icon-color-green)'
+      22: 'var(--icon-color-yellow)'
+      23: 'var(--icon-color-orange)'
+      24: 'var(--icon-color-red)'
+  - type: 'custom:flex-horseshoe-card'
+    entities:
+      - entity: climate.keuken
+        attribute: current_temperature
+        decimals: 1
+        unit: '°C'
+        area: "Kitchen"
+        tap_action:
+          action: more-info
+      - entity: climate.keuken
+        attribute: temperature
+        decimals: 1
+        unit: '°C'
+        area: "Kitchen"
+        tap_action:
+          action: more-info
+    show:
+      horseshoe_style: 'colorstop'
+    layout:
+      hlines:
+      - id: 0
+        xpos: 50
+        ypos: 50
+        length: 40
+        styles:
+        - stroke: var(--primary-text-color);
+        - stroke-width: 5;
+        - stroke-linecap: round;
+        - opacity: 0.7;
+      states:
+      - id: 0
+        entity_index: 0
+        xpos: 50
+        ypos: 42
+        styles:
+        - font-size: 3.5em;
+        - stroke: var(--primary-text-color);
+      - id: 1
+        entity_index: 1
+        xpos: 50
+        ypos: 70
+        styles:
+        - font-size: 3em;
+      areas:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 100
+          styles:
+            - font-size: 2em;
+    horseshoe_scale:
+      min: 0
+      max: 40
+    color_stops:
+      0: 'var(--icon-color-purple)'
+      18: 'var(--icon-color-blue)'
+      20: 'var(--icon-color-green)'
+      22: 'var(--icon-color-yellow)'
+      23: 'var(--icon-color-orange)'
+      24: 'var(--icon-color-red)'
+  - type: 'custom:flex-horseshoe-card'
+    entities:
+      - entity: climate.berging
+        attribute: current_temperature
+        decimals: 1
+        unit: '°C'
+        area: "Washroom"
+        tap_action:
+          action: more-info
+      - entity: climate.berging
+        attribute: temperature
+        decimals: 1
+        unit: '°C'
+        area: "Washroom"
+        tap_action:
+          action: more-info
+    show:
+      horseshoe_style: 'colorstop'
+    layout:
+      hlines:
+      - id: 0
+        xpos: 50
+        ypos: 50
+        length: 40
+        styles:
+        - stroke: var(--primary-text-color);
+        - stroke-width: 5;
+        - stroke-linecap: round;
+        - opacity: 0.7;
+      states:
+      - id: 0
+        entity_index: 0
+        xpos: 50
+        ypos: 42
+        styles:
+        - font-size: 3.5em;
+        - stroke: var(--primary-text-color);
+      - id: 1
+        entity_index: 1
+        xpos: 50
+        ypos: 70
+        styles:
+        - font-size: 3em;
+      areas:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 100
+          styles:
+            - font-size: 2em;
+    horseshoe_scale:
+      min: 0
+      max: 40
+    color_stops:
+      0: 'var(--icon-color-purple)'
+      18: 'var(--icon-color-blue)'
+      20: 'var(--icon-color-green)'
+      22: 'var(--icon-color-yellow)'
+      23: 'var(--icon-color-orange)'
+      24: 'var(--icon-color-red)'
+  - type: 'custom:flex-horseshoe-card'
+    entities:
+      - entity: climate.badkamer_1v
+        attribute: current_temperature
+        decimals: 1
+        unit: '°C'
+        area: "Bathroom"
+        tap_action:
+          action: more-info
+      - entity: climate.badkamer_1v
+        attribute: temperature
+        decimals: 1
+        unit: '°C'
+        area: "Bathroom"
+        tap_action:
+          action: more-info
+    show:
+      horseshoe_style: 'colorstop'
+    layout:
+      hlines:
+      - id: 0
+        xpos: 50
+        ypos: 50
+        length: 40
+        styles:
+        - stroke: var(--primary-text-color);
+        - stroke-width: 5;
+        - stroke-linecap: round;
+        - opacity: 0.7;
+      states:
+      - id: 0
+        entity_index: 0
+        xpos: 50
+        ypos: 42
+        styles:
+        - font-size: 3.5em;
+        - stroke: var(--primary-text-color);
+      - id: 1
+        entity_index: 1
+        xpos: 50
+        ypos: 70
+        styles:
+        - font-size: 3em;
+      areas:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 100
+          styles:
+            - font-size: 2em;
+    horseshoe_scale:
+      min: 0
+      max: 40
+    color_stops:
+      0: 'var(--icon-color-purple)'
+      18: 'var(--icon-color-blue)'
+      20: 'var(--icon-color-green)'
+      22: 'var(--icon-color-yellow)'
+      23: 'var(--icon-color-orange)'
+      24: 'var(--icon-color-red)'
+- type: horizontal-stack
+  cards:
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: icon
+      entity: sensor.climate_woonkamer_active
+      state:
+      - value: 'heating'
+        color: var(--icon-color-orange)
+        icon: mdi:fire
+      - value: 'idle'
+        color: var(--icon-color-blue)
+        icon: mdi:waves
+      styles:
+        card:
+        - font-size: 12px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: icon
+      entity: sensor.climate_keuken_active
+      state:
+      - value: 'heating'
+        color: var(--icon-color-orange)
+        icon: mdi:fire
+      - value: 'idle'
+        color: var(--icon-color-blue)
+        icon: mdi:waves
+      styles:
+        card:
+        - font-size: 12px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: icon
+      entity: sensor.climate_berging_active
+      state:
+      - value: 'heating'
+        color: var(--icon-color-orange)
+        icon: mdi:fire
+      - value: 'idle'
+        color: var(--icon-color-blue)
+        icon: mdi:waves
+      styles:
+        card:
+        - font-size: 12px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: icon
+      entity: sensor.climate_badkamer_active
+      state:
+      - value: 'heating'
+        color: var(--icon-color-orange)
+        icon: mdi:fire
+      - value: 'idle'
+        color: var(--icon-color-blue)
+        icon: mdi:waves
+      styles:
+        card:
+        - font-size: 12px
+        - text-transform: capitalize
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

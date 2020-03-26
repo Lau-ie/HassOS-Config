@@ -1,0 +1,4 @@
+hue:
+  bridges:
+    - host: !secret hue_downstairs_ip
+    - host: !secret hue_upstairs_ip

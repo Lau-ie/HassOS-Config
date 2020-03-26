@@ -1,0 +1,10 @@
+tplink:
+  discovery: false
+  switch:
+  - host: !secret tplink_host_ip_1
+  - host: !secret tplink_host_ip_2
+  - host: !secret tplink_host_ip_3
+  - host: !secret tplink_host_ip_4
+  - host: !secret tplink_host_ip_5
+  - host: !secret tplink_host_ip_6
+  - host: !secret tplink_host_ip_7

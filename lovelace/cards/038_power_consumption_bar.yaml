@@ -1,0 +1,132 @@
+type: custom:vertical-style-card
+title: Energy
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: custom:bar-card
+    title: Electricity
+    title_position: inside
+    unit_of_measurement: "W"
+    entity: sensor.dsmr_current_electricity_watts
+    min: 0
+    max: 3500
+    padding: 2px
+    indicator: 'off'
+    card_style:
+    - box-shadow: none
+    title_style:
+    - text-align: left
+    - font-size: 16px
+    font-size: 8px
+    color: var(--icon-color-amber)
+  - type: custom:bar-card
+    title: Gas
+    title_position: inside
+    unit_of_measurement: "m3h"
+    entity: sensor.dsmr_current_gas_per_hour
+    min: 0
+    max: 2
+    padding: 2px
+    indicator: 'off'
+    card_style:
+    - box-shadow: none
+    title_style:
+    - text-align: left
+    - font-size: 16px
+    bar_style:
+    - align-items: left
+    font-size: 8px
+    color: var(--icon-color-green)
+- type: horizontal-stack
+  cards:
+    - type: "custom:bignumber-card"
+      entity: sensor.dsmr_current_electricity_cost
+      title: Current cost
+      scale: 15px
+    - type: "custom:bignumber-card"
+      entity: sensor.dsmr_current_gas_cost
+      title: Current cost
+      scale: 15px
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      name: Electricity
+      entities:
+      - entity: sensor.dsmr_daily_power
+        name: Power_daily
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      - entity: sensor.dsmr_hourly_power
+        name: Power
+        show_state: false
+        color: var(--icon-color-amber)
+      - entity: sensor.dsmr_daily_power_cost
+        name: Cost
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      line_color: var(--icon-color-amber)
+      icon: mdi:flash
+      aggregate_func: max
+      group_by: hour
+      show:
+        graph: bar
+        name: false
+        icon: false
+      hours_to_show: 24
+      decimals: 2
+      hour24: true
+      font_size: 65
+    - type: custom:mini-graph-card
+      name: Gas
+      entities:
+      - entity: sensor.dsmr_daily_gas
+        name: Power_daily
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      - entity: sensor.dsmr_hourly_gas
+        name: Power
+        show_state: false
+        color: var(--icon-color-green)
+      - entity: sensor.dsmr_daily_gas_cost
+        name: Cost
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      line_color: var(--icon-color-green)
+      icon: mdi:flash
+      aggregate_func: max
+      group_by: hour
+      show:
+        graph: bar
+        name: false
+        icon: false
+      font_size: 65
+      hours_to_show: 24
+      decimals: 2
+      hour24: true
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

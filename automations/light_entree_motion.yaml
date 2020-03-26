@@ -1,0 +1,40 @@
+- alias: Turn on entree bright
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_entree
+    to: 'on'
+  condition:
+    condition: time
+    after: '09:00:00'
+    before: '22:00:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.entree_2
+      brightness: 255
+
+- alias: Turn on entree dimmed
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_entree
+    to: 'on'
+  condition:
+    condition: time
+    after: '22:00:00'
+    before: '09:00:00'
+  action:
+  - service: light.turn_on
+    data:
+      entity_id: light.entree_2
+      brightness: 178
+
+- alias: Turn off entree light 3 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_entree
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+    service: light.turn_off
+    entity_id: light.entree_2

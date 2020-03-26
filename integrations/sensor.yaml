@@ -1,0 +1,991 @@
+sensor:
+- platform: netatmo
+  station: Home
+  modules:
+    - Home-Inside
+    - Home-Outside
+- platform: dsmr_reader
+- platform: time_date
+  display_options:
+    - 'time'
+- platform: yr
+- platform: mqtt
+  state_topic: "valetudo/pachy/state"
+  json_attributes_topic: "valetudo/pachy/map_data_parsed"
+  name: pachy_map
+  value_template: 'OK'
+- platform: mqtt
+  name: mc_harmony_status
+  state_topic: "harmony/state/"
+- platform: mqtt
+  name: mc_activity
+  state_topic: "harmony/activity/"
+- platform: mqtt
+  name: mc_activity_readable
+  state_topic: "harmony/activity/readable"
+- platform: mqtt
+  name: thermostat_active
+  state_topic: "thermostat/active"
+- platform: mqtt
+  name: thermostat_mode
+  state_topic: "thermostat/mode"
+- platform: mqtt
+  name: climate_livingroom_expected_temperature
+  state_topic: "climate/livingroom/expected"
+- platform: mqtt
+  name: climate_kitchen_expected_temperature
+  state_topic: "climate/kitchen/expected"
+- platform: mqtt
+  name: climate_washroom_expected_temperature
+  state_topic: "climate/washroom/expected"
+- platform: mqtt
+  name: climate_bathroom_expected_temperature
+  state_topic: "climate/bathroom/expected"
+- platform: mqtt
+  name: "Node RED"
+  state_topic: "checkIn/nodeRED"
+  expire_after: 300
+- platform: mqtt
+  name: Hassio State
+  state_topic: "hassio/state"
+- platform: mqtt
+  state_topic: "windows/flirclistener"  
+  name: "Flirc Listener"
+- platform: mqtt
+  state_topic: "zigbee2mqtt/bridge/permit_join_remaining"  
+  name: "Permit Join Countdown"
+- platform: mqtt
+  state_topic: "washing/ontime"  
+  name: "Washing Ontime"
+- platform: mqtt
+  state_topic: "dryer/ontime"  
+  name: "Dryer Ontime"
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+- platform: mqtt
+  name: Afval UpNext
+  state_topic: "afval/afvalUpNext"
+- platform: mqtt
+  name: Afval Days Left
+  state_topic: "afval/dayLeftClean"
+- platform: mqtt
+  name: Afval Weekday
+  state_topic: "afval/weekDay"
+- platform: mqtt
+  name: Afval Papier Days Left
+  state_topic: "afval/papier/dayLeft"
+- platform: mqtt
+  name: Afval Papier Weekday
+  state_topic: "afval/papier/weekDay"
+- platform: mqtt
+  name: Afval GFT Days Left
+  state_topic: "afval/gft/dayLeft"
+- platform: mqtt
+  name: Afval GFT Weekday
+  state_topic: "afval/gft/weekDay"
+- platform: mqtt
+  name: Afval Rest Days Left
+  state_topic: "afval/rest/dayLeft"
+- platform: mqtt
+  name: Afval Rest Weekday
+  state_topic: "afval/rest/weekDay"
+- platform: mqtt
+  name: nzbgetvpn_ontime
+  state_topic: "nzbget/ontime"
+- platform: mqtt
+  name: drivepool_free
+  state_topic: "brontosaurus/drivepool/free"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_freepercent
+  state_topic: "brontosaurus/drivepool/freePercent"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_used
+  state_topic: "brontosaurus/drivepool/used"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_usedpercent
+  state_topic: "brontosaurus/drivepool/usedPercent"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_usedpercentfloat
+  state_topic: "brontosaurus/drivepool/usedPercentFloat"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_size
+  state_topic: "brontosaurus/drivepool/size"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_free
+  state_topic: "brontosaurus/quick/free"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_freepercent
+  state_topic: "brontosaurus/quick/freePercent"
+  unit_of_measurement: "%"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_used
+  state_topic: "brontosaurus/quick/used"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_usedpercent
+  state_topic: "brontosaurus/quick/usedPercent"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_usedpercentfloat
+  state_topic: "brontosaurus/quick/usedPercentFloat"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_size
+  state_topic: "brontosaurus/quick/size"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: brontosaurus_glances
+  state_topic: "brontosaurus/glances/status"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: brontosaurus_docker_uptime
+  state_topic: "brontosaurus/uptime"
+  icon: mdi:progress-clock
+- platform: mqtt
+  name: brontosaurus_docker_total_down
+  state_topic: "brontosaurus/docker/total_down"
+  icon: mdi:download
+- platform: mqtt
+  name: brontosaurus_nzbget_status
+  state_topic: "brontosaurus/nzbget/status"
+- platform: mqtt
+  name: brontosaurus_qbt_status
+  state_topic: "brontosaurus/qbt/status"
+- platform: mqtt
+  name: brontosaurus_emby_status
+  state_topic: "brontosaurus/emby/status"
+- platform: mqtt
+  name: brontosaurus_plex_status
+  state_topic: "brontosaurus/plex/status"
+- platform: mqtt
+  name: brontosaurus_uptime_power_consumption
+  state_topic: "brontosaurus/docker/uptime_power_consumption"
+- platform: mqtt
+  name: brontosaurus_qbittorrentvpn
+  state_topic: "brontosaurus/qbittorrentvpn/status"
+- platform: mqtt
+  name: brontosaurus_pia_vpn
+  state_topic: "brontosaurus/pia-vpn/status"
+- platform: mqtt
+  name: brontosaurus_sonarr
+  state_topic: "brontosaurus/sonarr/status"
+- platform: mqtt
+  name: brontosaurus_radarr
+  state_topic: "brontosaurus/radarr/status"
+- platform: mqtt
+  name: brontosaurus_hydra2
+  state_topic: "brontosaurus/hydra2/status"
+- platform: mqtt
+  name: brontosaurus_jackett
+  state_topic: "brontosaurus/jackett/status"
+- platform: mqtt
+  name: brontosaurus_calibre
+  state_topic: "brontosaurus/calibre/status"
+- platform: mqtt
+  name: brontosaurus_portainer
+  state_topic: "brontosaurus/portainer/status"
+- platform: mqtt
+  name: powerflow_velociraptor
+  state_topic: "powerflow/velociraptor"
+- platform: mqtt
+  name: powerflow_brontosaurus
+  state_topic: "powerflow/brontosaurus"
+- platform: mqtt
+  name: power_velociraptor
+  state_topic: "power/velociraptor"
+- platform: mqtt
+  name: power_brontosaurus
+  state_topic: "power/brontosaurus"
+- platform: mqtt
+  name: powerflow_brontosaurus_pending
+  state_topic: "powerflow/brontosaurus/pending"
+- platform: mqtt
+  name: powerflow_velociratpor_pending
+  state_topic: "powerflow/velociratpor/pending"
+- platform: mqtt
+  name: power_coffeemachine
+  state_topic: "power/coffeemachine"
+- platform: mqtt
+  name: f1_quali_days_left
+  state_topic: "f1/quali_days_left"
+- platform: mqtt
+  name: f1_quali_day
+  state_topic: "f1/quali_day"
+- platform: mqtt
+  name: f1_quali_time
+  state_topic: "f1/quali_time"
+- platform: mqtt
+  name: f1_next_race
+  state_topic: "f1/next_race"
+- platform: mqtt
+  name: f1_race_time
+  state_topic: "f1/race_time"
+- platform: mqtt
+  name: f1_location
+  state_topic: "f1/location"
+- platform: mqtt
+  name: f1_race_days_left
+  state_topic: "f1/race_days_left"
+- platform: mqtt
+  name: f1_race_days_readable
+  state_topic: "f1/day_left_readable"
+- platform: mqtt
+  name: f1_race_day
+  state_topic: "f1/race_day"
+- platform: mqtt
+  name: f1_week_left
+  state_topic: "f1/week_left"
+- platform: mqtt
+  name: f1_race_str
+  state_topic: "f1/race_str"
+- platform: mqtt
+  name: f1_quali_str
+  state_topic: "f1/qualifying_str"
+- platform: mqtt
+  name: sonarr_upcoming_retained
+  state_topic: "sonarr/retain/upcoming"
+  json_attributes_topic: "sonarr/retain/upcoming/attributes"
+- platform: mqtt
+  name: radarr_upcoming_retained
+  state_topic: "radarr/retain/upcoming"
+  json_attributes_topic: "radarr/retain/upcoming/attributes"
+- platform: mqtt
+  name: iotlink_brontosaurus_idle_time
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/idle-time"
+  unit_of_measurement: 'seconds'
+  icon: mdi:timer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_cpu_usage
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/cpu"
+  unit_of_measurement: '%'
+  icon: mdi:speedometer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_ram_available"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/memory/available"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_ram_used"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/memory/used"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_ram_total
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/memory/total"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_network_wired
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/network/0/wired"
+  unit_of_measurement: ''
+  icon: mdi:ethernet
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_network_ipv4
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/network/0/ipv4"
+  unit_of_measurement: ''
+  icon: mdi:lan
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_brontosaurus_network_ipv6
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/network/0/ipv6"
+  unit_of_measurement: ''
+  icon: mdi:lan
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_drive_usage_c"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/c/drive-usage"
+  unit_of_measurement: '%'
+  icon: mdi:chart-donut
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_total_size_c"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/c/total-size"
+  unit_of_measurement: 'MB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_total_free_c"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/c/total-free-space"
+  unit_of_measurement: 'MB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_drive_usage_d"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/d/drive-usage"
+  unit_of_measurement: '%'
+  icon: mdi:chart-donut
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_total_size_d"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/d/total-size"
+  unit_of_measurement: 'MB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_total_free_d"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/d/total-free-space"
+  unit_of_measurement: 'MB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_drive_usage_p"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/p/drive-usage"
+  unit_of_measurement: '%'
+  icon: mdi:chart-donut
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_total_size_p"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/p/total-size"
+  unit_of_measurement: 'MB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: "iotlink_brontosaurus_total_free_p"
+  state_topic: "iotlink/workgroup/brontosaurus/windows-monitor/stats/hard-drive/p/total-free-space"
+  unit_of_measurement: 'MB'
+  icon: mdi:harddisk
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/brontosaurus/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_idle_time
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/idle-time"
+  unit_of_measurement: 'seconds'
+  icon: mdi:timer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_cpu_usage
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/cpu"
+  unit_of_measurement: '%'
+  icon: mdi:speedometer
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_ram_available"
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/memory/available"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_ram_used"
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/memory/used"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_ram_total
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/memory/total"
+  unit_of_measurement: 'MB'
+  icon: mdi:memory
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_network_wired
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/network/0/wired"
+  unit_of_measurement: ''
+  icon: mdi:ethernet
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_network_ipv4
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/network/0/ipv4"
+  unit_of_measurement: ''
+  icon: mdi:lan
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: mqtt
+  name: iotlink_velociraptor_network_ipv6
+  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/network/0/ipv6"
+  unit_of_measurement: ''
+  icon: mdi:lan
+  value_template: "{{ value }}"
+  availability_topic: "iotlink/workgroup/velociraptor/lwt"
+  payload_available: "ON"
+  payload_not_available: "OFF"
+  qos: 1
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: memory_use
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_30
+  max_age:
+    minutes: 30
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_7
+  max_age:
+    minutes: 7
+- platform: statistics
+  entity_id: sensor.dsmr_consumption_gas_currently_delivered
+  name: gas_mean
+  max_age:
+    minutes: 30
+- platform: sql
+  db_url: !secret recorder_string
+  queries:
+    - name: 'DataBase size KB'
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1024, 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+      column: 'value'
+      unit_of_measurement: MB
+- platform: template
+  sensors:
+    database_size_mb:
+      friendly_name: "Database_size_MB"
+      unit_of_measurement: 'MB'
+      value_template: "{{ (states('sensor.database_size_kb')|float / 1024)| round(0)}}"
+    database_size_gb:
+      friendly_name: "Database_size_GB"
+      unit_of_measurement: 'GB'
+      value_template: "{{ (states('sensor.database_size_mb')|float / 1024)| round(1)}}"
+    gas_max_30:
+      friendly_name: "Gas Max 30"
+      unit_of_measurement: 'm3'
+      value_template: "{{ state_attr('sensor.gas_mean', 'max_value') }}"
+    solar_angle:
+      friendly_name: "Sun Angle"
+      unit_of_measurement: '°'
+      value_template: "{{ '%+.1f'|format(state_attr('sun.sun', 'elevation')) }}"
+    power_consumption_total:
+      friendly_name: "Power Consumption Total"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_consumption_low')|float + states('sensor.power_consumption_normal')|float }}"
+    climate_woonkamer_active:
+      friendly_name: "Climate Woonkamer Active"
+      value_template: "{{ state_attr('climate.woonkamer', 'hvac_action') }}"
+    climate_keuken_active:
+      friendly_name: "Climate Keuken Active"
+      value_template: "{{ state_attr('climate.keuken', 'hvac_action') }}"
+    climate_berging_active:
+      friendly_name: "Climate Berging Active"
+      value_template: "{{ state_attr('climate.berging', 'hvac_action') }}"
+    climate_badkamer_active:
+      friendly_name: "Climate Badkamer Active"
+      value_template: "{{ state_attr('climate.badkamer_1v', 'hvac_action') }}"
+    pachy_charge:
+      friendly_name: "Pachy Charge"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('vacuum.pachy', 'battery_level') }}"
+    pachy_status:
+      friendly_name: "Pachy Status"
+      value_template: "{{ state_attr('vacuum.pachy', 'state') }}"
+    pachy_fan_speed:
+      friendly_name: "Pachy Fan Speed"
+      value_template: "{{ state_attr('vacuum.pachy', 'fan_speed') }}"
+    pachy_cleaning_time:
+      friendly_name: "Cleaning Time"
+      value_template: "{{ state_attr('vacuum.pachy', 'currentCleanTime:') }}"
+    pachy_cleaned_area:
+      friendly_name: "Cleaned Area"
+      value_template: "{{ state_attr('vacuum.pachy', 'currentCleanArea') }}"
+      unit_of_measurement: 'm2'
+    pachy_cleaning_count:
+      friendly_name: "Total Cleaning Count"
+      value_template: "{{ state_attr('vacuum.pachy', 'cleanCount') }}"
+    pachy_total_cleaned_area:
+      friendly_name: "Total Cleaned Area"
+      value_template: "{{ state_attr('vacuum.pachy', 'cleanArea') }}"
+      unit_of_measurement: 'm2'
+    pachy_total_cleaning_time:
+      friendly_name: "Total Cleaning Time"
+      value_template: "{{ state_attr('vacuum.pachy', 'cleanTime') }}"
+      unit_of_measurement: 'h'
+    pachy_main_brush_left:
+      friendly_name: "Main Brush Left"
+      value_template: "{{ state_attr('vacuum.pachy', 'mainBrush') }}"
+    pachy_side_brush_left:
+      friendly_name: "Side Brush Left"
+      value_template: "{{ state_attr('vacuum.pachy', 'sideBrush') }}"
+    pachy_filter_left:
+      friendly_name: "Filter Left"
+      value_template: "{{ state_attr('vacuum.pachy', 'filter') }}"
+    pachy_sensor_dirty_left:
+      friendly_name: "Sensor Dirty Left"
+      value_template: "{{ state_attr('vacuum.pachy', 'dirty_left') }}"
+    pachy_clean_start:
+      friendly_name: "Fan Clean Start"
+      value_template: "{{ state_attr('vacuum.pachy', 'startTime') }}"
+    pachy_clean_stop:
+      friendly_name: "Fan Clean Stop"
+      value_template: "{{ state_attr('vacuum.pachy', 'endTime') }}"
+    vacuum_cleaner_error_sensor:
+      friendly_name: Vacuum Cleaner Error Sensor
+      value_template: >-
+        {% if states.vacuum.pachy.attributes.error is defined %}
+          {{states.vacuum.pachy.attributes.error}}
+        {% else %}
+          No Error
+        {% endif %}
+    darksky_temp_outside:
+      friendly_name: "DarkSky Temp Outside"
+      value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
+      unit_of_measurement: '°C'
+    darksky_humidity_outside:
+      friendly_name: "DarkSky Temp Humidity"
+      value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
+      unit_of_measurement: '%'
+    climate_livingroom_target_temperature:
+      friendly_name: "Climate Livingroom Target Temperature"
+      value_template: "{{ state_attr('climate.woonkamer', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_livingroom_current_temperature:
+      friendly_name: "Climate Livingroom Target Temperature"
+      value_template: "{{ state_attr('climate.woonkamer', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_kitchen_target_temperature:
+      friendly_name: "Climate Kitchen Target Temperature"
+      value_template: "{{ state_attr('climate.keuken', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_kitchen_current_temperature:
+      friendly_name: "Climate Kitchen Target Temperature"
+      value_template: "{{ state_attr('climate.keuken', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_washroom_target_temperature:
+      friendly_name: "Climate Washroom Target Temperature"
+      value_template: "{{ state_attr('climate.berging', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_washroom_current_temperature:
+      friendly_name: "Climate Washroom Target Temperature"
+      value_template: "{{ state_attr('climate.berging', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_bathroom_target_temperature:
+      friendly_name: "Climate Bathroom Target Temperature"
+      value_template: "{{ state_attr('climate.badkamer1v', 'temperature') }}"
+      unit_of_measurement: '°C'
+    climate_bathroom_current_temperature:
+      friendly_name: "Climate Bathroom Target Temperature"
+      value_template: "{{ state_attr('climate.badkamer1v', 'temperature') }}"
+      unit_of_measurement: '°C'
+    tp_link_mediacenter_total_kwh:
+      friendly_name: "Mediacenter Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_mediacenter', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_mediacenter_hourly_power:
+      friendly_name: Mediacenter Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.mediacenter_power_hourly_peak')|float + states('sensor.mediacenter_power_hourly_offpeak')|float }}"
+    tp_link_mediacenter_hourly_power_cost:
+      friendly_name: Mediacenter Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.mediacenter_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.mediacenter_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_mediacenter_daily_power:
+      friendly_name: Mediacenter Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.mediacenter_power_daily_peak')|float + states('sensor.mediacenter_power_daily_offpeak')|float }}"
+    tp_link_mediacenter_daily_power_cost:
+      friendly_name: Mediacenter Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.mediacenter_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.mediacenter_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_mediacenter_current_load:
+      friendly_name: "Mediacenter Current Load"
+      value_template: "{{ state_attr('switch.tp_link_mediacenter', 'current_power_w') }}"
+    tp_link_mediacenter_current_cost:
+      friendly_name: "Mediacenter Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_mediacenter', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_mediacenter', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    tp_link_coffeemachine_total_kwh:
+      friendly_name: "Coffeemachine Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_coffeemachine', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_coffeemachine_hourly_power:
+      friendly_name: Coffeemachine Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.coffeemachine_power_hourly_peak')|float + states('sensor.coffeemachine_power_hourly_offpeak')|float }}"
+    tp_link_coffeemachine_hourly_power_cost:
+      friendly_name: Coffeemachine Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.coffeemachine_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.coffeemachine_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_coffeemachine_daily_power:
+      friendly_name: Coffeemachine Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.coffeemachine_power_daily_peak')|float + states('sensor.coffeemachine_power_daily_offpeak')|float }}"
+    tp_link_coffeemachine_daily_power_cost:
+      friendly_name: Coffeemachine Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.coffeemachine_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.coffeemachine_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_coffeemachine_current_load:
+      friendly_name: "Coffeemachine Current Load"
+      value_template: "{{ state_attr('switch.tp_link_coffeemachine', 'current_power_w') }}"
+    tp_link_coffeemachine_current_cost:
+      friendly_name: "Coffeemachine Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_coffeemachine', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_coffeemachine', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    tp_link_brontosaurus_total_kwh:
+      friendly_name: "Brontosaurus Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_brontosaurus', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_brontosaurus_hourly_power:
+      friendly_name: Brontosaurus Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.brontosaurus_power_hourly_peak')|float + states('sensor.brontosaurus_power_hourly_offpeak')|float }}"
+    tp_link_brontosaurus_hourly_power_cost:
+      friendly_name: Brontosaurus Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.brontosaurus_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.brontosaurus_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_brontosaurus_daily_power:
+      friendly_name: Brontosaurus Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.brontosaurus_power_daily_peak')|float + states('sensor.brontosaurus_power_daily_offpeak')|float }}"
+    tp_link_brontosaurus_daily_power_cost:
+      friendly_name: Brontosaurus Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.brontosaurus_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.brontosaurus_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_brontosaurus_current_load:
+      friendly_name: "Brontosaurus Current Load"
+      value_template: "{{ state_attr('switch.tp_link_brontosaurus', 'current_power_w') }}"
+      unit_of_measurement: 'Watts'
+    tp_link_brontosaurus_current_cost:
+      friendly_name: "Brontosaurus Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_brontosaurus', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_brontosaurus', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    tp_link_washer_total_kwh:
+      friendly_name: "Washingmachine Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_washingmachine', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_washer_hourly_power:
+      friendly_name: Washingmachine Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.washer_power_hourly_peak')|float + states('sensor.washer_power_hourly_offpeak')|float }}"
+    tp_link_washer_hourly_power_cost:
+      friendly_name: Washingmachine Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.washer_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_washer_daily_power:
+      friendly_name: Washingmachine Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.washer_power_daily_peak')|float + states('sensor.washer_power_daily_offpeak')|float }}"
+    tp_link_washer_daily_power_cost:
+      friendly_name: Washingmachine Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.washer_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_washer_current_load:
+      friendly_name: "Washingmachine Current Load"
+      value_template: "{{ state_attr('switch.tp_link_washingmachine', 'current_power_w') }}"
+      unit_of_measurement: 'Watts'
+    tp_link_washer_current_cost:
+      friendly_name: "Washer Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_washer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_washer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    tp_link_dryer_total_kwh:
+      friendly_name: "Dryer Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_dryer', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_dryer_hourly_power:
+      friendly_name: Dryer Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.dryer_power_hourly_peak')|float + states('sensor.dryer_power_hourly_offpeak')|float }}"
+    tp_link_dryer_hourly_power_cost:
+      friendly_name: Dryer Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.dryer_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_dryer_daily_power:
+      friendly_name: Dryer Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.dryer_power_daily_peak')|float + states('sensor.dryer_power_daily_offpeak')|float }}"
+    tp_link_dryer_daily_power_cost:
+      friendly_name: Dryer Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.dryer_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_dryer_current_load:
+      friendly_name: "Dryer Current Load"
+      value_template: "{{ state_attr('switch.tp_link_dryer', 'current_power_w') }}"
+      unit_of_measurement: 'Watts'
+    tp_link_dryer_current_cost:
+      friendly_name: "Dryer Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_dryer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_dryer', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    tp_link_quooker_total_kwh:
+      friendly_name: "Quooker Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_quooker', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_quooker_hourly_power:
+      friendly_name: Quooker Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.quooker_power_hourly_peak')|float + states('sensor.quooker_power_hourly_offpeak')|float }}"
+    tp_link_quooker_hourly_power_cost:
+      friendly_name: Quooker Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.quooker_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_quooker_daily_power:
+      friendly_name: Quooker Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.quooker_power_daily_peak')|float + states('sensor.quooker_power_daily_offpeak')|float }}"
+    tp_link_quooker_daily_power_cost:
+      friendly_name: Quooker Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.quooker_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_quooker_current_load:
+      friendly_name: "Quooker Current Load"
+      value_template: "{{ state_attr('switch.tp_link_quooker', 'current_power_w') }}"
+      unit_of_measurement: 'Watts'
+    tp_link_quooker_current_cost:
+      friendly_name: "Quooker Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_quooker', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_quooker', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    tp_link_triceratops_total_kwh:
+      friendly_name: "Triceratops Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_triceratops', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_triceratops_hourly_power:
+      friendly_name: Triceratops Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.triceratops_power_hourly_peak')|float + states('sensor.triceratops_power_hourly_offpeak')|float }}"
+    tp_link_triceratops_hourly_power_cost:
+      friendly_name: Triceratops Hourly Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.triceratops_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_triceratops_daily_power:
+      friendly_name: Triceratops Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.triceratops_power_daily_peak')|float + states('sensor.triceratops_power_daily_offpeak')|float }}"
+    tp_link_triceratops_daily_power_cost:
+      friendly_name: Triceratops Daily Power Cost
+      unit_of_measurement: kWh
+      value_template: "{{ (states('sensor.triceratops_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float) }}"
+    tp_link_triceratops_current_load:
+      friendly_name: "Triceratops Current Load"
+      value_template: "{{ state_attr('switch.tp_link_triceratops', 'current_power_w') }}"
+      unit_of_measurement: 'Watts'
+    tp_link_triceratops_current_cost:
+      friendly_name: "Triceratops Current Cost"
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}
+        {% else %}
+          {{ (state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}
+        {% endif %}
+    dsmr_hourly_power:
+      friendly_name: Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.dsmr_hourly_power_offpeak')|float + states('sensor.dsmr_hourly_power_peak')|float }}"
+    dsmr_daily_power:
+      friendly_name: Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.dsmr_daily_power_offpeak')|float + states('sensor.dsmr_daily_power_peak')|float }}"
+    dsmr_weekly_power:
+      friendly_name: Weekly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.dsmr_weekly_power_offpeak')|float + states('sensor.dsmr_weekly_power_peak')|float }}"
+    dsmr_monthly_power:
+      friendly_name: Monthly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.dsmr_monthly_power_offpeak')|float + states('sensor.dsmr_monthly_power_peak')|float }}"
+    dsmr_hourly_power_offpeak_cost:
+      friendly_name: Hourly Power Offpeak Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_hourly_power_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}"
+    dsmr_hourly_power_peak_cost:
+      friendly_name: Hourly Power Peak Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_hourly_power_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}"
+    dsmr_hourly_gas_cost:
+      friendly_name: Hourly Gas Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_hourly_gas')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}"
+    dsmr_daily_power_offpeak_cost:
+      friendly_name: Daily Power Offpeak Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_daily_power_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float }}"
+    dsmr_daily_power_peak_cost:
+      friendly_name: Daily Power Peak Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_daily_power_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float }}"
+    dsmr_daily_gas_cost:
+      friendly_name: Daily Gas Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_daily_gas')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float }}"
+    dsmr_hourly_power_cost:
+      friendly_name: Hourly Power Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_hourly_power_offpeak_cost')|float + states('sensor.dsmr_hourly_power_peak_cost')|float }}"
+    dsmr_daily_power_cost:
+      friendly_name: Daily Power Cost
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.dsmr_daily_power_offpeak_cost')|float + states('sensor.dsmr_daily_power_peak_cost')|float }}"
+    dsmr_current_electricity_cost:
+      friendly_name: Current Electricity Cost
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ (states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float)|round(2) }}
+        {% else %}
+          {{ (states('sensor.dsmr_reading_electricity_currently_delivered')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float)|round(2) }}
+        {% endif %}
+    dsmr_current_electricity_watts:
+      friendly_name: Current Electricity Watt
+      unit_of_measurement: Watt
+      value_template: >-
+        {{ (states('sensor.dsmr_reading_electricity_currently_delivered')|float * 1000)|round(0) }}
+    dsmr_current_gas_cost:
+      friendly_name: Current Gas Cost
+      unit_of_measurement: €/h
+      value_template: >-
+        {{ ((states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12) * states('sensor.dsmr_day_consumption_energy_supplier_price_gas')|float)|round(2) }}
+    dsmr_current_gas_per_hour:
+      friendly_name: Current Gas per Hour
+      unit_of_measurement: m3h
+      value_template: >-
+        {{ (states('sensor.dsmr_consumption_gas_currently_delivered')|float * 12)|round(3) }}
+- platform: mqtt
+  name: pachy_last_run
+  state_topic: "vacuum/last_run"
+- platform: mqtt
+  name: pachy_bat_state
+  state_topic: "vacuum/bat_state"
+- platform: mqtt
+  state_topic: "vacuum/ontime"  
+  name: "pachy_ontime"
+- platform: darksky
+  api_key: !secret darksky_api_key
+  forecast:
+    - 0
+  monitored_conditions:
+    - summary
+    - icon
+    - temperature
+    - temperature_high
+    - temperature_low
+    - moon_phase
+    - uv_index
+    - apparent_temperature_high
+    - apparent_temperature_low

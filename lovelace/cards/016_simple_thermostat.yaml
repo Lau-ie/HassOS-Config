@@ -1,0 +1,83 @@
+type: custom:vertical-style-card
+title: Thermostat
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:simple-thermostat
+      entity: climate.family_room
+      step_size: 0.5
+      sensors:
+      - entity: sensor.dark_sky_temperature
+        name: Outside
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: card
+      entity: sensor.thermostat_mode
+      style:
+      - color: var(--icon-off-color)
+      tap_action:
+        action: call-service
+        service: script.thermostat_mode_click
+      state:
+      - value: 'high'
+        color: var(--icon-color-red)
+        icon: mdi:radiator
+      - value: 'low'
+        color: var(--icon-color-green)
+        icon: mdi:radiator
+      - value: 'off'
+        color: var(--icon-color-blue)
+        icon: mdi:radiator-off
+    - type: "custom:button-card"
+      icon: mdi:thermometer-minus
+      show_name: false
+      show_label: false
+      color_type: card
+      color_off: var(--element-accent-color)
+      entity: input_boolean.always_off
+      tap_action:
+        action: call-service
+        service: script.thermostat_decrease_click
+    - type: "custom:button-card"
+      icon: mdi:thermometer-plus
+      show_name: false
+      show_label: false
+      color_type: card
+      color_off: var(--element-accent-color)
+      entity: input_boolean.always_off
+      tap_action:
+        action: call-service
+        service: script.thermostat_increase_click
+    - type: "custom:button-card"
+      show_name: false
+      name: automate
+      show_label: false
+      color_type: icon
+      entity: input_boolean.thermostat_schedule
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:arrow-decision-auto
+      - value: 'off'
+        color: var(--icon-color-off)
+        icon: mdi:arrow-decision-auto-outline
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png

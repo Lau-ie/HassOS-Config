@@ -1,0 +1,5 @@
+timer:
+  attic_light:
+    duration: '00:03:00'
+  garage_light:
+    duration: '00:03:00'

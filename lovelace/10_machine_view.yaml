@@ -1,0 +1,7 @@
+title: Machines
+id: machines
+icon: mdi:desktop-tower
+cards:
+  - !include cards/002_machine_control.yaml
+  - !include cards/003_brontosaurus.yaml
+  - !include cards/004_drives.yaml

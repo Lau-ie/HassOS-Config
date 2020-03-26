@@ -1,0 +1,8 @@
+emulated_hue:
+  host_ip: !secret emulated_hue_host_ip
+  listen_port: !secret emulated_hue_listen_port
+  off_maps_to_on_domains:
+    - script
+  expose_by_default: true
+  exposed_domains:
+    - script

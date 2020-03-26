@@ -1,0 +1,35 @@
+custom_header:
+  compact_mode: true
+  menu: overflow
+  hide_help: true
+  options: clock
+  voice: hide
+  clock_format: 24
+  exceptions:
+  - conditions:
+      user: K4tr1n
+    config:
+      options: clock
+      clock_format: 24
+      hide_tabs: 0,1,2,3
+  - conditions:
+      user: D3lta3
+    config:
+      options: clock
+      clock_format: 24
+      hide_tabs: 4,5
+  - conditions:
+      user: d3lta3
+    config:
+      options: clock
+      lock_format: 24
+      hide_tabs: 4,5
+
+title: Jurassic
+views:
+- !include lovelace/00_overview.yaml
+- !include lovelace/20_lights_switches.yaml
+- !include lovelace/25_sensors.yaml
+- !include lovelace/30_hassio.yaml
+- !include lovelace/40_overview_short.yaml
+- !include lovelace/50_lights_switches_short.yaml

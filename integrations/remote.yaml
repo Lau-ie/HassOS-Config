@@ -1,0 +1,4 @@
+remote:
+  - platform: harmony
+    name: Woonkamer
+    host: !secret harmony_host_ip

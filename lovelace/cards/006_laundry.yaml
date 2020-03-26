@@ -1,0 +1,56 @@
+type: custom:vertical-style-card
+title: Laundry
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      icon: mdi:washing-machine
+      show_name: false
+      show_label: false
+      tap_action: 
+        action: more-info
+      color: var(--icon-color-green)
+      color_off: var(--element-accent-color)
+      color_type: card
+      entity: input_boolean.washingmachine
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      icon: mdi:tumble-dryer
+      show_name: false
+      show_label: false
+      tap_action: 
+        action: more-info
+      color: var(--icon-color-green)
+      color_off: var(--element-accent-color)
+      color_type: card
+      entity: input_boolean.dryer
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      entity: sensor.washing_ontime
+      title: Time elapsed
+      scale: 20px
+    - type: "custom:bignumber-card"
+      entity: sensor.dryer_ontime
+      title: Time elapsed
+      scale: 20px
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

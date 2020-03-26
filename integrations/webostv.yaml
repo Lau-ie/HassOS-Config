@@ -1,0 +1,3 @@
+webostv:
+  host: !secret lgwebostv_host_ip
+  name: Living Room TV

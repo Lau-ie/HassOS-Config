@@ -1,0 +1,4 @@
+media_player:
+  - platform: androidtv
+    name: Nvidia Shield TV
+    host: !secret nvidia_shield_ip

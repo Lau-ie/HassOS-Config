@@ -1,0 +1,89 @@
+type: custom:vertical-style-card
+title: Ventilation
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      entity: sensor.ventilation_mode
+      show_name: false
+      show_label: false
+      name: Mode
+      icon: mdi:fan
+      color_type: icon
+      size: 30%
+      tap_action:
+       action: call-service
+       service: script.ventilation_button_mode
+      state:
+      - value: 'off'
+        color: var(--icon-color-red)
+      - value: 'low'
+        color: var(--icon-color-green)
+      - value: 'mid'
+        color: var(--icon-color-orange)
+      - value: 'high'
+        color: var(--icon-color-deep-orange)
+      - value: 'auto-high'
+        color: var(--icon-color-deep-orange)
+      style:
+      - color: var(--icon-off-color)
+    - type: "custom:button-card"
+      icon: mdi:power
+      show_name: false
+      show_label: false
+      color_type: card
+      color: var(--icon-color-red)
+      color_off: var(--element-accent-color)
+      size: 30%
+      entity: input_boolean.ventilation_stay_off
+      style:
+      - color: var(--icon-off-color)
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: Ventilation
+      title_position: inside
+      unit_of_measurement: "%"
+      entity: sensor.ventilation_mode_percent
+      padding: 5px
+      indicator: right
+      card_style:
+      - box-shadow: none
+      - align: center
+      - vertical-align: middle
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      bar_style:
+      - align-items: left
+      font-size: 8px
+      severity:
+      - value: 1
+        color: var(--icon-color-deep-red)
+      - value: 33
+        color: var(--icon-color-green)
+      - value: 66
+        color: var(--icon-color-yellow)
+      - value: 100
+        color: var(--icon-color-deep-orange)
+    - type: "custom:bignumber-card"
+      entity: sensor.ventilation_off_time_remaining
+      title: Time Remaining
+      scale: 15px
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png

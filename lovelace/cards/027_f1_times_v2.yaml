@@ -1,0 +1,79 @@
+type: custom:vertical-style-card
+title: Formula 1
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:triplevalue-card"
+      title_entity: sensor.f1_race_days_readable
+      entity: sensor.f1_next_race
+      subtitle_entity: sensor.f1_location
+      scale: 20px
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      icon: mdi:timer
+      show_name: false
+      action: more_info
+      color_type: icon
+      size: 25%
+      entity: sensor.f1_quali_days_left
+      state:
+      - value: 'today'
+        color: var(--icon-color-blue)
+      - value: 'off'
+        color: var(--icon-off-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+    - type: "custom:singlevalue-card"
+      entity: sensor.f1_quali_day
+      scale: 20px
+    - type: "custom:singlevalue-card"
+      entity: sensor.f1_quali_time
+      scale: 20px
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      icon: mdi:flag-checkered
+      show_name: false
+      action: more_info
+      color_type: icon
+      size: 25%
+      entity: sensor.f1_race_time
+      label_template: >
+        return states['sensor.f1_race_day'].state
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+        - box-shadow: 0px 0px 0px 0px
+      state:
+      - value: 'on'
+        color: var(--icon-color-blue)
+      - value: 'off'
+        color: var(--icon-off-color)
+    - type: "custom:singlevalue-card"
+      entity: sensor.f1_race_day
+      scale: 20px
+    - type: "custom:singlevalue-card"
+      entity: sensor.f1_race_time
+      scale: 20px
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

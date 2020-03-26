@@ -1,0 +1,23 @@
+- alias: Turn on the garagelights when the door opens or motion is detected
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.tradfri_motion_sensor_garage, binary_sensor.tradfri_motion_sensor_garagefront, binary_sensor.xiaomi_doorsensor_garagedoor
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.sonoff2
+  - service: timer.start
+    data:
+      entity_id: timer.garage_light
+
+- alias: Turn off the garagelights when no motion is detected
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.garage_light
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.sonoff2

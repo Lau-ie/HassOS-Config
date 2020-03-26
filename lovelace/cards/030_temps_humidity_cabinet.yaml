@@ -1,0 +1,54 @@
+type: custom:vertical-style-card
+title: Cabinets
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_ps4
+      name: PS4
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_ps4
+      name: PS4
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_velo
+      name: Velociraptor
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_velo
+      name: Velociraptor
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      line_color: 
+      - var(--icon-color-blue)

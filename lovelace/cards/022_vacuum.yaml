@@ -1,0 +1,249 @@
+type: custom:vertical-style-card
+title: Pachy
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        icon: bha:roborock
+        name: 'Pachycephalosaurus'
+        show_name: false
+        show_label: false
+        show_state: false
+        action: more_info
+        color_type: card
+        entity: vacuum.pachy
+        label_template: >
+          return states['sensor.pachy_bat_state'].state
+        style:
+        - color: var(--icon-off-color)
+        state:
+        - value: 'docked'
+          color: var(--icon-color-amber)
+        - value: 'cleaning'
+          color: var(--icon-color-green)
+        - value: 'paused'
+          color: var(--icon-color-orange)
+        - value: 'returning'
+          color: var(--icon-color-light-blue)
+        - value: 'idle'
+          color: var(--icon-color-orange)
+        - value: 'unavailable'
+          color: var(--icon-off-color)
+        - value: 'error'
+          color: var(--icon-color-red)
+      - type: "custom:button-card"
+        icon: mdi:gas-station
+        show_name: false
+        show_label: false
+        color_type: card
+        entity: vacuum.pachy
+        tap_action:
+          action: call-service
+          service: script.pachy_dock
+        style:
+        - color: var(--icon-off-color)
+        state:
+        - value: 'docked'
+          color: var(--icon-color-blue)
+          icon: mdi:ev-station
+        - value: 'cleaning'
+          color: var(--element-accent-color)
+        - value: 'charging'
+          color: var(--element-accent-color)
+        - value: 'paused'
+          color: var(--element-accent-color)
+        - value: 'returning'
+          color: var(--icon-color-light-blue)
+          icon: mdi:ev-station
+        - value: 'idle'
+          color: var(--element-accent-color)
+        - value: 'unavailable'
+          color: var(--element-accent-color)
+        - value: 'error'
+          color: var(--icon-color-red)
+      - type: custom:state-switch
+        entity: vacuum.pachy
+        states:
+          docked:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+          returning:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+            style:
+            - color: var(--icon-off-color)
+          idle:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+            style:
+            - color: var(--icon-off-color)
+          error:
+            type: "custom:button-card"
+            icon: mdi:alert-circle
+            color_type: card
+            color: var(--element-accent-color)
+            show_name: false
+            show_label: false
+            entity: vacuum.pachy
+            tap_action:
+              action: more-info
+          paused:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
+            style:
+            - color: var(--icon-off-color)
+          cleaning:
+            type: "custom:button-card"
+            icon: mdi:pause-circle
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_pause
+          unavailable:
+            type: "custom:button-card"
+            icon: mdi:wifi-off
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--icon-color-grey)
+            entity: vacuum.pachy
+            tap_action:
+              action: more-info
+      - type: "custom:button-card"
+        icon: mdi:calendar-blank
+        show_name: false
+        show_label: false
+        show_state: false
+        color_type: card
+        entity: input_boolean.vacuum_autorun
+        tap_action:
+            action: toggle
+        style:
+          - color: var(--icon-off-color)
+        state:
+        - value: 'on'
+          color: var(--icon-color-green)
+          icon: mdi:calendar-check
+        - value: 'off'
+          color: var(--icon-color-red)
+          icon: mdi:calendar-remove
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:state-switch
+      entity: vacuum.pachy
+      states:
+        cleaning:
+          type: "custom:bignumber-card"
+          title: Runtime
+          scale: 15px
+          entity: sensor.pachy_ontime
+        docked:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        returning:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        idle:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        error:
+          type: "custom:bignumber-card"
+          title: Last Run
+          scale: 15px
+          entity: sensor.pachy_last_run
+        paused:
+          type: "custom:bignumber-card"
+          title: Runtime
+          scale: 15px
+          entity: sensor.pachy_ontime
+    - type: "custom:bignumber-card"
+      title: Area Cleaned
+      scale: 15px
+      entity: sensor.pachy_cleaned_area
+      style:
+      - text-transform: capitalize
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: Battery
+      title_position: inside
+      unit_of_measurement: "%"
+      entity: sensor.pachy_charge
+      padding: 2px
+      indicator: right
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      bar_style:
+      - align-items: left
+      font-size: 8px
+      severity:
+      - value: 15
+        color: var(--icon-color-deep-red)
+      - value: 25
+        color: var(--icon-color-red)
+      - value: 35
+        color: var(--icon-color-orange)
+      - value: 50
+        color: var(--icon-color-yellow)
+      - value: 75
+        color: var(--icon-color-light-green)
+      - value: 100
+        color: var(--icon-color-green)

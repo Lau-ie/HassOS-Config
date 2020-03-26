@@ -1,0 +1,69 @@
+- cal_id: '#contacts@group.v.calendar.google.com'
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: false
+- cal_id: nl.dutch#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: feestdagen_in_nederland
+    ignore_availability: true
+    name: Feestdagen in Nederland
+    track: true
+- cal_id: 6g7qd5mn2am7ll54i771evjef4@group.calendar.google.com
+  entities:
+  - device_id: gezamenlijke_afspraken
+    ignore_availability: true
+    name: Gezamenlijke Afspraken
+    track: true
+- cal_id: dvs9v52fec8hrn7dq1fv2f6cr4o32fv3@import.calendar.google.com
+  entities:
+  - device_id: f1_calendar_2019_race
+    ignore_availability: true
+    name: F1 Calendar 2019
+    track: true
+- cal_id: 9bn071r4lk1sv35hg534i8opfabapj87@import.calendar.google.com
+  entities:
+  - device_id: gft-afval 
+    ignore_availability: true
+    name: GFT-afval
+    track: true
+    search: Gft-afval
+  - device_id: restafval
+    ignore_availability: true
+    name: Restafval
+    track: true
+    search: Restafval
+  - device_id: papier
+    ignore_availability: true
+    name: Papier
+    track: true
+    search: Papier
+
+- cal_id: rd1gbo949pvb4knc7dnk29ad84p19geg@import.calendar.google.com
+  entities:
+  - device_id: f1_calendar_2019_qualifying
+    ignore_availability: true
+    name: F1 Calendar 2019
+    track: true
+
+- cal_id: addressbook#contacts@group.v.calendar.google.com
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: true
+
+- cal_id: en.dutch#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: holidays_in_netherlands
+    ignore_availability: true
+    name: Holidays in Netherlands
+    track: true
+
+- cal_id: family03785542185748954120@group.calendar.google.com
+  entities:
+  - device_id: family
+    ignore_availability: true
+    name: Family
+    track: true

@@ -1,0 +1,3 @@
+glances:
+  - host: localhost
+    port: 61210

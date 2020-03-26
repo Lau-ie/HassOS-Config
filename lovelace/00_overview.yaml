@@ -1,0 +1,16 @@
+title: Overview
+id: overview
+icon: mdi:view-dashboard-variant
+cards:
+  - !include cards/001_presence_alarm.yaml
+  - !include cards/002_machine_control.yaml
+  - !include cards/005_media_center.yaml
+  - !include cards/039_thermostat_flex_horseshoe.yaml
+  - !include cards/032_power_consumption_horseshoe.yaml
+  - !include cards/034_netatmo_inside.yaml
+  - !include cards/022_vacuum.yaml
+  - !include cards/011_weather.yaml
+#  - !include cards/027_f1_times_v2.yaml
+  - !include cards/007_trash_pickup.yaml
+  - !include cards/006_laundry.yaml
+  - !include cards/008_sensors.yaml

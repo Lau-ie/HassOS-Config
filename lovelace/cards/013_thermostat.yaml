@@ -1,0 +1,4 @@
+type: thermostat
+entity: climate.family_room
+style:
+  border: true

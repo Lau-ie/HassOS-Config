@@ -1,0 +1,49 @@
+switch:
+- platform: wake_on_lan
+  mac: !secret velociraptor_mac
+  name: Velociraptor
+  host: !secret velociraptor_host_ip
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Velociraptor
+- platform: wake_on_lan
+  mac: !secret brontosaurus_mac
+  name: Brontosaurus
+  host: !secret brontosaurus_host_ip
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Brontosaurus
+- platform: wake_on_lan
+  mac: !secret triceratops_mac
+  name: Triceratops
+  host: !secret triceratops_host_ip
+- platform: mqtt
+  name: "Sonoff1"
+  state_topic: "stat/sonoff1/POWER"
+  command_topic: "cmnd/sonoff1/POWER"
+  availability_topic: "tele/sonoff1/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Sonoff2"
+  state_topic: "stat/sonoff2/POWER"
+  command_topic: "cmnd/sonoff2/POWER"
+  availability_topic: "tele/sonoff2/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+#- platform: broadlink
+#  host: !secret broadlink_host_ip
+#  mac: !secret broadlink_mac
+#  timeout: 15

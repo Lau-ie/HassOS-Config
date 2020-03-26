@@ -1,0 +1,222 @@
+type: custom:vertical-style-card
+title: Switches
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: Washer
+      color_type: icon
+      entity: switch.tp_link_washingmachine
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:power-socket-eu
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:power-socket-eu
+    - type: "custom:button-card"
+      name: Dryer
+      color_type: icon
+      entity: switch.tp_link_dryer
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:power-socket-eu
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:power-socket-eu
+    - type: "custom:button-card"
+      name: Brontosaurus
+      color_type: icon
+      entity: switch.tp_link_brontosaurus
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:power-socket-eu
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:power-socket-eu
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: Washer
+      title_position: inside
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_washer_current_load
+      min: 0
+      max: 2500
+      padding: 2px
+      indicator: 'off'
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      font-size: 8px
+      color: var(--icon-color-amber)
+    - type: custom:bar-card
+      title: Dryer
+      title_position: inside
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_dryer_current_load
+      min: 0
+      max: 2000
+      padding: 2px
+      indicator: 'off'
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      font-size: 8px
+      color: var(--icon-color-amber)
+    - type: custom:bar-card
+      title: Brontosaurus
+      title_position: inside
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_brontosaurus_current_load
+      min: 0
+      max: 2500
+      padding: 2px
+      indicator: 'off'
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      font-size: 8px
+      color: var(--icon-color-amber)
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: Mediacenter
+      color_type: icon
+      entity: switch.tp_link_mediacenter
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:power-socket-eu
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:power-socket-eu
+    - type: "custom:button-card"
+      name: Quooker
+      color_type: icon
+      entity: switch.tp_link_quooker
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:power-socket-eu
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:power-socket-eu
+    - type: "custom:button-card"
+      name: Coffeemachine
+      color_type: icon
+      entity: switch.tp_link_coffeemachine
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:power-socket-eu
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:power-socket-eu
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      title: Mediacenter
+      title_position: inside
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_mediacenter_current_load
+      min: 0
+      max: 2500
+      padding: 2px
+      indicator: 'off'
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      font-size: 8px
+      color: var(--icon-color-amber)
+    - type: custom:bar-card
+      title: Quooker
+      title_position: inside
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_quooker_current_load
+      min: 0
+      max: 2000
+      padding: 2px
+      indicator: 'off'
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      font-size: 8px
+      color: var(--icon-color-amber)
+    - type: custom:bar-card
+      title: Coffeemachine
+      title_position: inside
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_coffeemachine_current_load
+      min: 0
+      max: 2500
+      padding: 2px
+      indicator: 'off'
+      card_style:
+      - box-shadow: none
+      title_style:
+      - text-align: left
+      - font-size: 16px
+      font-size: 8px
+      color: var(--icon-color-amber)
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

@@ -1,0 +1,126 @@
+type: custom:vertical-style-card
+title: Powerconsumption
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_mediacenter
+      name: Media Center
+      line_color: 
+      - var(--icon-color-blue)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_mediacenter_cost
+      name: Media Center
+      line_color: 
+      - var(--icon-color-amber)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_brontosaurus
+      name: Brontosaurus
+      line_color: 
+      - var(--icon-color-blue)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_brontosaurus_cost
+      name: Brontosaurus
+      line_color: 
+      - var(--icon-color-amber)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_washer
+      name: Washer
+      line_color: 
+      - var(--icon-color-blue)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_washer_cost
+      name: Washer
+      line_color: 
+      - var(--icon-color-amber)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+- type: horizontal-stack
+  cards:
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_dryer
+      name: Dryer
+      line_color: 
+      - var(--icon-color-blue)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true
+    - type: custom:mini-graph-card
+      entities:
+      - sensor.power_consumption_dryer_cost
+      name: Dryer
+      line_color: 
+      - var(--icon-color-amber)
+      align_header: left
+      align_state: left
+      show:
+        fill: true
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 4
+      hour24: true

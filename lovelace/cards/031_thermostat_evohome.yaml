@@ -1,0 +1,53 @@
+type: custom:vertical-style-card
+title: Thermostat
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: thermostat
+      title: Woonkamer
+      entity: climate.woonkamer
+      name: Livingroom
+      style:
+      - font-size: 10px
+      - text-color
+      - text-transform: capitalize
+      - background-color: var(--element-accent-color)
+    - type: thermostat
+      name: Kitchen
+      entity: climate.keuken
+      style:
+      - font-size: 10px
+      - text-color
+      - text-transform: capitalize
+      - background-color: var(--element-accent-color)
+  - type: horizontal-stack
+    cards:
+    - type: thermostat
+      name: Washroom
+      entity: climate.berging
+      style:
+      - font-size: 10px
+      - text-color
+      - text-transform: capitalize
+      - background-color: var(--element-accent-color)
+    - type: thermostat
+      name: Bathroom
+      entity: climate.badkamer_1v
+      style:
+      - font-size: 10px
+      - text-color
+      - text-transform: capitalize
+      - background-color: var(--element-accent-color)
+  - type: horizontal-stack
+    cards:
+     - type: picture
+       image: /local/divider.png

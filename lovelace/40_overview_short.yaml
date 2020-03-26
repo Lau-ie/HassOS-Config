@@ -1,0 +1,13 @@
+title: Overview
+id: overview
+icon: mdi:view-dashboard-variant
+cards:
+  - !include cards/001_presence_alarm.yaml
+  - !include cards/005_media_center.yaml
+  - !include cards/006_laundry.yaml
+  - !include cards/016_simple_thermostat.yaml
+  - !include cards/007_trash_pickup.yaml
+  - !include cards/008_sensors.yaml
+  - !include cards/017_ventilation.yaml
+  - !include cards/009_light_control_rooms.yaml
+  - !include cards/022_vacuum.yaml

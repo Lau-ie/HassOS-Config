@@ -1,0 +1,195 @@
+type: custom:vertical-style-card
+title: Brontosaurus
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: NZBget
+      color_type: icon
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      icon: mdi:download-network
+      entity: sensor.brontosaurus_nzbget_status
+      action: more_info
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+      - value: 'downloading'
+        color: var(--icon-color-green)
+      - value: 'idle'
+        color: var(--icon-color-amber)
+      - value: 'paused'
+        color: var(--icon-color-orange)
+      - value: 'stalled'
+        color: var(--icon-color-orange)
+      - value: 'postprocessing'
+        color: var(--icon-color-green)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+    - type: "custom:button-card"
+      name: Sonarr
+      color_type: icon
+      icon: mdi:alpha-s-circle
+      entity: sensor.brontosaurus_sonarr
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+      - color: var(--icon-off-color)
+      - background-color: var(--element-accent-color)
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+        - value: 'running'
+          color: var(--icon-color-amber)
+        - value: 'not running'
+          color: var(--icon-off-red)
+    - type: "custom:button-card"
+      name: Radarr
+      color_type: icon
+      icon: mdi:alpha-r-circle
+      entity: sensor.brontosaurus_radarr
+      color: var(--icon-color-amber)
+      color_off: var(--icon-color-color)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+      - color: var(--icon-off-color)
+      - background-color: var(--element-accent-color)
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+        - value: 'running'
+          color: var(--icon-color-amber)
+        - value: 'not running'
+          color: var(--icon-color-red)
+    - type: "custom:button-card"
+      name: VPN
+      color_type: icon
+      icon: mdi:key
+      entity: sensor.brontosaurus_pia_vpn
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+      - color: var(--icon-off-color)
+      - background-color: var(--element-accent-color)
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+        - value: 'up'
+          color: var(--icon-color-amber)
+        - value: 'down'
+          color: var(--icon-color-red)
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: QBT
+      color_type: icon
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      icon: mdi:download-network
+      entity: sensor.brontosaurus_qbt_status
+      action: more_info
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+      - value: 'downloading'
+        color: var(--icon-color-green)
+      - value: 'stalled'
+        color: var(--icon-color-orange)
+      - value: 'seeding'
+        color: var(--icon-color-blue)
+      - value: 'stalledup'
+        color: var(--icon-color-lightblue)
+      - value: 'idle'
+        color: var(--icon-color-amber)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+    - type: "custom:button-card"
+      name: Emby
+      color_type: icon
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      icon: mdi:youtube-tv
+      entity: sensor.brontosaurus_emby_status
+      action: more_info
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+      - value: 'idle'
+        color: var(--icon-color-amber)
+      - value: 'streaming'
+        color: var(--icon-color-green)
+      - value: 'paused'
+        color: var(--icon-color-orange)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+    - type: "custom:button-card"
+      name: Hydra
+      color_type: icon
+      icon: mdi:docker
+      entity: sensor.brontosaurus_hydra2
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+      - color: var(--icon-off-color)
+      - background-color: var(--element-accent-color)
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+        - value: 'running'
+          color: var(--icon-color-amber)
+        - value: 'paused'
+          color: var(--icon-off-orange)
+        - value: 'restarting'
+          color: var(--icon-color-orange)
+        - value: 'exited'
+          color: var(--icon-color-blue)
+        - value: 'dead'
+          color: var((--icon-color-red)
+        - value: 'created'
+          color: var(--icon-color-yellow)
+    - type: "custom:button-card"
+      name: Jackett
+      color_type: icon
+      icon: mdi:docker
+      entity: sensor.brontosaurus_jackett
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      style:
+      - font-size: 10px
+      - text-transform: capitalize
+      - color: var(--icon-off-color)
+      - background-color: var(--element-accent-color)
+      state:
+        - value: 'off'
+          color: var(--icon-off-color)
+        - value: 'running'
+          color: var(--icon-color-amber)
+        - value: 'paused'
+          color: var(--icon-off-orange)
+        - value: 'restarting'
+          color: var(--icon-color-orange)
+        - value: 'exited'
+          color: var(--icon-color-blue)
+        - value: 'dead'
+          color: var((--icon-color-red)
+        - value: 'created'
+          color: var(--icon-color-yellow)

@@ -1,0 +1,69 @@
+type: custom:vertical-style-card
+title: Light control
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: Livingroom
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:lightbulb
+      entity: light.living_room
+      tap_action:
+        action: call-service
+        service: light.toggle
+        service_data: 
+          entity_id: light.living_room
+      style:
+        - font-size: 10px
+        - text-transform: capitalize
+        - color: var(--icon-off-color)
+        - background-color: var(--element-accent-color)
+    - type: "custom:button-card"
+      name: Bedroom
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:lightbulb
+      entity: light.bedroom
+      tap_action:
+        action: call-service
+        service: light.toggle
+        service_data: 
+          entity_id: light.bedroom
+      style:
+        - font-size: 10px
+        - text-transform: capitalize
+        - color: var(--icon-off-color)
+        - background-color: var(--element-accent-color)
+    - type: "custom:button-card"
+      name: Attic
+      color: var(--icon-color-amber)
+      color_off: var(--icon-off-color)
+      color_type: icon
+      icon: mdi:lightbulb
+      entity: light.attic
+      tap_action:
+        action: call-service
+        service: light.toggle
+        service_data: 
+          entity_id: light.attic
+      style:
+        - font-size: 10px
+        - text-transform: capitalize
+        - color: var(--icon-off-color)
+        - background-color: var(--element-accent-color)
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png

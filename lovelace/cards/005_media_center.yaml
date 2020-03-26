@@ -1,0 +1,132 @@
+type: custom:vertical-style-card
+title: Media Center
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: card
+      entity: sensor.mc_activity
+      icon: mdi:youtube-tv
+      tap_action:
+        action: call-service
+        service: script.harmony_shieldtv
+      hold_action:
+        action: call-service
+        service: script.harmony_shieldtv_long
+      state:
+      - value: 'off'
+        color: var(--element-accent-color)
+      - value: 'Watch PC'
+        color: var(--element-accent-color)
+      - value: 'Ziggo'
+        color: var(--element-accent-color)
+      - value: 'Console'
+        color: var(--element-accent-color)
+      - value: 'ShieldTV'
+        color: var(--icon-color-green)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: card
+      icon: mdi:desktop-tower-monitor
+      entity: sensor.mc_activity
+      tap_action:
+        action: call-service
+        service: script.harmony_pc
+      hold_action:
+        action: call-service
+        service: script.harmony_pc_long
+      state:
+      - value: 'off'
+        color: var(--element-accent-color)
+      - value: 'Watch PC'
+        color: var(--icon-color-blue)
+      - value: 'Ziggo'
+        color: var(--element-accent-color)
+      - value: 'Console'
+        color: var(--element-accent-color)
+      - value: 'ShieldTV'
+        color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: card
+      icon: mdi:television-classic
+      entity: sensor.mc_activity
+      tap_action:
+        action: call-service
+        service: script.harmony_ziggo
+      hold_action:
+        action: call-service
+        service: script.harmony_ziggo_long
+      state:
+      - value: 'off'
+        color: var(--element-accent-color)
+      - value: 'Watch PC'
+        color: var(--element-accent-color)
+      - value: 'Ziggo'
+        color: var(--icon-color-orange)
+      - value: 'Console'
+        color: var(--element-accent-color)
+      - value: 'ShieldTV'
+        color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: card
+      entity: sensor.mc_activity
+      icon: mdi:google-controller
+      tap_action:
+        action: call-service
+        service: script.harmony_console
+      hold_action:
+        action: call-service
+        service: script.harmony_console_long
+      state:
+      - value: 'off'
+        color: var(--element-accent-color)
+      - value: 'Watch PC'
+        color: var(--element-accent-color)
+      - value: 'Ziggo'
+        color: var(--element-accent-color)
+      - value: 'Console'
+        color: var(--icon-color-amber)
+      - value: 'ShieldTV'
+        color: var(--element-accent-color)
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      entity: sensor.mc_activity_readable
+      title: Current activity
+      scale: 17px
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png

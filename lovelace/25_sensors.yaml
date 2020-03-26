@@ -1,0 +1,10 @@
+title: Sesnors
+id: sensors
+theme: dark-mode
+icon: mdi:thermometer-lines
+cards:
+  - !include cards/018_temps_humidity.yaml
+  - !include cards/028_temps_humidity_downstairs.yaml
+  - !include cards/037_temps_humidity_upstairs.yaml
+  - !include cards/030_temps_humidity_cabinet.yaml
+#  - !include cards/035_power_consumption_individual_v2.yaml

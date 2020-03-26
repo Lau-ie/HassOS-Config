@@ -1,0 +1,146 @@
+type: custom:vertical-style-card
+title: Hassio Control
+style:
+  font_size: 24px
+  border: true
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        name: HomeAssistant
+        icon: mdi:home-assistant
+        show_name: true
+        show_label: false
+        color_type: icon
+        entity: input_boolean.restart_homeassistant
+        tap_action:
+          action: call-service
+          service: script.hassiocontrol_homeassistant_restart
+        styles:
+          card:
+          - font-size: 10px
+          - text-transform: capitalize
+        state:
+        - value: 'on'
+          color: var(--icon-color-orange)
+          icon: mdi:home-assistant
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:home-assistant
+      - type: "custom:button-card"
+        icon: mdi:nodejs
+        name: NodeRed
+        show_name: true
+        show_label: false
+        color_type: icon
+        entity: input_boolean.restart_nodered
+        tap_action:
+          action: call-service
+          service: script.hassiocontrol_nodered_restart
+        styles:
+          card:
+          - font-size: 10px
+          - text-transform: capitalize
+        state:
+        - value: 'on'
+          color: var(--icon-color-orange)
+          icon: mdi:nodejs
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:nodejs
+      - type: "custom:button-card"
+        name: Reboot
+        show_name: true
+        show_label: false
+        color_type: icon
+        entity: input_boolean.reboot_host
+        tap_action:
+          action: more-info
+        styles:
+          card:
+          - font-size: 10px
+          - text-transform: capitalize
+        state:
+        - value: 'on'
+          color: var(--icon-color-orange)
+          icon: mdi:restart
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:restart
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+      - type: "custom:bignumber-card"
+        title: Freespace
+        unit_of_measurement: "GB"
+        scale: 15px
+        entity: sensor.glances_config_free
+      - type: "custom:bignumber-card"
+        title: Database
+        unit_of_measurement: "GB"
+        scale: 15px
+        entity: sensor.database_size_gb
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+          - sensor.glances_cpu_used
+          name: CPU
+          align_header: right
+          align_state: right
+          font_size: 75
+          show:
+            name: true
+            icon: true
+            state: true
+          line_color: 
+          - var(--icon-color-red)
+          hours_to_show: 4
+          points_per_hour: 60
+        - type: custom:mini-graph-card
+          entities:
+          - sensor.glances_ram_used_percent
+          name: RAM
+          align_header: right
+          align_state: right
+          font_size: 75
+          show:
+            name: true
+            icon: true
+            state: true
+          line_color: 
+          - var(--icon-color-green)
+          hours_to_show: 4
+          points_per_hour: 60
+        - type: custom:mini-graph-card
+          entities:
+          - sensor.glances_config_used_percent
+          name: Diskspace
+          align_header: right
+          align_state: right
+          font_size: 75
+          show:
+            name: true
+            icon: true
+            state: true
+          line_color: 
+          - var(--icon-color-blue)
+          hours_to_show: 4
+          points_per_hour: 60
+    - type: horizontal-stack
+      cards:
+      - type: picture
+        image: /local/divider.png
