@@ -11,6 +11,7 @@
 .storage
 .cloud
 .google.token
+.
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
@@ -18,3 +19,4 @@ secrets.yaml
 known_devices.yaml
 google_calendars.yaml
 automations.yaml
+integrations/anniversaries.yaml
