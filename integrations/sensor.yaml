@@ -168,9 +168,6 @@ sensor:
   name: brontosaurus_plex_status
   state_topic: "brontosaurus/plex/status"
 - platform: mqtt
-  name: brontosaurus_uptime_power_consumption
-  state_topic: "brontosaurus/docker/uptime_power_consumption"
-- platform: mqtt
   name: brontosaurus_qbittorrentvpn
   state_topic: "brontosaurus/qbittorrentvpn/status"
 - platform: mqtt

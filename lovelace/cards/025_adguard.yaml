@@ -71,35 +71,41 @@ cards:
 - type: horizontal-stack
   cards:
   - type: custom:bar-card
-    title: Blockedratio
-    title_position: inside
+    name: Blockedratio
     unit_of_measurement: "%"
     entity: sensor.adguard_dns_queries_blocked_ratio
-    padding: 2px
-    indicator: right
-    card_style:
-    - box-shadow: none
-    title_style:
-    - text-align: left
-    - font-size: 16px
-    bar_style:
-    - align-items: left
-    font-size: 8px
+    positions:
+      icon: 'off'
+      indicator: 'off'
+      minmax: 'off'
+      title: inside
+      value: inside
     severity:
-    - value: 5
-      color: var(--icon-color-red)
-    - value: 10
-      color: var(--icon-color-orange)
-    - value: 15
-      color: var(--icon-color-yellow)
-    - value: 25
-      color: var(--icon-color-green)
-    - value: 50
-      color: var(--icon-color-green)
-    - value: 75
-      color: var(--icon-color-green)
-    - value: 100
-      color: var(--icon-color-green)
+      - color: var(--icon-color-red)
+        from: 0
+        to: 5
+      - color: var(--icon-color-orange)
+        from: 6
+        to: 10
+      - color: var(--icon-color-yellow)
+        from: 11
+        to: 15
+      - color: var(--icon-color-green)
+        from: 16
+        to: 25
+      - color: var(--icon-color-green)
+        from: 26
+        to: 50
+      - color: var(--icon-color-green)
+        from: 51
+        to: 75
+      - color: var(--icon-color-green)
+        from: 76
+        to: 100
+    style: |-
+      #states {
+        padding: 0px;
+      }
   - type: "custom:bignumber-card"
     title: Avg. Processing Speed
     scale: 15px

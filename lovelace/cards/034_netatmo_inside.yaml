@@ -16,6 +16,8 @@ cards:
       decimals: 1
       unit: '%'
       area: "Humidity"
+      tap_action:
+        action: more-info
     show:
       horseshoe_style: 'colorstop'
     layout:
@@ -54,10 +56,12 @@ cards:
       60: 'var(--icon-color-blue)'
   - type: 'custom:flex-horseshoe-card'
     entities:
-      - entity: sensor.netatmo_home_inside_temperature
-        decimals: 1
-        unit: '°C'
-        area: "Temperature"
+    - entity: sensor.netatmo_home_inside_temperature
+      decimals: 1
+      unit: '°C'
+      area: "Temperature"
+      tap_action:
+        action: more-info
     show:
       horseshoe_style: 'colorstop'
     layout:
@@ -101,10 +105,12 @@ cards:
       }
   - type: 'custom:flex-horseshoe-card'
     entities:
-      - entity: sensor.netatmo_home_inside_co2
-        decimals: 0
-        unit: 'ppm'
-        area: "CO2"
+    - entity: sensor.netatmo_home_inside_co2
+      decimals: 0
+      unit: 'ppm'
+      area: "CO2"
+      tap_action:
+        action: more-info
     show:
       horseshoe_style: 'colorstop'
     layout:
