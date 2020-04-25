@@ -1,6 +1,0 @@
-title: Lights
-id: lights
-icon: mdi:lightbulb
-cards:
-  - !include cards/010_lights_switches.yaml
-  - !include cards/012_aquarium.yaml

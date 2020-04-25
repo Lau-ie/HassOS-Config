@@ -32,8 +32,8 @@ cards:
   cards:
     - type: custom:mini-graph-card
       entities:
-      - sensor.xiaomi_tempsensor_entree
-      name: Entree
+      - sensor.xiaomi_tempsensor_servercloset
+      name: Server
       align_header: left
       align_state: left
       show:
@@ -43,8 +43,8 @@ cards:
       - var(--icon-color-red)
     - type: custom:mini-graph-card
       entities:
-      - sensor.xiaomi_humiditysensor_entree
-      name: Entree
+      - sensor.xiaomi_humiditysensor_servercloset
+      name: Server
       align_header: left
       align_state: left
       show:

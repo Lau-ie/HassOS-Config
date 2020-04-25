@@ -94,3 +94,5 @@ input_boolean:
     name: motion_bathroom_toggle
   motion_ventilation_toggle:
     name: ventilation_after_shower
+  volume_killer_pressed:
+    name: volume_killer_pressed

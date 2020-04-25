@@ -19,7 +19,7 @@ lovelace:
     type: module
   - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
     type: module
-  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=0.7
+  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=0.9
     type: module
   - url: /local/vertical-style-card.js?v=0.4
     type: js
@@ -33,7 +33,9 @@ lovelace:
     type: js
   - url: /local/bignumber-card.js
     type: js
-  - url: /local/weather-card.js?v=7.2
+  - url: /local/weather-card.js?v=7.3
     type: module
   - type: js
     url: /local/community/hass-bha-icons/hass-bha-icons.js
+  - url: /local/mini-graph-card/dist/mini-graph-card-squished-bundle.js?v=3
+    type: module

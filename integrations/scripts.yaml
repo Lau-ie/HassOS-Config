@@ -11,6 +11,12 @@ script:
       data:
         addon: core_rpc_shutdown
         input: Velociraptor
+  shutdown_allosaurus:
+    sequence:
+    - service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: Allosaurus
   harmony_pc:
     sequence:
     - service: mqtt.publish
@@ -82,6 +88,12 @@ script:
       data:
         payload: click
         topic: powerflow/velociraptor/button
+  powerflow_allosaurus_button:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: powerflow/allosaurus/button
   powerflow_resume_auto:
     sequence:
     - service: mqtt.publish
@@ -100,6 +112,12 @@ script:
       data:
         payload: click
         topic: power/velociraptor/button
+  power_allosaurus_button:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: power/allosaurus/button
   pachy_clean:
     sequence:
     - service: mqtt.publish
@@ -190,3 +208,171 @@ script:
       data:
         payload: click
         topic: hassiocontrol/zigbee2mqtt/restart
+  iotlink_allosaurus_refresh:
+    alias: "Allosaurus - Refresh"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/refresh"
+        payload: ""
+  iotlink_allosaurus_shutdown:
+    alias: "Allosaurus - Shutdown"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/shutdown"
+        payload: ""
+  iotlink_allosaurus_reboot:
+    alias: "Allosaurus - Reboot"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/reboot"
+        payload: ""
+  iotlink_allosaurus_hibernate:
+    alias: "Allosaurus - Hibernate"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/hibernate"
+        payload: ""
+  iotlink_allosaurus_suspend:
+    alias: "Allosaurus - Suspend"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/suspend"
+        payload: ""
+  iotlink_allosaurus_logoff:
+    alias: "Allosaurus - Logoff"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/logoff"
+        payload: ""
+  iotlink_allosaurus_lock:
+    alias: "Allosaurus - Lock"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/lock"
+        payload: ""
+  iotlink_allosaurus_vol_mute:
+    alias: "Allosaurus - Toggle Mute"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/allosaurus/commands/volume/mute"
+        payload: ""
+  iotlink_velociraptor_refresh:
+    alias: "Velociraptor - Refresh"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/refresh"
+        payload: ""
+  iotlink_velociraptor_shutdown:
+    alias: "Velociraptor - Shutdown"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/shutdown"
+        payload: ""
+  iotlink_velociraptor_reboot:
+    alias: "Velociraptor - Reboot"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/reboot"
+        payload: ""
+  iotlink_velociraptor_hibernate:
+    alias: "Velociraptor - Hibernate"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/hibernate"
+        payload: ""
+  iotlink_velociraptor_suspend:
+    alias: "Velociraptor - Suspend"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/suspend"
+        payload: ""
+  iotlink_velociraptor_logoff:
+    alias: "Velociraptor - Logoff"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/logoff"
+        payload: ""
+  iotlink_velociraptor_lock:
+    alias: "Velociraptor - Lock"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/lock"
+        payload: ""
+  iotlink_velociraptor_vol_mute:
+    alias: "Velociraptor - Toggle Mute"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/velociraptor/commands/volume/mute"
+        payload: ""
+  iotlink_brontosaurus_refresh:
+    alias: "Brontosaurus- Refresh"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/refresh"
+        payload: ""
+  iotlink_brontosaurus_shutdown:
+    alias: "Brontosaurus - Shutdown"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/shutdown"
+        payload: ""
+  iotlink_brontosaurus_reboot:
+    alias: "Brontosaurus - Reboot"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/reboot"
+        payload: ""
+  iotlink_brontosaurus_hibernate:
+    alias: "Brontosaurus - Hibernate"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/hibernate"
+        payload: ""
+  iotlink_brontosaurus_suspend:
+    alias: "Brontosaurus - Suspend"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/suspend"
+        payload: ""
+  iotlink_brontosaurus_logoff:
+    alias: "Brontosaurus - Logoff"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/logoff"
+        payload: ""
+  iotlink_brontosaurus_lock:
+    alias: "Brontosaurus - Lock"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/lock"
+        payload: ""
+  iotlink_brontosaurus_vol_mute:
+    alias: "Brontosaurus - Toggle Mute"
+    sequence:
+    - service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/brontosaurus/commands/volume/mute"
+        payload: ""

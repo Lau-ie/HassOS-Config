@@ -10,10 +10,11 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card
+    - type: custom:mini-graph-card-squished
       entities:
       - sensor.adguard_dns_queries
-      name: DNS Queries
+      name: Queries
+      font_size: 60
       align_header: left
       align_state: left
       show:
@@ -22,10 +23,11 @@ cards:
         icon: false
       line_color: 
       - var(--icon-color-blue)
-    - type: custom:mini-graph-card
+    - type: custom:mini-graph-card-squished
       entities:
       - sensor.adguard_dns_queries_blocked
-      name: Blocked by filters
+      name: Filters
+      font_size: 60
       align_header: left
       align_state: left
       show:
@@ -40,10 +42,11 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card
+    - type: custom:mini-graph-card-squished
       entities:
       - sensor.adguard_safe_browsing_blocked
-      name: Blocked malware/phishing
+      name: Malware
+      font_size: 60
       align_header: left
       align_state: left
       show:
@@ -52,10 +55,11 @@ cards:
         icon: false
       line_color: 
       - var(--icon-color-red)
-    - type: custom:mini-graph-card
+    - type: custom:mini-graph-card-squished
       entities:
       - sensor.adguard_parental_control_blocked
-      name: Blocked adult websites
+      name: Adult
+      font_size: 60
       align_header: left
       align_state: left
       show:

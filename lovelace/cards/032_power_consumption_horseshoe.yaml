@@ -15,13 +15,13 @@ cards:
       - entity: sensor.dsmr_current_electricity_watts
         decimals: 0
         unit: 'W'
-        area: "Electricity"
+        area: "Power"
         tap_action:
           action: more-info
       - entity: sensor.dsmr_current_electricity_cost
         decimals: 2
         unit: '€ per hour'
-        area: "Electricity"
+        area: "Power"
         tap_action:
           action: more-info
     show:
@@ -126,76 +126,77 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card
-      name: Electricity
-      entities:
-      - entity: sensor.dsmr_daily_power
-        name: Power_daily
-        show_state: true
-        show_graph: false
-        show_line: false
-        show_points: false
-        show_legend: false
-        show_fill: false
-      - entity: sensor.dsmr_hourly_power
-        name: Power
-        show_state: false
-        color: var(--icon-color-amber)
-      - entity: sensor.dsmr_daily_power_cost
-        name: Cost
-        show_state: true
-        show_graph: false
-        show_line: false
-        show_points: false
-        show_legend: false
-        show_fill: false
-      line_color: var(--icon-color-amber)
-      icon: mdi:flash
-      aggregate_func: max
-      group_by: hour
-      show:
-        graph: bar
-        name: false
-        icon: false
-      hours_to_show: 24
-      decimals: 2
-      hour24: true
-      font_size: 65
-    - type: custom:mini-graph-card
-      name: Gas
-      entities:
-      - entity: sensor.dsmr_daily_gas
-        name: Power_daily
-        show_state: true
-        show_graph: false
-        show_line: false
-        show_points: false
-        show_legend: false
-        show_fill: false
-      - entity: sensor.dsmr_hourly_gas
-        name: Power
-        show_state: false
-        color: var(--icon-color-green)
-      - entity: sensor.dsmr_daily_gas_cost
-        name: Cost
-        show_state: true
-        show_graph: false
-        show_line: false
-        show_points: false
-        show_legend: false
-        show_fill: false
-      line_color: var(--icon-color-green)
-      icon: mdi:flash
-      aggregate_func: max
-      group_by: hour
-      show:
-        graph: bar
-        name: false
-        icon: false
-      font_size: 65
-      hours_to_show: 24
-      decimals: 2
-      hour24: true
+  - type: custom:mini-graph-card-squished
+    name: Power
+    entities:
+    - entity: sensor.dsmr_daily_power
+      name: Power_daily
+      show_state: true
+      show_graph: false
+      show_line: false
+      show_points: false
+      show_legend: false
+      show_fill: false
+    - entity: sensor.dsmr_hourly_power
+      name: Power
+      show_state: false
+      color: var(--icon-color-amber)
+    - entity: sensor.dsmr_daily_power_cost
+      name: Cost
+      show_state: true
+      show_graph: false
+      show_line: false
+      show_points: false
+      show_legend: false
+      show_fill: false
+      color: var(--icon-color-amber)
+    line_color: var(--icon-color-amber)
+    icon: mdi:flash
+    aggregate_func: max
+    group_by: hour
+    show:
+      graph: bar
+      name: false
+      icon: false
+    hours_to_show: 24
+    decimals: 2
+    hour24: true
+    font_size: 65
+  - type: custom:mini-graph-card-squished
+    name: Gas
+    entities:
+    - entity: sensor.dsmr_daily_gas
+      name: Gas_daily
+      show_state: true
+      show_graph: false
+      show_line: false
+      show_points: false
+      show_legend: false
+      show_fill: false
+    - entity: sensor.dsmr_hourly_gas
+      name: Power
+      show_state: false
+      color: var(--icon-color-green)
+    - entity: sensor.dsmr_daily_gas_cost
+      name: Cost
+      show_state: true
+      show_graph: false
+      show_line: false
+      show_points: false
+      show_legend: false
+      show_fill: false
+    line_color: var(--icon-color-green)
+    icon: mdi:flash
+    aggregate_func: max
+    group_by: hour
+    show:
+      graph: bar
+      name: false
+      icon: false
+    font_size: 65
+    hours_to_show: 24
+    decimals: 2
+    hour24: true
 - type: horizontal-stack
   cards:
   - type: picture

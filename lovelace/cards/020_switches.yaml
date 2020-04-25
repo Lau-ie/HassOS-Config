@@ -12,210 +12,407 @@ cards:
       image: /local/divider.png
   - type: horizontal-stack
     cards:
-    - type: "custom:button-card"
-      name: Washer
-      color_type: icon
-      entity: switch.tp_link_washingmachine
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:power-socket-eu
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:power-socket-eu
-    - type: "custom:button-card"
-      name: Dryer
-      color_type: icon
-      entity: switch.tp_link_dryer
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:power-socket-eu
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:power-socket-eu
-    - type: "custom:button-card"
-      name: Brontosaurus
-      color_type: icon
-      entity: switch.tp_link_brontosaurus
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:power-socket-eu
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:power-socket-eu
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_brontosaurus_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Brontosaurus"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_brontosaurus_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Brontosaurus"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 400
+      color_stops:
+        1: '#FFF6E3'
+        400: 'var(--icon-color-amber)'
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_triceratops_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Triceratops"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_triceratops_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Triceratops"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 250
+      color_stops:
+        1: '#FFF6E3'
+        250: 'var(--icon-color-amber)'
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_mediacenter_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Mediacenter"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_mediacenter_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Mediacenter"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 500
+      color_stops:
+        1: '#FFF6E3'
+        500: 'var(--icon-color-amber)'
   - type: horizontal-stack
     cards:
-    - type: custom:bar-card
-      title: Washer
-      title_position: inside
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_washer_current_load
-      min: 0
-      max: 2500
-      padding: 2px
-      indicator: 'off'
-      card_style:
-      - box-shadow: none
-      title_style:
-      - text-align: left
-      - font-size: 16px
-      font-size: 8px
-      color: var(--icon-color-amber)
-    - type: custom:bar-card
-      title: Dryer
-      title_position: inside
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_dryer_current_load
-      min: 0
-      max: 2000
-      padding: 2px
-      indicator: 'off'
-      card_style:
-      - box-shadow: none
-      title_style:
-      - text-align: left
-      - font-size: 16px
-      font-size: 8px
-      color: var(--icon-color-amber)
-    - type: custom:bar-card
-      title: Brontosaurus
-      title_position: inside
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_brontosaurus_current_load
-      min: 0
-      max: 2500
-      padding: 2px
-      indicator: 'off'
-      card_style:
-      - box-shadow: none
-      title_style:
-      - text-align: left
-      - font-size: 16px
-      font-size: 8px
-      color: var(--icon-color-amber)
+    - type: "custom:bignumber-card"
+      entity: sensor.tp_link_brontosaurus_daily_power_cost
+      title: Time elapsed
+      scale: 20px
+    - type: "custom:bignumber-card"
+      entity: sensor.dryer_ontime
+      title: Time elapsed
+      scale: 20px
+    - type: "custom:bignumber-card"
+      entity: sensor.dryer_ontime
+      title: Time elapsed
+      scale: 20px
   - type: horizontal-stack
     cards:
-    - type: "custom:button-card"
-      name: Mediacenter
-      color_type: icon
-      entity: switch.tp_link_mediacenter
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:power-socket-eu
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:power-socket-eu
-    - type: "custom:button-card"
-      name: Quooker
-      color_type: icon
-      entity: switch.tp_link_quooker
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:power-socket-eu
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:power-socket-eu
-    - type: "custom:button-card"
-      name: Coffeemachine
-      color_type: icon
-      entity: switch.tp_link_coffeemachine
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:power-socket-eu
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:power-socket-eu
-  - type: horizontal-stack
-    cards:
-    - type: custom:bar-card
-      title: Mediacenter
-      title_position: inside
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_mediacenter_current_load
-      min: 0
-      max: 2500
-      padding: 2px
-      indicator: 'off'
-      card_style:
-      - box-shadow: none
-      title_style:
-      - text-align: left
-      - font-size: 16px
-      font-size: 8px
-      color: var(--icon-color-amber)
-    - type: custom:bar-card
-      title: Quooker
-      title_position: inside
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_quooker_current_load
-      min: 0
-      max: 2000
-      padding: 2px
-      indicator: 'off'
-      card_style:
-      - box-shadow: none
-      title_style:
-      - text-align: left
-      - font-size: 16px
-      font-size: 8px
-      color: var(--icon-color-amber)
-    - type: custom:bar-card
-      title: Coffeemachine
-      title_position: inside
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_coffeemachine_current_load
-      min: 0
-      max: 2500
-      padding: 2px
-      indicator: 'off'
-      card_style:
-      - box-shadow: none
-      title_style:
-      - text-align: left
-      - font-size: 16px
-      font-size: 8px
-      color: var(--icon-color-amber)
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_washer_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Washer"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_washer_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Washer"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 2500
+      color_stops:
+        1: '#FFF6E3'
+        2500: 'var(--icon-color-amber)'
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_dryer_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Dryer"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_dryer_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Dryer"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 1000
+      color_stops:
+        1: '#FFF6E3'
+        1000: 'var(--icon-color-amber)'
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_quooker_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Quooker"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_quooker_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Quooker"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 3000
+      color_stops:
+        1: '#FFF6E3'
+        3000: 'var(--icon-color-amber)'
+    - type: 'custom:flex-horseshoe-card'
+      entities:
+        - entity: sensor.tp_link_coffeemachine_current_load
+          decimals: 0
+          unit: 'W'
+          area: "Coffeemachine"
+          tap_action:
+            action: more-info
+        - entity: sensor.tp_link_coffeemachine_current_cost
+          decimals: 2
+          unit: '€ per hour'
+          area: "Coffeemachine"
+          tap_action:
+            action: more-info
+      show:
+        horseshoe_style: 'lineargradient'
+      layout:
+        hlines:
+        - id: 0
+          xpos: 50
+          ypos: 50
+          length: 40
+          styles:
+          - stroke: var(--primary-text-color);
+          - stroke-width: 5;
+          - stroke-linecap: round;
+          - opacity: 0.7;
+        states:
+        - id: 0
+          entity_index: 0
+          xpos: 50
+          ypos: 42
+          styles:
+          - font-size: 3em;
+          - stroke: var(--primary-text-color);
+        - id: 1
+          entity_index: 1
+          xpos: 29
+          ypos: 65
+          styles:
+          - text-anchor: start;
+          - font-size: 1.5em;
+        areas:
+          - id: 0
+            entity_index: 0
+            xpos: 50
+            ypos: 90
+            styles:
+              - font-size: 1.5em;
+      horseshoe_scale:
+        min: 0
+        max: 500
+      color_stops:
+        1: '#FFF6E3'
+        500: 'var(--icon-color-amber)'
 - type: horizontal-stack
   cards:
   - type: picture

@@ -20,4 +20,8 @@ recorder:
       - sensor.dsmr_current_gas_cost
       - sensor.dsmr_current_gas_cost_per_hour
       - sensor.dsmr_consumption_gas_currently_delivered
+      - sensor.allosaurus_ontime
+      - sensor.brontosaurus_ontime
+      - sensor.velociraptor_ontime
+      - sensor.triceratops_ontime
       - sun.sun

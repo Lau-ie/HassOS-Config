@@ -18,6 +18,15 @@ switch:
       addon: core_rpc_shutdown
       input: Brontosaurus
 - platform: wake_on_lan
+  mac: !secret allosaurus_mac
+  name: Allosaurus
+  host: !secret allosaurus_host_ip
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: Allosaurus
+- platform: wake_on_lan
   mac: !secret triceratops_mac
   name: Triceratops
   host: !secret triceratops_host_ip
