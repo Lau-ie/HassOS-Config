@@ -1,0 +1,10 @@
+title: Lights & Sensors
+id: lights_sensors
+theme: dark-mode
+icon: mdi:lightbulb
+cards:
+  - !include cards/010_lights_switches.yaml
+  - !include cards/018_temps_humidity.yaml
+  - !include cards/028_temps_humidity_downstairs.yaml
+  - !include cards/037_temps_humidity_upstairs.yaml
+  - !include cards/030_temps_humidity_cabinet.yaml

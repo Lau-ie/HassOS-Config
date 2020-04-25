@@ -1,0 +1,233 @@
+type: custom:vertical-style-card
+title: Velociraptor
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      color_type: icon
+      show_name: false
+      entity: sensor.power_velociraptor
+      tap_action:
+        action: call-service
+        service: script.power_velociraptor_button
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:alpha-v-circle-outline
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:alpha-v-circle
+    - type: "custom:button-card"
+      color_type: icon
+      show_name: false
+      entity: sensor.power_velociraptor
+      tap_action:
+        action: call-service
+        service: script.power_velociraptor_button
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:electric-switch
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:state-machine
+    - type: "custom:button-card"
+      color_type: icon
+      show_name: false
+      entity: sensor.power_velociraptor
+      tap_action:
+        action: call-service
+        service: script.iotlink_velociraptor_refresh
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:database-refresh
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:database-refresh
+    - type: "custom:button-card"
+      color_type: icon
+      show_name: false
+      entity: sensor.velociraptor_current_username
+      tap_action:
+        action: call-service
+        service: script.iotlink_velociraptor_lock
+      state:
+      - value: 'Laurens'
+        color: var(--icon-color-green)
+        icon: mdi:lock-open
+      - value: 'laurensvda'
+        color: var(--icon-color-green)
+        icon: mdi:lock-open
+      - value: 'SYSTEM'
+        color: var(--icon-color-red)
+        icon: mdi:lock
+      - value: 'unknown'
+        color: var(--icon-color-red)
+        icon: mdi:lock
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:lock
+    - type: "custom:button-card"
+      color_type: icon
+      show_name: false
+      entity: sensor.power_velociraptor
+      tap_action:
+        action: call-service
+        service: script.iotlink_velociraptor_reboot
+      state:
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:restart
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:restart
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: custom:state-switch
+    entity: sensor.power_velociraptor
+    states:
+      "on":
+        type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+          - type: "custom:bignumber-card"
+            title: Disksize
+            scale: 15px
+            entity: sensor.velociraptor_storage_c_total_storage
+          - type: "custom:bignumber-card"
+            title: Disk Used %
+            scale: 15px
+            entity: sensor.velociraptor_storage_c_usage
+          - type: "custom:bignumber-card"
+            title: Uptime
+            scale: 15px
+            entity: sensor.velociraptor_ontime
+        - type: horizontal-stack
+          cards:
+          - type: picture
+            image: /local/divider.png
+  - type: custom:state-switch
+    entity: sensor.power_velociraptor
+    states:
+      "on":
+        type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+          - type: custom:mini-graph-card-squished
+            entities:
+            - sensor.velociraptor_cpu_usage
+            name: CPU
+            font_size: 60
+            show:
+              name: true
+              icon: true
+              state: true
+            line_color: 
+            - var(--icon-color-red)
+            hours_to_show: 4
+            points_per_hour: 60
+            hour24: true
+          - type: custom:mini-graph-card-squished
+            entities:
+            - sensor.velociraptor_memory_usage
+            name: RAM
+            font_size: 60
+            show:
+              name: true
+              icon: true
+              state: true
+            line_color: 
+            - var(--icon-color-green)
+            hours_to_show: 4
+            points_per_hour: 60
+            hour24: true
+          - type: custom:mini-graph-card-squished
+            name: Power
+            font_size: 60
+            entities:
+            - entity: sensor.tp_link_mediacenter_daily_power
+              name: Power_daily
+              show_state: true
+              show_graph: false
+              show_line: false
+              show_points: false
+              show_legend: false
+              show_fill: false
+            - entity: sensor.tp_link_mediacenter_hourly_power
+              name: Power
+              show_state: false
+              color: var(--icon-color-amber)
+            line_color: var(--icon-color-amber)
+            icon: mdi:flash
+            aggregate_func: max
+            group_by: hour
+            show:
+              graph: bar
+              name: true
+              icon: false
+            hours_to_show: 24
+            decimals: 2
+            hour24: true
+        - type: horizontal-stack
+          cards:
+          - type: picture
+            image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:bar-card
+      name: Current Load
+      unit_of_measurement: "W"
+      entity: sensor.tp_link_mediacenter_current_load
+      positions:
+        icon: 'off'
+        indicator: 'off'
+        minmax: 'off'
+        title: inside
+        value: inside
+      severity:
+        - color: var(--icon-color-grey)
+          from: 0
+          to: 5
+        - color: var(--icon-color-light-green)
+          from: 16
+          to: 75
+        - color: var(--icon-color-green)
+          from: 76
+          to: 200
+        - color: var(--icon-color-yellow)
+          from: 201
+          to: 250
+        - color: var(--icon-color-orange)
+          from: 251
+          to: 350
+        - color: var(--icon-color-red)
+          from: 351
+          to: 1000
+      min: 0
+      max: 500
+      style: |-
+        #states {
+          padding: 0px;
+        }
+    - type: "custom:bignumber-card"
+      title: Current Cost
+      scale: 15px
+      entity: sensor.tp_link_mediacenter_current_cost
+    - type: "custom:bignumber-card"
+      title: Cost Today
+      scale: 15px
+      entity: sensor.tp_link_mediacenter_daily_power_cost

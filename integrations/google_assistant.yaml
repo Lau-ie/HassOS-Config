@@ -1,0 +1,6 @@
+google_assistant:
+  project_id: HassIO
+  service_account: !include ../service_account_ga.json
+  report_state: true
+  exposed_domains:
+    - light

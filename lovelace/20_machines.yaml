@@ -1,0 +1,10 @@
+title: Machines
+id: machines
+theme: dark-mode
+icon: mdi:desktop-classic
+cards:
+  - !include cards/041_system_monitor_allosaurus.yaml
+  - !include cards/042_system_monitor_velociraptor.yaml
+  - !include cards/040_system_monitor_brontosaurus.yaml
+  - !include cards/043_system_monitor_triceratops.yaml
+  - !include cards/025_adguard.yaml
