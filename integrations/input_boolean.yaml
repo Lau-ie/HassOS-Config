@@ -65,6 +65,18 @@ input_boolean:
     name: harmony light plus
   harmony_light_minus:
     name: harmony light minus
+  reboot_triceratops:
+    name: reboot_triceratops
+    initial: off
+  reboot_allosaurus:
+    name: reboot_allosaurus
+    initial: off
+  reboot_brontosaurus:
+    name: reboot_brontosaurus
+    initial: off
+  reboot_velociraptor:
+    name: reboot_velociraptor
+    initial: off
   reboot_host:
     name: reboot_host
     initial: off

@@ -10,7 +10,7 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card-squished
+    - type: custom:compact-graph-card
       entities:
       - sensor.adguard_dns_queries
       name: Queries
@@ -23,7 +23,7 @@ cards:
         icon: false
       line_color: 
       - var(--icon-color-blue)
-    - type: custom:mini-graph-card-squished
+    - type: custom:compact-graph-card
       entities:
       - sensor.adguard_dns_queries_blocked
       name: Filters
@@ -42,7 +42,7 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card-squished
+    - type: custom:compact-graph-card
       entities:
       - sensor.adguard_safe_browsing_blocked
       name: Malware
@@ -55,7 +55,7 @@ cards:
         icon: false
       line_color: 
       - var(--icon-color-red)
-    - type: custom:mini-graph-card-squished
+    - type: custom:compact-graph-card
       entities:
       - sensor.adguard_parental_control_blocked
       name: Adult

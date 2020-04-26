@@ -193,231 +193,231 @@ cards:
         - font-size: 10px
         - text-transform: capitalize
         - box-shadow: 0px 0px 0px 0px
-  - type: horizontal-stack
-    cards:
-    - type: "custom:button-card"
-      name: NZBget
-      color_type: icon
-      entity: sensor.brontosaurus_nzbget_status
-      tap_action: 
-        action: more-info
-      state:
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:alpha-n-circle-outline
-      - value: 'downloading'
-        color: var(--icon-color-green)
-        icon: mdi:download-network
-      - value: 'idle'
-        color: var(--icon-color-amber)
-        icon: mdi:download-network
-      - value: 'paused'
-        color: var(--icon-color-orange)
-        icon: mdi:download-network
-      - value: 'stalled'
-        color: var(--icon-color-orange)
-        icon: mdi:alert-circle
-      - value: 'postprocessing'
-        color: var(--icon-color-green)
-        icon: mdi:download-network
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-    - type: "custom:button-card"
-      name: QBT
-      color_type: icon
-      entity: sensor.brontosaurus_qbt_status
-      tap_action: 
-        action: more-info
-      state:
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:alpha-q-circle-outline
-      - value: 'downloading'
-        color: var(--icon-color-green)
-        icon: mdi:download-network
-      - value: 'stalled'
-        color: var(--icon-color-orange)
-        icon: mdi:alert-circle
-      - value: 'seeding'
-        color: var(--icon-color-blue)
-        icon: mdi:download-network
-      - value: 'stalledup'
-        color: var(--icon-color-lightblue)
-        icon: mdi:download-network
-      - value: 'error'
-        color: var(--icon-color-red)
-        icon: mdi:download-network
-      - value: 'idle'
-        color: var(--icon-color-amber)
-        icon: mdi:download-network
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-    - type: "custom:button-card"
-      name: Plex
-      color_type: icon
-      entity: sensor.brontosaurus_plex_status
-      tap_action: 
-        action: more-info
-      state:
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:alpha-p-circle-outline
-      - value: 'idle'
-        color: var(--icon-color-amber)
-        icon: mdi:plex
-      - value: 'streaming'
-        color: var(--icon-color-green)
-        icon: mdi:play-circle
-      - value: 'paused'
-        color: var(--icon-color-orange)
-        icon: mdi:pause-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-    - type: "custom:button-card"
-      name: VPN
-      color_type: icon
-      entity: sensor.brontosaurus_pia_vpn
-      tap_action: 
-        action: more-info
-      style:
-      - font-size: 10px
-      - text-transform: capitalize
-      - color: var(--icon-off-color)
-      - background-color: var(--element-accent-color)
-      state:
-        - value: 'off'
-          color: var(--icon-off-color)
-          icon: mdi:alpha-v-circle-outline
-        - value: 'up'
-          color: var(--icon-color-amber)
-          icon: mdi:key
-        - value: 'down'
-          color: var(--icon-color-red)
-          icon: mdi:alert-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-  - type: horizontal-stack
-    cards:
-    - type: "custom:button-card"
-      name: Sonarr
-      color_type: icon
-      entity: sensor.brontosaurus_sonarr
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-      state:
-        - value: 'off'
-          color: var(--icon-off-color)
-          icon: mdi:alpha-s-circle-outline
-        - value: 'running'
-          color: var(--icon-color-amber)
-          icon: mdi:basketball
-        - value: 'not running'
-          color: var(--icon-color-red)
-          icon: mdi:alert-circle
-    - type: "custom:button-card"
-      name: Radarr
-      color_type: icon
-      entity: sensor.brontosaurus_radarr
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-      state:
-        - value: 'off'
-          color: var(--icon-off-color)
-          icon: mdi:alpha-r-circle-outline
-        - value: 'running'
-          color: var(--icon-color-amber)
-          icon: mdi:basketball
-        - value: 'not running'
-          color: var(--icon-color-red)
-          icon: mdi:alert-circle
-    - type: "custom:button-card"
-      name: Hydra
-      color_type: icon
-      entity: sensor.brontosaurus_hydra2
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-      state:
-        - value: 'off'
-          color: var(--icon-off-color)
-          icon: mdi:alpha-h-circle-outline
-        - value: 'running'
-          color: var(--icon-color-amber)
-          icon: mdi:database-search
-        - value: 'paused'
-          color: var(--icon-off-orange)
-          icon: mdi:alert-circle
-        - value: 'restarting'
-          color: var(--icon-color-orange)
-          icon: mdi:alpha-h-circle
-        - value: 'exited'
-          color: var(--icon-color-blue)
-          icon: mdi:alpha-h-circle
-        - value: 'dead'
-          color: var((--icon-color-red)
-          icon: mdi:alert-circle
-        - value: 'created'
-          color: var(--icon-color-yellow)
-          icon: mdi:alpha-h-circle
-    - type: "custom:button-card"
-      name: Jackett
-      color_type: icon
-      entity: sensor.brontosaurus_jackett
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
-      state:
-        - value: 'off'
-          color: var(--icon-off-color)
-          icon: mdi:alpha-j-circle-outline
-        - value: 'running'
-          color: var(--icon-color-amber)
-          icon: mdi:database-search
-        - value: 'paused'
-          color: var(--icon-off-orange)
-          icon: mdi:alert-circle
-        - value: 'restarting'
-          color: var(--icon-color-orange)
-          icon: mdi:alpha-j-circle
-        - value: 'exited'
-          color: var(--icon-color-blue)
-          icon: mdi:alpha-j-circle
-        - value: 'dead'
-          color: var((--icon-color-red)
-          icon: mdi:alert-circle
-        - value: 'created'
-          color: var(--icon-color-yellow)
-          icon: mdi:alpha-j-circle
+  - type: custom:state-switch
+    entity: switch.brontosaurus
+    states:
+      "on":
+        type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+          - type: "custom:button-card"
+            name: NZBget
+            color_type: icon
+            entity: sensor.brontosaurus_nzbget_status
+            tap_action: 
+              action: more-info
+            state:
+            - value: 'off'
+              color: var(--icon-off-color)
+              icon: mdi:alpha-n-circle-outline
+            - value: 'downloading'
+              color: var(--icon-color-green)
+              icon: mdi:download-network
+            - value: 'idle'
+              color: var(--icon-color-amber)
+              icon: mdi:download-network
+            - value: 'paused'
+              color: var(--icon-color-orange)
+              icon: mdi:download-network
+            - value: 'stalled'
+              color: var(--icon-color-orange)
+              icon: mdi:alert-circle
+            - value: 'postprocessing'
+              color: var(--icon-color-green)
+              icon: mdi:download-network
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+              - box-shadow: 0px 0px 0px 0px
+          - type: "custom:button-card"
+            name: QBT
+            color_type: icon
+            entity: sensor.brontosaurus_qbt_status
+            tap_action: 
+              action: more-info
+            state:
+            - value: 'off'
+              color: var(--icon-off-color)
+              icon: mdi:alpha-q-circle-outline
+            - value: 'downloading'
+              color: var(--icon-color-green)
+              icon: mdi:download-network
+            - value: 'stalled'
+              color: var(--icon-color-orange)
+              icon: mdi:alert-circle
+            - value: 'seeding'
+              color: var(--icon-color-blue)
+              icon: mdi:download-network
+            - value: 'stalledup'
+              color: var(--icon-color-lightblue)
+              icon: mdi:download-network
+            - value: 'error'
+              color: var(--icon-color-red)
+              icon: mdi:download-network
+            - value: 'idle'
+              color: var(--icon-color-amber)
+              icon: mdi:download-network
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+          - type: "custom:button-card"
+            name: Plex
+            color_type: icon
+            entity: sensor.brontosaurus_plex_status
+            tap_action: 
+              action: more-info
+            state:
+            - value: 'off'
+              color: var(--icon-off-color)
+              icon: mdi:alpha-p-circle-outline
+            - value: 'idle'
+              color: var(--icon-color-amber)
+              icon: mdi:plex
+            - value: 'streaming'
+              color: var(--icon-color-green)
+              icon: mdi:play-circle
+            - value: 'paused'
+              color: var(--icon-color-orange)
+              icon: mdi:pause-circle
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+          - type: "custom:button-card"
+            name: VPN
+            color_type: icon
+            entity: sensor.brontosaurus_pia_vpn
+            tap_action: 
+              action: more-info
+            style:
+            - font-size: 10px
+            - text-transform: capitalize
+            - color: var(--icon-off-color)
+            - background-color: var(--element-accent-color)
+            state:
+              - value: 'off'
+                color: var(--icon-off-color)
+                icon: mdi:alpha-v-circle-outline
+              - value: 'up'
+                color: var(--icon-color-amber)
+                icon: mdi:key
+              - value: 'down'
+                color: var(--icon-color-red)
+                icon: mdi:alert-circle
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+        - type: horizontal-stack
+          cards:
+          - type: "custom:button-card"
+            name: Sonarr
+            color_type: icon
+            entity: sensor.brontosaurus_sonarr
+            tap_action: 
+              action: more-info
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+              - box-shadow: 0px 0px 0px 0px
+            state:
+              - value: 'off'
+                color: var(--icon-off-color)
+                icon: mdi:alpha-s-circle-outline
+              - value: 'running'
+                color: var(--icon-color-amber)
+                icon: mdi:basketball
+              - value: 'not running'
+                color: var(--icon-color-red)
+                icon: mdi:alert-circle
+          - type: "custom:button-card"
+            name: Radarr
+            color_type: icon
+            entity: sensor.brontosaurus_radarr
+            tap_action: 
+              action: more-info
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+            state:
+              - value: 'off'
+                color: var(--icon-off-color)
+                icon: mdi:alpha-r-circle-outline
+              - value: 'running'
+                color: var(--icon-color-amber)
+                icon: mdi:basketball
+              - value: 'not running'
+                color: var(--icon-color-red)
+                icon: mdi:alert-circle
+          - type: "custom:button-card"
+            name: Hydra
+            color_type: icon
+            entity: sensor.brontosaurus_hydra2
+            tap_action: 
+              action: more-info
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+            state:
+              - value: 'off'
+                color: var(--icon-off-color)
+                icon: mdi:alpha-h-circle-outline
+              - value: 'running'
+                color: var(--icon-color-amber)
+                icon: mdi:database-search
+              - value: 'paused'
+                color: var(--icon-off-orange)
+                icon: mdi:alert-circle
+              - value: 'restarting'
+                color: var(--icon-color-orange)
+                icon: mdi:alpha-h-circle
+              - value: 'exited'
+                color: var(--icon-color-blue)
+                icon: mdi:alpha-h-circle
+              - value: 'dead'
+                color: var((--icon-color-red)
+                icon: mdi:alert-circle
+              - value: 'created'
+                color: var(--icon-color-yellow)
+                icon: mdi:alpha-h-circle
+          - type: "custom:button-card"
+            name: Jackett
+            color_type: icon
+            entity: sensor.brontosaurus_jackett
+            tap_action: 
+              action: more-info
+            styles:
+              card:
+              - font-size: 10px
+              - text-transform: capitalize
+            state:
+              - value: 'off'
+                color: var(--icon-off-color)
+                icon: mdi:alpha-j-circle-outline
+              - value: 'running'
+                color: var(--icon-color-amber)
+                icon: mdi:database-search
+              - value: 'paused'
+                color: var(--icon-off-orange)
+                icon: mdi:alert-circle
+              - value: 'restarting'
+                color: var(--icon-color-orange)
+                icon: mdi:alpha-j-circle
+              - value: 'exited'
+                color: var(--icon-color-blue)
+                icon: mdi:alpha-j-circle
+              - value: 'dead'
+                color: var((--icon-color-red)
+                icon: mdi:alert-circle
+              - value: 'created'
+                color: var(--icon-color-yellow)
+                icon: mdi:alpha-j-circle
   - type: horizontal-stack
     cards:
     - type: picture

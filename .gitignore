@@ -6,12 +6,16 @@
 !*.yaml
 !.gitignore
 !*.md
+!integrations/
+!lovelace/
+!lovelace/cards
+!www/mini-graph-card/dist
+
 
 # Ignore folders.
 .storage
 .cloud
 .google.token
-.
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml

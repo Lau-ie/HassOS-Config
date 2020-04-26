@@ -217,38 +217,13 @@ cards:
       entity: sensor.pachy_cleaned_area
       style:
       - text-transform: capitalize
+    - type: "custom:bignumber-card"
+      title: Battery
+      scale: 15px
+      entity: sensor.pachy_charge
+      style:
+      - text-transform: capitalize
   - type: horizontal-stack
     cards:
-    - type: custom:bar-card
-      entity: sensor.pachy_charge
-      unit_of_measurement: "%"
-      name: Battery
-      positions:
-        icon: 'off'
-        indicator: 'off'
-        minmax: 'off'
-        title: inside
-        value: inside
-      severity:
-        - color: var(--icon-color-deep-red)
-          from: 0
-          to: 15
-        - color: var(--icon-color-red)
-          from: 16
-          to: 25
-        - color: var(--icon-color-orange)
-          from: 26
-          to: 35
-        - color: var(--icon-color-yellow)
-          from: 36
-          to: 50
-        - color: var(--icon-color-light-green)
-          from: 51
-          to: 75
-        - color: var(--icon-color-green)
-          from: 76
-          to: 100
-      style: |-
-        #states {
-          padding: 0px;
-        }
+    - type: picture
+      image: /local/divider.png

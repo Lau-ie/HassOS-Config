@@ -6,49 +6,37 @@ style:
 cards:
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card
+    - type: custom:compact-graph-card
       entities:
       - sensor.netatmo_home_inside_temperature
       name: Livingroom
-      align_header: left
-      align_state: left
       show:
         fill: true
-        icon: false
       line_color: 
       - var(--icon-color-red)
-    - type: custom:mini-graph-card
+    - type: custom:compact-graph-card
       entities:
       - sensor.netatmo_home_inside_humidity
       name: Livingroom
-      align_header: left
-      align_state: left
       show:
         fill: true
-        icon: false
       line_color: 
       - var(--icon-color-blue)
 - type: horizontal-stack
   cards:
-    - type: custom:mini-graph-card
+    - type: custom:compact-graph-card
       entities:
       - sensor.xiaomi_tempsensor_servercloset
       name: Server
-      align_header: left
-      align_state: left
       show:
         fill: true
-        icon: false
       line_color: 
       - var(--icon-color-red)
-    - type: custom:mini-graph-card
+    - type: custom:compact-graph-card
       entities:
       - sensor.xiaomi_humiditysensor_servercloset
       name: Server
-      align_header: left
-      align_state: left
       show:
         fill: true
-        icon: false
       line_color: 
       - var(--icon-color-blue)

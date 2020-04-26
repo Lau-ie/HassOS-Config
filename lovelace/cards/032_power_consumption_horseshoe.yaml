@@ -126,7 +126,7 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-  - type: custom:mini-graph-card-squished
+  - type: custom:compact-graph-card
     name: Power
     entities:
     - entity: sensor.dsmr_daily_power
@@ -162,7 +162,7 @@ cards:
     decimals: 2
     hour24: true
     font_size: 65
-  - type: custom:mini-graph-card-squished
+  - type: custom:compact-graph-card
     name: Gas
     entities:
     - entity: sensor.dsmr_daily_gas

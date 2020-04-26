@@ -93,7 +93,7 @@ cards:
       show_name: false
       show_label: false
       color_type: icon
-      entity: input_boolean.reboot_host
+      entity: input_boolean.reboot_triceratops
       tap_action:
         action: more-info
       styles:
@@ -145,7 +145,7 @@ cards:
         cards:
         - type: horizontal-stack
           cards:
-          - type: custom:mini-graph-card-squished
+          - type: custom:compact-graph-card
             entities:
             - sensor.glances_cpu_used
             name: CPU
@@ -160,7 +160,7 @@ cards:
             hours_to_show: 4
             points_per_hour: 60
             hour24: true
-          - type: custom:mini-graph-card-squished
+          - type: custom:compact-graph-card
             entities:
             - sensor.glances_ram_used_percent
             name: RAM
@@ -174,7 +174,7 @@ cards:
             hours_to_show: 4
             points_per_hour: 60
             hour24: true
-          - type: custom:mini-graph-card-squished
+          - type: custom:compact-graph-card
             entities:
             - sensor.glances_config_used_percent
             name: Space
