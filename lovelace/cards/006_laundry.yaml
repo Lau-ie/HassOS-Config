@@ -43,11 +43,11 @@ cards:
   - type: horizontal-stack
     cards:
     - type: "custom:bignumber-card"
-      entity: sensor.washing_ontime
+      entity: sensor.washing_uptime
       title: Time elapsed
       scale: 20px
     - type: "custom:bignumber-card"
-      entity: sensor.dryer_ontime
+      entity: sensor.dryer_uptime
       title: Time elapsed
       scale: 20px
   - type: horizontal-stack

@@ -13,39 +13,39 @@ cards:
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
+      color_type: icon
       show_name: false
+      entity: switch.triceratops
+      tap_action:
+        action: call-service
+        service: script.triceratops_action_power
+      state:
+      - value: 'off'
+        color: var(--icon-color-amber)
+        icon: mdi:power
+      - value: 'on'
+        color: var(--icon-color-red)
+        icon: mdi:power
+    - type: "custom:button-card"
+      name: Reboot
+      show_name: false
+      show_label: false
       color_type: icon
       entity: switch.triceratops
+      tap_action:
+        action: call-service
+        service: script.triceratops_action_reboot
+      styles:
+        card:
+        - font-size: 10px
+        - text-transform: capitalize
       state:
       - value: 'off'
         color: var(--icon-off-color)
-        icon: mdi:alpha-t-circle-outline
+        icon: mdi:restart
       - value: 'on'
         color: var(--icon-color-amber)
-        icon: mdi:alpha-t-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-    - type: "custom:button-card"
-      show_name: false
-      color_type: icon
-      entity: sensor.node_red
-      tap_action:
-        action: call-service
-      service: script.selfheal_initiate
-      state:
-      - value: 'OK'
-        color: var(--icon-color-amber)
-        icon: mdi:state-machine
-      - value: 'unknown'
-        color: var(--icon-color-red)
-        icon: mdi:electric-switch
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
+        icon: mdi:restart
     - type: "custom:button-card"
       name: HomeAssistant
       icon: mdi:home-assistant
@@ -65,7 +65,7 @@ cards:
         color: var(--icon-color-orange)
         icon: mdi:home-assistant
       - value: 'off'
-        color: var(--icon-off-color)
+        color: var(--icon-color-amber)
         icon: mdi:home-assistant
     - type: "custom:button-card"
       icon: mdi:nodejs
@@ -86,31 +86,91 @@ cards:
         color: var(--icon-color-orange)
         icon: mdi:nodejs
       - value: 'off'
-        color: var(--icon-off-color)
+        color: var(--icon-color-amber)
         icon: mdi:nodejs
     - type: "custom:button-card"
-      name: Reboot
       show_name: false
-      show_label: false
       color_type: icon
-      entity: input_boolean.reboot_triceratops
+      entity: sensor.node_red
       tap_action:
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
+        action: call-service
+      service: script.selfheal_initiate
       state:
-      - value: 'off'
+      - value: 'OK'
         color: var(--icon-color-amber)
-        icon: mdi:restart
-      - value: 'on'
-        color: var(--icon-color-amber)
-        icon: mdi:restart
+        icon: mdi:state-machine
+      - value: 'unknown'
+        color: var(--icon-color-red)
+        icon: mdi:electric-switch
   - type: horizontal-stack
     cards:
     - type: picture
       image: /local/divider.png
+  - type: custom:state-switch
+    entity: sensor.triceratops_pending
+    states:
+      "shutdown":
+        type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+          - type: "custom:button-card"
+            color_type: icon
+            show_name: false
+            icon: mdi:checkbox-marked-circle
+            entity: sensor.power_triceratops
+            color: var(--icon-color-green)
+            tap_action:
+              action: call-service
+              service: script.triceratops_action_confirm
+          - type: "custom:doublevalue-card"
+            entity: sensor.triceratops_pending_count
+            title_entity: sensor.triceratops_pending
+            scale: 20px
+          - type: "custom:button-card"
+            color_type: icon
+            show_name: false
+            icon: mdi:cancel
+            entity: sensor.power_triceratops
+            color: var(--icon-color-red)
+            tap_action:
+              action: call-service
+              service: script.triceratops_action_cancel
+        - type: horizontal-stack
+          cards:
+          - type: picture
+            image: /local/divider.png
+      "reboot":
+        type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+          - type: "custom:button-card"
+            color_type: icon
+            show_name: false
+            icon: mdi:checkbox-marked-circle
+            entity: sensor.power_triceratops
+            color: var(--icon-color-green)
+            tap_action:
+              action: call-service
+              service: script.triceratops_action_confirm
+          - type: "custom:doublevalue-card"
+            entity: sensor.triceratops_pending_count
+            title_entity: sensor.triceratops_pending
+            scale: 20px
+          - type: "custom:button-card"
+            color_type: icon
+            show_name: false
+            icon: mdi:cancel
+            entity: sensor.power_triceratops
+            color: var(--icon-color-red)
+            tap_action:
+              action: call-service
+              service: script.triceratops_action_cancel
+        - type: horizontal-stack
+          cards:
+          - type: picture
+            image: /local/divider.png
   - type: custom:state-switch
     entity: switch.triceratops
     states:
@@ -132,7 +192,7 @@ cards:
           - type: "custom:bignumber-card"
             title: Uptime
             scale: 15px
-            entity: sensor.triceratops_ontime
+            entity: sensor.triceratops_uptime
         - type: horizontal-stack
           cards:
           - type: picture
@@ -175,18 +235,31 @@ cards:
             points_per_hour: 60
             hour24: true
           - type: custom:compact-graph-card
-            entities:
-            - sensor.glances_config_used_percent
-            name: Space
+            name: Power
             font_size: 60
+            entities:
+            - entity: sensor.tp_link_triceratops_daily_power
+              name: Power_daily
+              show_state: true
+              show_graph: false
+              show_line: false
+              show_points: false
+              show_legend: false
+              show_fill: false
+            - entity: sensor.tp_link_triceratops_hourly_power
+              name: Power
+              show_state: false
+              color: var(--icon-color-amber)
+            line_color: var(--icon-color-amber)
+            icon: mdi:flash
+            aggregate_func: max
+            group_by: hour
             show:
+              graph: bar
               name: true
-              icon: true
-              state: true
-            line_color: 
-            - var(--icon-color-blue)
-            hours_to_show: 4
-            points_per_hour: 60
+              icon: false
+            hours_to_show: 24
+            decimals: 2
             hour24: true
         - type: horizontal-stack
           cards:
@@ -194,45 +267,14 @@ cards:
             image: /local/divider.png
   - type: horizontal-stack
     cards:
-    - type: custom:bar-card
-      name: Current Load
-      unit_of_measurement: "W"
-      entity: sensor.tp_link_triceratops_current_load
-      positions:
-        icon: 'off'
-        indicator: 'off'
-        minmax: 'off'
-        title: inside
-        value: inside
-      severity:
-        - color: var(--icon-color-blue)
-          from: 0
-          to: 5
-        - color: var(--icon-color-light-green)
-          from: 6
-          to: 20
-        - color: var(--icon-color-green)
-          from: 21
-          to: 30
-        - color: var(--icon-color-yellow)
-          from: 31
-          to: 40
-        - color: var(--icon-color-orange)
-          from: 41
-          to: 50
-        - color: var(--icon-color-red)
-          from: 51
-          to: 100
-      min: 0
-      max: 40
-      style: |-
-        #states {
-          padding: 0px;
-        }
     - type: "custom:bignumber-card"
-      title: Power Today
+      title: Current Load
       scale: 15px
-      entity: sensor.tp_link_triceratops_daily_power
+      entity: sensor.tp_link_triceratops_current_load
+    - type: "custom:bignumber-card"
+      title: Current Cost
+      scale: 15px
+      entity: sensor.tp_link_triceratops_current_cost
     - type: "custom:bignumber-card"
       title: Cost Today
       scale: 15px

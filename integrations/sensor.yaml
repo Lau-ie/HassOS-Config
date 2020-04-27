@@ -55,23 +55,47 @@ sensor:
   state_topic: "zigbee2mqtt/bridge/permit_join_remaining"  
   name: "Permit Join Countdown"
 - platform: mqtt
-  state_topic: "washing/ontime"  
-  name: "Washing Ontime"
+  state_topic: "uptime/washer"  
+  name: "Washing Uptime"
 - platform: mqtt
-  state_topic: "dryer/ontime"  
-  name: "Dryer Ontime"
+  state_topic: "uptime/dryer"  
+  name: "Dryer Uptime"
 - platform: mqtt
-  state_topic: "allosaurus/ontime"  
-  name: "Allosaurus Ontime"
+  state_topic: "uptime/allosaurus"  
+  name: "Allosaurus Uptime"
 - platform: mqtt
-  state_topic: "brontosaurus/ontime"  
-  name: "Brontosaurus Ontime"
+  state_topic: "uptime/brontosaurus"  
+  name: "Brontosaurus Uptime"
 - platform: mqtt
-  state_topic: "velociraptor/ontime"  
-  name: "Velociraptor Ontime"
+  state_topic: "uptime/velociraptor"  
+  name: "Velociraptor Uptime"
 - platform: mqtt
-  state_topic: "triceratops/ontime"  
-  name: "Triceratops Ontime"
+  state_topic: "uptime/triceratops"  
+  name: "Triceratops Uptime"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/pending"  
+  name: "Brontosaurus Pending"
+- platform: mqtt
+  state_topic: "machines/allosaurus/pending"  
+  name: "Allosaurus Pending"
+- platform: mqtt
+  state_topic: "machines/velociraptor/pending"  
+  name: "Velociraptor Pending"
+- platform: mqtt
+  state_topic: "machines/triceratops/pending"  
+  name: "Triceratops Pending"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/pending/count"  
+  name: "Brontosaurus Pending Count"
+- platform: mqtt
+  state_topic: "machines/allosaurus/pending/count"  
+  name: "Allosaurus Pending Count"
+- platform: mqtt
+  state_topic: "machines/velociraptor/pending/count"  
+  name: "Velociraptor Pending Count"
+- platform: mqtt
+  state_topic: "machines/triceratops/pending/count"  
+  name: "Triceratops Pending Count"
 - platform: mqtt
   name: Bridge state
   state_topic: "zigbee2mqtt/bridge/state"
@@ -444,86 +468,6 @@ sensor:
   payload_available: "ON"
   payload_not_available: "OFF"
   qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_idle_time
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/idle-time"
-  unit_of_measurement: 'seconds'
-  icon: mdi:timer
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_cpu_usage
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/cpu"
-  unit_of_measurement: '%'
-  icon: mdi:speedometer
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_ram_available"
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/memory/available"
-  unit_of_measurement: 'MB'
-  icon: mdi:memory
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_ram_used"
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/memory/used"
-  unit_of_measurement: 'MB'
-  icon: mdi:memory
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_ram_total
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/memory/total"
-  unit_of_measurement: 'MB'
-  icon: mdi:memory
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_network_wired
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/network/0/wired"
-  unit_of_measurement: ''
-  icon: mdi:ethernet
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_network_ipv4
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/network/0/ipv4"
-  unit_of_measurement: ''
-  icon: mdi:lan
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
-- platform: mqtt
-  name: iotlink_velociraptor_network_ipv6
-  state_topic: "iotlink/workgroup/velociraptor/windows-monitor/stats/network/0/ipv6"
-  unit_of_measurement: ''
-  icon: mdi:lan
-  value_template: "{{ value }}"
-  availability_topic: "iotlink/workgroup/velociraptor/lwt"
-  payload_available: "ON"
-  payload_not_available: "OFF"
-  qos: 1
 - platform: systemmonitor
   resources:
     - type: disk_use_percent
@@ -554,6 +498,8 @@ sensor:
       unit_of_measurement: MB
 - platform: template
   sensors:
+    dayoftheweek:
+      value_template: "{{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}"
     database_size_mb:
       friendly_name: "Database_size_MB"
       unit_of_measurement: 'MB'
@@ -702,7 +648,8 @@ sensor:
       value_template: "{{ ((states('sensor.mediacenter_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.mediacenter_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_mediacenter_current_load:
       friendly_name: "Mediacenter Current Load"
-      value_template: "{{ state_attr('switch.tp_link_mediacenter', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_mediacenter', 'current_power_w')|round(0) }}"
+      unit_of_measurement: Watts
     tp_link_mediacenter_current_cost:
       friendly_name: "Mediacenter Current Cost"
       unit_of_measurement: €/h
@@ -734,7 +681,7 @@ sensor:
       value_template: "{{ ((states('sensor.coffeemachine_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.coffeemachine_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_coffeemachine_current_load:
       friendly_name: "Coffeemachine Current Load"
-      value_template: "{{ state_attr('switch.tp_link_coffeemachine', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_coffeemachine', 'current_power_w')|round(0) }}"
     tp_link_coffeemachine_current_cost:
       friendly_name: "Coffeemachine Current Cost"
       unit_of_measurement: €/h
@@ -767,7 +714,7 @@ sensor:
       value_template: "{{ ((states('sensor.brontosaurus_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.brontosaurus_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_brontosaurus_current_load:
       friendly_name: "Brontosaurus Current Load"
-      value_template: "{{ state_attr('switch.tp_link_brontosaurus', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_brontosaurus', 'current_power_w')|round(0) }}"
       unit_of_measurement: 'Watts'
     tp_link_brontosaurus_current_cost:
       friendly_name: "Brontosaurus Current Cost"
@@ -800,7 +747,7 @@ sensor:
       value_template: "{{ ((states('sensor.washer_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.washer_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_washer_current_load:
       friendly_name: "Washingmachine Current Load"
-      value_template: "{{ state_attr('switch.tp_link_washingmachine', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_washingmachine', 'current_power_w')|round(0) }}"
       unit_of_measurement: 'Watts'
     tp_link_washer_current_cost:
       friendly_name: "Washer Current Cost"
@@ -833,7 +780,7 @@ sensor:
       value_template: "{{ ((states('sensor.dryer_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.dryer_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_dryer_current_load:
       friendly_name: "Dryer Current Load"
-      value_template: "{{ state_attr('switch.tp_link_dryer', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_dryer', 'current_power_w')|round(0) }}"
       unit_of_measurement: 'Watts'
     tp_link_dryer_current_cost:
       friendly_name: "Dryer Current Cost"
@@ -866,7 +813,7 @@ sensor:
       value_template: "{{ ((states('sensor.quooker_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_quooker_current_load:
       friendly_name: "Quooker Current Load"
-      value_template: "{{ state_attr('switch.tp_link_quooker', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_quooker', 'current_power_w')|round(0) }}"
       unit_of_measurement: 'Watts'
     tp_link_quooker_current_cost:
       friendly_name: "Quooker Current Cost"
@@ -899,16 +846,16 @@ sensor:
       value_template: "{{ ((states('sensor.triceratops_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_triceratops_current_load:
       friendly_name: "Triceratops Current Load"
-      value_template: "{{ state_attr('switch.tp_link_triceratops', 'current_power_w') }}"
+      value_template: "{{ state_attr('switch.tp_link_triceratops', 'current_power_w')|round(0) }}"
       unit_of_measurement: 'Watts'
     tp_link_triceratops_current_cost:
       friendly_name: "Triceratops Current Cost"
       unit_of_measurement: €/h
       value_template: >-
         {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
-          {{ ((state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float)|round(2) }}
+          {{ ((state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float)|round(3) }}
         {% else %}
-          {{ ((state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float)|round(2) }}
+          {{ ((state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float)|round(3) }}
         {% endif %}
     dsmr_hourly_power:
       friendly_name: Hourly Power

@@ -100,24 +100,120 @@ script:
       data:
         payload: click
         topic: powerflow/resume_auto
-  power_brontosaurus_button:
+  brontosaurus_action_power:
     sequence:
     - service: mqtt.publish
       data:
-        payload: click
-        topic: power/brontosaurus/button
-  power_velociraptor_button:
+        payload: shutdown
+        topic: machines/brontosaurus/action
+  velociraptor_action_power:
     sequence:
     - service: mqtt.publish
       data:
-        payload: click
-        topic: power/velociraptor/button
-  power_allosaurus_button:
+        payload: shutdown
+        topic: machines/velociraptor/action
+  allosaurus_action_power:
     sequence:
     - service: mqtt.publish
       data:
-        payload: click
-        topic: power/allosaurus/button
+        payload: shutdown
+        topic: machines/allosaurus/action
+  triceratops_action_power:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: shutdown
+        topic: machines/triceratops/action
+  brontosaurus_action_reboot:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: reboot
+        topic: machines/brontosaurus/action
+  velociraptor_action_reboot:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: reboot
+        topic: machines/velociraptor/action
+  allosaurus_action_reboot:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: reboot
+        topic: machines/allosaurus/action
+  triceratops_action_reboot:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: reboot
+        topic: machines/triceratops/action
+  brontosaurus_action_suspend:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: suspend
+        topic: machines/brontosaurus/action
+  velociraptor_action_suspend:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: suspend
+        topic: machines/velociraptor/action
+  allosaurus_action_suspend:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: suspend
+        topic: machines/allosaurus/action
+  brontosaurus_action_confirm:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: confirm
+        topic: machines/brontosaurus/action
+  velociraptor_action_confirm:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: confirm
+        topic: machines/velociraptor/action
+  allosaurus_action_confirm:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: confirm
+        topic: machines/allosaurus/action
+  triceratops_action_confirm:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: confirm
+        topic: machines/triceratops/action
+  brontosaurus_action_cancel:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: cancel
+        topic: machines/brontosaurus/action
+  velociraptor_action_cancel:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: cancel
+        topic: machines/velociraptor/action
+  allosaurus_action_cancel:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: cancel
+        topic: machines/allosaurus/action
+  triceratops_action_cancel:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: cancel
+        topic: machines/triceratops/action
   pachy_clean:
     sequence:
     - service: mqtt.publish
