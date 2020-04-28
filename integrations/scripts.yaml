@@ -104,67 +104,67 @@ script:
     sequence:
     - service: mqtt.publish
       data:
-        payload: shutdown
+        payload: Shutdown
         topic: machines/brontosaurus/action
   velociraptor_action_power:
     sequence:
     - service: mqtt.publish
       data:
-        payload: shutdown
+        payload: Shutdown
         topic: machines/velociraptor/action
   allosaurus_action_power:
     sequence:
     - service: mqtt.publish
       data:
-        payload: shutdown
+        payload: Shutdown
         topic: machines/allosaurus/action
   triceratops_action_power:
     sequence:
     - service: mqtt.publish
       data:
-        payload: shutdown
+        payload: Shutdown
         topic: machines/triceratops/action
   brontosaurus_action_reboot:
     sequence:
     - service: mqtt.publish
       data:
-        payload: reboot
+        payload: Reboot
         topic: machines/brontosaurus/action
   velociraptor_action_reboot:
     sequence:
     - service: mqtt.publish
       data:
-        payload: reboot
+        payload: Reboot
         topic: machines/velociraptor/action
   allosaurus_action_reboot:
     sequence:
     - service: mqtt.publish
       data:
-        payload: reboot
+        payload: Reboot
         topic: machines/allosaurus/action
   triceratops_action_reboot:
     sequence:
     - service: mqtt.publish
       data:
-        payload: reboot
+        payload: Reboot
         topic: machines/triceratops/action
   brontosaurus_action_suspend:
     sequence:
     - service: mqtt.publish
       data:
-        payload: suspend
+        payload: Suspend
         topic: machines/brontosaurus/action
   velociraptor_action_suspend:
     sequence:
     - service: mqtt.publish
       data:
-        payload: suspend
+        payload: Suspend
         topic: machines/velociraptor/action
   allosaurus_action_suspend:
     sequence:
     - service: mqtt.publish
       data:
-        payload: suspend
+        payload: Suspend
         topic: machines/allosaurus/action
   brontosaurus_action_confirm:
     sequence:

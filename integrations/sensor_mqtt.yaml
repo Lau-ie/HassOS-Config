@@ -1,0 +1,291 @@
+sensor:
+- platform: mqtt
+  name: mc_harmony_status
+  state_topic: "harmony/state/"
+- platform: mqtt
+  name: mc_activity
+  state_topic: "harmony/activity/"
+- platform: mqtt
+  name: mc_activity_readable
+  state_topic: "harmony/activity/readable"
+- platform: mqtt
+  name: thermostat_active
+  state_topic: "thermostat/active"
+- platform: mqtt
+  name: thermostat_mode
+  state_topic: "thermostat/mode"
+- platform: mqtt
+  name: climate_livingroom_expected_temperature
+  state_topic: "climate/livingroom/expected"
+- platform: mqtt
+  name: climate_kitchen_expected_temperature
+  state_topic: "climate/kitchen/expected"
+- platform: mqtt
+  name: climate_washroom_expected_temperature
+  state_topic: "climate/washroom/expected"
+- platform: mqtt
+  name: climate_bathroom_expected_temperature
+  state_topic: "climate/bathroom/expected"
+- platform: mqtt
+  name: "Node RED"
+  state_topic: "checkIn/nodeRED"
+  expire_after: 300
+- platform: mqtt
+  name: Hassio State
+  state_topic: "hassio/state"
+- platform: mqtt
+  state_topic: "windows/flirclistener"  
+  name: "Flirc Listener"
+- platform: mqtt
+  state_topic: "zigbee2mqtt/bridge/permit_join_remaining"  
+  name: "Permit Join Countdown"
+- platform: mqtt
+  state_topic: "uptime/washer"  
+  name: "Washing Uptime"
+- platform: mqtt
+  state_topic: "uptime/dryer"  
+  name: "Dryer Uptime"
+- platform: mqtt
+  state_topic: "uptime/allosaurus"  
+  name: "Allosaurus Uptime"
+- platform: mqtt
+  state_topic: "uptime/brontosaurus"  
+  name: "Brontosaurus Uptime"
+- platform: mqtt
+  state_topic: "uptime/velociraptor"  
+  name: "Velociraptor Uptime"
+- platform: mqtt
+  state_topic: "uptime/triceratops"  
+  name: "Triceratops Uptime"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/pending"  
+  name: "Brontosaurus Pending"
+- platform: mqtt
+  state_topic: "machines/allosaurus/pending"  
+  name: "Allosaurus Pending"
+- platform: mqtt
+  state_topic: "machines/velociraptor/pending"  
+  name: "Velociraptor Pending"
+- platform: mqtt
+  state_topic: "machines/triceratops/pending"  
+  name: "Triceratops Pending"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/pending/count"  
+  name: "Brontosaurus Pending Count"
+- platform: mqtt
+  state_topic: "machines/allosaurus/pending/count"  
+  name: "Allosaurus Pending Count"
+- platform: mqtt
+  state_topic: "machines/velociraptor/pending/count"  
+  name: "Velociraptor Pending Count"
+- platform: mqtt
+  state_topic: "machines/triceratops/pending/count"  
+  name: "Triceratops Pending Count"
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+- platform: mqtt
+  name: Afval UpNext
+  state_topic: "afval/afvalUpNext"
+- platform: mqtt
+  name: Afval Days Left
+  state_topic: "afval/dayLeftClean"
+- platform: mqtt
+  name: Afval Weekday
+  state_topic: "afval/weekDay"
+- platform: mqtt
+  name: Afval Papier Days Left
+  state_topic: "afval/papier/dayLeft"
+- platform: mqtt
+  name: Afval Papier Weekday
+  state_topic: "afval/papier/weekDay"
+- platform: mqtt
+  name: Afval GFT Days Left
+  state_topic: "afval/gft/dayLeft"
+- platform: mqtt
+  name: Afval GFT Weekday
+  state_topic: "afval/gft/weekDay"
+- platform: mqtt
+  name: Afval Rest Days Left
+  state_topic: "afval/rest/dayLeft"
+- platform: mqtt
+  name: Afval Rest Weekday
+  state_topic: "afval/rest/weekDay"
+- platform: mqtt
+  name: nzbgetvpn_ontime
+  state_topic: "nzbget/ontime"
+- platform: mqtt
+  name: drivepool_free
+  state_topic: "brontosaurus/drivepool/free"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_freepercent
+  state_topic: "brontosaurus/drivepool/freePercent"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_used
+  state_topic: "brontosaurus/drivepool/used"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_usedpercent
+  state_topic: "brontosaurus/drivepool/usedPercent"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_usedpercentfloat
+  state_topic: "brontosaurus/drivepool/usedPercentFloat"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: drivepool_size
+  state_topic: "brontosaurus/drivepool/size"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_free
+  state_topic: "brontosaurus/quick/free"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_freepercent
+  state_topic: "brontosaurus/quick/freePercent"
+  unit_of_measurement: "%"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_used
+  state_topic: "brontosaurus/quick/used"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_usedpercent
+  state_topic: "brontosaurus/quick/usedPercent"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_usedpercentfloat
+  state_topic: "brontosaurus/quick/usedPercentFloat"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: quick_size
+  state_topic: "brontosaurus/quick/size"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: brontosaurus_glances
+  state_topic: "brontosaurus/glances/status"
+  icon: mdi:harddisk
+- platform: mqtt
+  name: brontosaurus_docker_uptime
+  state_topic: "brontosaurus/uptime"
+  icon: mdi:progress-clock
+- platform: mqtt
+  name: brontosaurus_docker_total_down
+  state_topic: "brontosaurus/docker/total_down"
+  icon: mdi:download
+- platform: mqtt
+  name: brontosaurus_nzbget_status
+  state_topic: "brontosaurus/nzbget/status"
+- platform: mqtt
+  name: brontosaurus_qbt_status
+  state_topic: "brontosaurus/qbt/status"
+- platform: mqtt
+  name: brontosaurus_emby_status
+  state_topic: "brontosaurus/emby/status"
+- platform: mqtt
+  name: brontosaurus_plex_status
+  state_topic: "brontosaurus/plex/status"
+- platform: mqtt
+  name: brontosaurus_qbittorrentvpn
+  state_topic: "brontosaurus/qbittorrentvpn/status"
+- platform: mqtt
+  name: brontosaurus_pia_vpn
+  state_topic: "brontosaurus/pia-vpn/status"
+- platform: mqtt
+  name: brontosaurus_sonarr
+  state_topic: "brontosaurus/sonarr/status"
+- platform: mqtt
+  name: brontosaurus_radarr
+  state_topic: "brontosaurus/radarr/status"
+- platform: mqtt
+  name: brontosaurus_hydra2
+  state_topic: "brontosaurus/hydra2/status"
+- platform: mqtt
+  name: brontosaurus_jackett
+  state_topic: "brontosaurus/jackett/status"
+- platform: mqtt
+  name: brontosaurus_calibre
+  state_topic: "brontosaurus/calibre/status"
+- platform: mqtt
+  name: brontosaurus_portainer
+  state_topic: "brontosaurus/portainer/status"
+- platform: mqtt
+  name: powerflow_velociraptor
+  state_topic: "powerflow/velociraptor"
+- platform: mqtt
+  name: powerflow_brontosaurus
+  state_topic: "powerflow/brontosaurus"
+- platform: mqtt
+  name: powerflow_allosaurus
+  state_topic: "powerflow/allosaurus"
+- platform: mqtt
+  name: power_velociraptor
+  state_topic: "power/velociraptor"
+- platform: mqtt
+  name: power_brontosaurus
+  state_topic: "power/brontosaurus"
+- platform: mqtt
+  name: power_allosaurus
+  state_topic: "power/allosaurus"
+- platform: mqtt
+  name: powerflow_brontosaurus_pending
+  state_topic: "powerflow/brontosaurus/pending"
+- platform: mqtt
+  name: powerflow_velociratpor_pending
+  state_topic: "powerflow/velociratpor/pending"
+- platform: mqtt
+  name: power_coffeemachine
+  state_topic: "power/coffeemachine"
+- platform: mqtt
+  name: f1_quali_days_left
+  state_topic: "f1/quali_days_left"
+- platform: mqtt
+  name: f1_quali_day
+  state_topic: "f1/quali_day"
+- platform: mqtt
+  name: f1_quali_time
+  state_topic: "f1/quali_time"
+- platform: mqtt
+  name: f1_next_race
+  state_topic: "f1/next_race"
+- platform: mqtt
+  name: f1_race_time
+  state_topic: "f1/race_time"
+- platform: mqtt
+  name: f1_location
+  state_topic: "f1/location"
+- platform: mqtt
+  name: f1_race_days_left
+  state_topic: "f1/race_days_left"
+- platform: mqtt
+  name: f1_race_days_readable
+  state_topic: "f1/day_left_readable"
+- platform: mqtt
+  name: f1_race_day
+  state_topic: "f1/race_day"
+- platform: mqtt
+  name: f1_week_left
+  state_topic: "f1/week_left"
+- platform: mqtt
+  name: f1_race_str
+  state_topic: "f1/race_str"
+- platform: mqtt
+  name: f1_quali_str
+  state_topic: "f1/qualifying_str"
+- platform: mqtt
+  name: pachy_last_run
+  state_topic: "vacuum/last_run"
+- platform: mqtt
+  name: pachy_bat_state
+  state_topic: "vacuum/bat_state"
+- platform: mqtt
+  state_topic: "vacuum/ontime"
+  name: "pachy_ontime"
+- platform: mqtt
+  state_topic: "valetudo/pachy/state"
+  json_attributes_topic: "valetudo/pachy/map_data_parsed"
+  name: pachy_map
+  value_template: 'OK'

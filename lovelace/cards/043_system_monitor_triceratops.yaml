@@ -109,7 +109,7 @@ cards:
   - type: custom:state-switch
     entity: sensor.triceratops_pending
     states:
-      "shutdown":
+      "Shutdown":
         type: vertical-stack
         cards:
         - type: horizontal-stack
@@ -140,7 +140,7 @@ cards:
           cards:
           - type: picture
             image: /local/divider.png
-      "reboot":
+      "Reboot":
         type: vertical-stack
         cards:
         - type: horizontal-stack

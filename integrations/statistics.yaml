@@ -1,0 +1,16 @@
+sensor:
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_30
+  max_age:
+    minutes: 30
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_7
+  max_age:
+    minutes: 7
+- platform: statistics
+  entity_id: sensor.dsmr_consumption_gas_currently_delivered
+  name: gas_mean
+  max_age:
+    minutes: 30
