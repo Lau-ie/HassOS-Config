@@ -38,8 +38,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:singlevalue-card"
       entity: sensor.f1_quali_day
       scale: 20px
@@ -60,8 +58,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-blue)

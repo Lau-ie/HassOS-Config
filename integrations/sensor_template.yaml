@@ -1,8 +1,6 @@
 sensor:
 - platform: template
   sensors:
-    dayoftheweek:
-      value_template: "{{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}"
     database_size_mb:
       friendly_name: "Database_size_MB"
       unit_of_measurement: 'MB'

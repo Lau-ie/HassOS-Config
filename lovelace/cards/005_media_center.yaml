@@ -35,10 +35,6 @@ cards:
         color: var(--element-accent-color)
       - value: 'ShieldTV'
         color: var(--icon-color-green)
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
     - type: "custom:button-card"
       show_name: false
       show_label: false
@@ -62,10 +58,6 @@ cards:
         color: var(--element-accent-color)
       - value: 'ShieldTV'
         color: var(--element-accent-color)
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
     - type: "custom:button-card"
       show_name: false
       show_label: false
@@ -89,10 +81,6 @@ cards:
         color: var(--element-accent-color)
       - value: 'ShieldTV'
         color: var(--element-accent-color)
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
     - type: "custom:button-card"
       show_name: false
       show_label: false
@@ -116,10 +104,6 @@ cards:
         color: var(--icon-color-amber)
       - value: 'ShieldTV'
         color: var(--element-accent-color)
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
   - type: horizontal-stack
     cards:
     - type: "custom:bignumber-card"

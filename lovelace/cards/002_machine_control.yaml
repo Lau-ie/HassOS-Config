@@ -26,11 +26,6 @@ cards:
       - value: 'on'
         color: var(--icon-color-amber)
         icon: mdi:alpha-v-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       color_type: icon
       show_name: false
@@ -45,11 +40,6 @@ cards:
       - value: 'on'
         color: var(--icon-color-amber)
         icon: mdi:alpha-a-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       show_name: false
       color_type: icon
@@ -64,11 +54,6 @@ cards:
       - value: 'on'
         color: var(--icon-color-amber)
         icon: mdi:alpha-b-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       show_name: false
       color_type: icon
@@ -80,11 +65,6 @@ cards:
       - value: 'on'
         color: var(--icon-color-amber)
         icon: mdi:alpha-t-circle
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -111,11 +91,6 @@ cards:
       - value: 'auto-deactivated'
         color: var(--icon-off-color)
         icon: mdi:toggle-switch-off-outline
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       color_type: icon
       entity: sensor.powerflow_allosaurus
@@ -140,11 +115,6 @@ cards:
       - value: 'auto-deactivated'
         color: var(--icon-off-color)
         icon: mdi:toggle-switch-off-outline
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       color_type: icon
       entity: sensor.powerflow_brontosaurus
@@ -169,11 +139,6 @@ cards:
       - value: 'auto-deactivated'
         color: var(--icon-off-color)
         icon: mdi:toggle-switch-off-outline
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
     - type: "custom:button-card"
       show_name: false
       color_type: icon
@@ -188,11 +153,6 @@ cards:
       - value: 'unknown'
         color: var(--icon-color-red)
         icon: mdi:electric-switch
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
   - type: custom:state-switch
     entity: switch.brontosaurus
     states:
@@ -229,8 +189,6 @@ cards:
             styles:
               card:
               - font-size: 10px
-              - text-transform: capitalize
-              - box-shadow: 0px 0px 0px 0px
           - type: "custom:button-card"
             name: QBT
             color_type: icon
@@ -262,7 +220,6 @@ cards:
             styles:
               card:
               - font-size: 10px
-              - text-transform: capitalize
           - type: "custom:button-card"
             name: Plex
             color_type: icon
@@ -285,7 +242,6 @@ cards:
             styles:
               card:
               - font-size: 10px
-              - text-transform: capitalize
           - type: "custom:button-card"
             name: VPN
             color_type: icon
@@ -310,7 +266,6 @@ cards:
             styles:
               card:
               - font-size: 10px
-              - text-transform: capitalize
         - type: horizontal-stack
           cards:
           - type: "custom:button-card"
@@ -323,7 +278,6 @@ cards:
               card:
               - font-size: 10px
               - text-transform: capitalize
-              - box-shadow: 0px 0px 0px 0px
             state:
               - value: 'off'
                 color: var(--icon-off-color)
@@ -343,7 +297,6 @@ cards:
             styles:
               card:
               - font-size: 10px
-              - text-transform: capitalize
             state:
               - value: 'off'
                 color: var(--icon-off-color)
@@ -395,7 +348,6 @@ cards:
             styles:
               card:
               - font-size: 10px
-              - text-transform: capitalize
             state:
               - value: 'off'
                 color: var(--icon-off-color)
@@ -424,39 +376,6 @@ cards:
       image: /local/divider.png
   - type: horizontal-stack
     cards:
-    - type: custom:bar-card
-      name: Cachedrive
-      unit_of_measurement: "%"
-      entity: sensor.quick_usedpercentfloat
-      positions:
-        icon: 'off'
-        indicator: 'off'
-        minmax: 'off'
-        title: inside
-        value: inside
-      severity:
-        - color: var(--icon-color-green)
-          from: 0
-          to: 15
-        - color: var(--icon-color-light-green)
-          from: 16
-          to: 25
-        - color: var(--icon-color-yellow)
-          from: 26
-          to: 35
-        - color: var(--icon-color-orange)
-          from: 36
-          to: 50
-        - color: var(--icon-color-red)
-          from: 51
-          to: 75
-        - color: var(--icon-color-deep-red)
-          from: 76
-          to: 100
-      style: |-
-        #states {
-          padding: 0px;
-        }
     - type: "custom:bignumber-card"
       title: Freespace
       scale: 15px
@@ -485,7 +404,6 @@ cards:
     styles:
       card:
       - font-size: 10px
-      - text-transform: capitalize
   - type: "custom:button-card"
     icon: mdi:shield-alert
     name: Safe Browsing
@@ -504,7 +422,6 @@ cards:
     styles:
       card:
       - font-size: 10px
-      - text-transform: capitalize
   - type: "custom:button-card"
     icon: mdi:shield-alert
     name: Safe Search
@@ -523,7 +440,6 @@ cards:
     styles:
       card:
       - font-size: 10px
-      - text-transform: capitalize
   - type: "custom:button-card"
     icon: mdi:shield-alert
     name: Parental Control
@@ -542,7 +458,6 @@ cards:
     styles:
       card:
       - font-size: 10px
-      - text-transform: capitalize
 - type: horizontal-stack
   cards:
   - type: picture

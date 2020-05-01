@@ -20,8 +20,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - background-color: var(--element-accent-color)
       state:
       - value: 'on'
         color: auto
@@ -37,8 +35,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - background-color: var(--element-accent-color)
       state:
       - value: 'on'
         color: auto
@@ -54,8 +50,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - background-color: var(--element-accent-color)
       state:
       - value: 'on'
         color: auto
@@ -87,8 +81,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - background-color: var(--element-accent-color)
       state:
       - value: 'on'
         color: auto
@@ -104,8 +96,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - background-color: var(--element-accent-color)
       state:
       - value: 'on'
         color: auto
@@ -121,8 +111,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - background-color: var(--element-accent-color)
       state:
       - value: 'on'
         color: auto

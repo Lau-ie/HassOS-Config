@@ -23,8 +23,6 @@ cards:
         entity: vacuum.pachy
         label_template: >
           return states['sensor.pachy_bat_state'].state
-        style:
-        - color: var(--icon-off-color)
         state:
         - value: 'docked'
           color: var(--icon-color-amber)
@@ -49,8 +47,6 @@ cards:
         tap_action:
           action: call-service
           service: script.pachy_dock
-        style:
-        - color: var(--icon-off-color)
         state:
         - value: 'docked'
           color: var(--icon-color-blue)
@@ -95,8 +91,6 @@ cards:
             tap_action:
               action: call-service
               service: script.pachy_clean
-            style:
-            - color: var(--icon-off-color)
           idle:
             type: "custom:button-card"
             icon: mdi:broom
@@ -131,8 +125,6 @@ cards:
             tap_action:
               action: call-service
               service: script.pachy_clean
-            style:
-            - color: var(--icon-off-color)
           cleaning:
             type: "custom:button-card"
             icon: mdi:pause-circle

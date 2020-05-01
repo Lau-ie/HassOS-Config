@@ -22,10 +22,6 @@ cards:
       color_off: var(--element-accent-color)
       color_type: card
       entity: input_boolean.washingmachine
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
     - type: "custom:button-card"
       icon: mdi:tumble-dryer
       show_name: false
@@ -36,10 +32,6 @@ cards:
       color_off: var(--element-accent-color)
       color_type: card
       entity: input_boolean.dryer
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
   - type: horizontal-stack
     cards:
     - type: "custom:bignumber-card"

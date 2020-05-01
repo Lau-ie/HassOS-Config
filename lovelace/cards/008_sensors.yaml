@@ -22,8 +22,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -41,8 +39,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -60,8 +56,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -79,8 +73,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -100,8 +92,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -119,8 +109,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -138,8 +126,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -157,8 +143,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -178,8 +162,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -197,8 +179,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -216,8 +196,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -235,8 +213,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)
@@ -254,8 +230,6 @@ cards:
       styles:
         card:
         - font-size: 10px
-        - text-transform: capitalize
-        - box-shadow: 0px 0px 0px 0px
       state:
       - value: 'on'
         color: var(--icon-color-amber)

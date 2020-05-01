@@ -49,10 +49,6 @@ cards:
       tap_action:
         action: call-service
         service: script.velociraptor_action_reboot
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
       state:
       - value: 'off'
         color: var(--icon-off-color)
@@ -236,7 +232,7 @@ cards:
             font_size: 60
             show:
               name: true
-              icon: true
+              icon: false
               state: true
             line_color: 
             - var(--icon-color-red)
@@ -250,7 +246,7 @@ cards:
             font_size: 60
             show:
               name: true
-              icon: true
+              icon: false
               state: true
             line_color: 
             - var(--icon-color-green)

@@ -49,10 +49,6 @@ cards:
       tap_action:
         action: call-service
         service: script.brontosaurus_action_reboot
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
       state:
       - value: 'off'
         color: var(--icon-off-color)

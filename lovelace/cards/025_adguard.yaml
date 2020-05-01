@@ -74,42 +74,6 @@ cards:
     image: /local/divider.png
 - type: horizontal-stack
   cards:
-  - type: custom:bar-card
-    name: Blockedratio
-    unit_of_measurement: "%"
-    entity: sensor.adguard_dns_queries_blocked_ratio
-    positions:
-      icon: 'off'
-      indicator: 'off'
-      minmax: 'off'
-      title: inside
-      value: inside
-    severity:
-      - color: var(--icon-color-red)
-        from: 0
-        to: 5
-      - color: var(--icon-color-orange)
-        from: 6
-        to: 10
-      - color: var(--icon-color-yellow)
-        from: 11
-        to: 15
-      - color: var(--icon-color-green)
-        from: 16
-        to: 25
-      - color: var(--icon-color-green)
-        from: 26
-        to: 50
-      - color: var(--icon-color-green)
-        from: 51
-        to: 75
-      - color: var(--icon-color-green)
-        from: 76
-        to: 100
-    style: |-
-      #states {
-        padding: 0px;
-      }
   - type: "custom:bignumber-card"
     title: Avg. Processing Speed
     scale: 15px

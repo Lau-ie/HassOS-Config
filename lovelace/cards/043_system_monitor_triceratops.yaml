@@ -56,10 +56,6 @@ cards:
       tap_action:
         action: call-service
         service: script.hassiocontrol_homeassistant_restart
-      styles:
-        card:
-        - font-size: 10px
-        - text-transform: capitalize
       state:
       - value: 'on'
         color: var(--icon-color-orange)
@@ -212,9 +208,8 @@ cards:
             font_size: 60
             show:
               name: true
-              icon: true
+              icon: false
               state: true
-            align_state: center
             line_color: 
             - var(--icon-color-red)
             hours_to_show: 4
@@ -227,7 +222,7 @@ cards:
             font_size: 60
             show:
               name: true
-              icon: true
+              icon: false
               state: true
             line_color: 
             - var(--icon-color-green)
