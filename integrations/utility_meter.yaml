@@ -185,6 +185,54 @@ utility_meter:
     tariffs:
       - peak
       - offpeak
+  battlestation_power_hourly:
+    source: sensor.tp_link_battlestation_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  battlestation_power_daily:
+    source: sensor.tp_link_battlestation_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  battlestation_power_weekly:
+    source: sensor.tp_link_battlestation_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  battlestation_power_monthly:
+    source: sensor.tp_link_battlestation_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  microwave_power_hourly:
+    source: sensor.tp_link_microwave_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  microwave_power_daily:
+    source: sensor.tp_link_microwave_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  microwave_power_weekly:
+    source: sensor.tp_link_microwave_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  microwave_power_monthly:
+    source: sensor.tp_link_microwave_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
   corona_netherlands_daily:
     source: sensor.netherlands_coronavirus_confirmed
     cycle: daily

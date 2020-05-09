@@ -472,3 +472,10 @@ script:
       data:
         topic: "iotlink/workgroup/brontosaurus/commands/volume/mute"
         payload: ""
+  iotlink_allosaurus_clean:
+    alias: "Clean Up"
+    sequence:
+      - service: mqtt.publish
+        data:
+          topic: "iotlink/workgroup/allosaurus/commands/run"
+          payload: '{ "command": "C:\\Batchfiles\\clean_up_now.bat", "path": "C:\\Batchfiles", "user": "", "visible": true, "fallback": true }'

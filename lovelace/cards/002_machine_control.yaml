@@ -18,7 +18,7 @@ cards:
       entity: sensor.power_velociraptor
       tap_action:
         action: call-service
-        service: script.power_velociraptor_button
+        service: script.velociraptor_action_power
       state:
       - value: 'off'
         color: var(--icon-off-color)
@@ -32,7 +32,7 @@ cards:
       entity: sensor.power_allosaurus
       tap_action:
         action: call-service
-        service: script.power_allosaurus_button
+        service: script.allosaurus_action_power
       state:
       - value: 'off'
         color: var(--icon-off-color)
@@ -46,7 +46,7 @@ cards:
       entity: sensor.power_brontosaurus
       tap_action:
         action: call-service
-        service: script.power_brontosaurus_button
+        service: script.brontosaurus_action_power
       state:
       - value: 'off'
         color: var(--icon-off-color)

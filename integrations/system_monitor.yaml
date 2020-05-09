@@ -5,3 +5,4 @@ sensor:
       arg: /home
     - type: memory_free
     - type: memory_use
+    - type: last_boot

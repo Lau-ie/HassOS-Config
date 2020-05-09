@@ -9,3 +9,4 @@ tplink:
   - host: !secret tplink_host_ip_6
   - host: !secret tplink_host_ip_7
   - host: !secret tplink_host_ip_8
+  - host: !secret tplink_host_ip_9

@@ -1,9 +1,19 @@
 sensor:
 - platform: statistics
   entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_60
+  max_age:
+    minutes: 60
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
   name: bathroom_hum_mean_30
   max_age:
     minutes: 30
+- platform: statistics
+  entity_id: sensor.xiaomi_humiditysensor_bathroom
+  name: bathroom_hum_mean_15
+  max_age:
+    minutes: 15
 - platform: statistics
   entity_id: sensor.xiaomi_humiditysensor_bathroom
   name: bathroom_hum_mean_7

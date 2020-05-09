@@ -128,31 +128,31 @@ sensor:
       value_template: "{{ state_attr('climate.badkamer1v', 'temperature') }}"
       unit_of_measurement: '°C'
     tp_link_battlestation_total_kwh:
-      friendly_name: "battlestation Total Power Used"
+      friendly_name: "Battlestation Total Power Used"
       value_template: "{{ state_attr('switch.tp_link_battlestation', 'total_energy_kwh') }}"
       unit_of_measurement: 'kWh'
     tp_link_battlestation_hourly_power:
-      friendly_name: battlestation Hourly Power
+      friendly_name: Battlestation Hourly Power
       unit_of_measurement: kWh
       value_template: "{{ states('sensor.battlestation_power_hourly_peak')|float + states('sensor.battlestation_power_hourly_offpeak')|float }}"
     tp_link_battlestation_hourly_power_cost:
-      friendly_name: battlestation Hourly Power Cost
+      friendly_name: Battlestation Hourly Power Cost
       unit_of_measurement: €
       value_template: "{{ ((states('sensor.battlestation_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.battlestation_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_battlestation_daily_power:
-      friendly_name: battlestation Daily Power
+      friendly_name: Battlestation Daily Power
       unit_of_measurement: kWh
       value_template: "{{ states('sensor.battlestation_power_daily_peak')|float + states('sensor.battlestation_power_daily_offpeak')|float }}"
     tp_link_battlestation_daily_power_cost:
-      friendly_name: battlestation Daily Power Cost
+      friendly_name: Battlestation Daily Power Cost
       unit_of_measurement: €
       value_template: "{{ ((states('sensor.battlestation_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.battlestation_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_battlestation_current_load:
-      friendly_name: "battlestation Current Load"
+      friendly_name: "Battlestation Current Load"
       value_template: "{{ state_attr('switch.tp_link_battlestation', 'current_power_w')|round(0) }}"
       unit_of_measurement: Watts
     tp_link_battlestation_current_cost:
-      friendly_name: "battlestation Current Cost"
+      friendly_name: "Battlestation Current Cost"
       unit_of_measurement: €/h
       value_template: >-
         {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
@@ -390,6 +390,39 @@ sensor:
           {{ ((state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float)|round(3) }}
         {% else %}
           {{ ((state_attr('switch.tp_link_triceratops', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float)|round(3) }}
+        {% endif %}
+    tp_link_microwave_total_kwh:
+      friendly_name: "Microwave Total Power Used"
+      value_template: "{{ state_attr('switch.tp_link_microwave', 'total_energy_kwh') }}"
+      unit_of_measurement: 'kWh'
+    tp_link_microwave_hourly_power:
+      friendly_name: Microwave Hourly Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.microwave_power_hourly_peak')|float + states('sensor.microwave_power_hourly_offpeak')|float }}"
+    tp_link_microwave_hourly_power_cost:
+      friendly_name: Microwave Hourly Power Cost
+      unit_of_measurement: €
+      value_template: "{{ ((states('sensor.microwave_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+    tp_link_microwave_daily_power:
+      friendly_name: Microwave Daily Power
+      unit_of_measurement: kWh
+      value_template: "{{ states('sensor.microwave_power_daily_peak')|float + states('sensor.microwave_power_daily_offpeak')|float }}"
+    tp_link_microwave_daily_power_cost:
+      friendly_name: Microwave Daily Power Cost
+      unit_of_measurement: €
+      value_template: "{{ ((states('sensor.microwave_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+    tp_link_microwave_current_load:
+      friendly_name: Microwave Current Load
+      value_template: "{{ state_attr('switch.tp_link_microwave', 'current_power_w')|round(0) }}"
+      unit_of_measurement: 'Watts'
+    tp_link_microwave_current_cost:
+      friendly_name: Microwave Current Cost
+      unit_of_measurement: €/h
+      value_template: >-
+        {% if is_state('sensor.dsmr_meter_stats_electricity_tariff', 'high') %}
+          {{ ((state_attr('switch.tp_link_microwave', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float)|round(3) }}
+        {% else %}
+          {{ ((state_attr('switch.tp_link_microwave', 'current_power_w')|float / 1000) * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float)|round(3) }}
         {% endif %}
     dsmr_hourly_power:
       friendly_name: Hourly Power
