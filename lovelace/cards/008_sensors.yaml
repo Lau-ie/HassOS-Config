@@ -80,6 +80,23 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:door
+    - type: "custom:button-card"
+      icon: mdi:door
+      name: Server
+      tap_action: 
+        action: more-info
+      color_type: icon
+      entity: binary_sensor.xiaomi_doorsensor_serverroom
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:door-open
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:door
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -150,8 +167,6 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:walk
-  - type: horizontal-stack
-    cards:
     - type: "custom:button-card"
       name: Toilet
       icon: mdi:walk
@@ -159,6 +174,25 @@ cards:
         action: more-info
       color_type: icon
       entity: binary_sensor.tradfri_motion_sensor_toilet
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:walk
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:walk
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: Gangway
+      icon: mdi:walk
+      tap_action: 
+        action: more-info
+      color_type: icon
+      entity: input_boolean.motion_gangway
       styles:
         card:
         - font-size: 10px

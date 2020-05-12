@@ -77,7 +77,7 @@ cards:
         service: script.powerflow_velociraptor_button
       hold_action:
         action: call-service
-        service: script.powerflow_resume_auto
+        service: powerflow_velociraptor_resume_auto
       state:
       - value: 'manually-activated'
         color: var(--icon-color-green)
@@ -101,7 +101,7 @@ cards:
         service: script.powerflow_allosaurus_button
       hold_action:
         action: call-service
-        service: script.powerflow_resume_auto
+        service: powerflow_allosaurus_resume_auto
       state:
       - value: 'manually-activated'
         color: var(--icon-color-green)
@@ -125,7 +125,7 @@ cards:
         service: script.powerflow_brontosaurus_button
       hold_action:
         action: call-service
-        service: script.powerflow_resume_auto
+        service: powerflow_brontosaurus_resume_auto
       state:
       - value: 'manually-activated'
         color: var(--icon-color-green)

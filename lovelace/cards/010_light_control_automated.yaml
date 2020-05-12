@@ -110,7 +110,7 @@ cards:
     - type: "custom:button-card"
       name: Garage
       color_type: icon
-      entity: switch.sonoff2
+      entity: switch.sonoff_basic_1
       action: more_info
       styles:
         card:

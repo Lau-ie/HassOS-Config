@@ -57,22 +57,6 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:lightbulb
-  - type: horizontal-stack
-    cards:
-    - type: custom:slider-entity-row
-      entity: light.livingroom
-      full_row: true
-      hide_state: true
-    - type: custom:slider-entity-row
-      entity: light.divide
-      full_row: true
-      hide_state: true
-    - type: custom:slider-entity-row
-      entity: light.diningarea
-      full_row: true
-      hide_state: true
-  - type: horizontal-stack
-    cards:
     - type: "custom:button-card"
       name: Master Bedroom
       color_type: icon
@@ -88,6 +72,26 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:lightbulb
+  - type: horizontal-stack
+    cards:
+    - type: custom:slider-entity-row
+      entity: light.livingroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.divide
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.diningarea
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.master_bedroom
+      full_row: true
+      hide_state: true
+  - type: horizontal-stack
+    cards:
     - type: "custom:button-card"
       name: Small Bedroom
       color_type: icon
@@ -118,18 +122,52 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:lightbulb
+    - type: "custom:button-card"
+      name: Engineroom
+      color_type: icon
+      entity: switch.sonoff4ch_1
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:lightbulb-on
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:lightbulb
+    - type: "custom:button-card"
+      name: Serverroom
+      color_type: icon
+      entity: switch.sonoff4ch_2
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:lightbulb-on
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:lightbulb
   - type: horizontal-stack
     cards:
-    - type: custom:slider-entity-row
-      entity: light.master_bedroom
-      full_row: true
-      hide_state: true
     - type: custom:slider-entity-row
       entity: light.small_bedroom
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row
       entity: light.guestroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.placeholder
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.placeholder
       full_row: true
       hide_state: true
 - type: horizontal-stack

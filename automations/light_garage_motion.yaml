@@ -6,7 +6,7 @@
   action:
   - service: switch.turn_on
     data:
-      entity_id: switch.sonoff2
+      entity_id: switch.sonoff_basic_1
   - service: timer.start
     data:
       entity_id: timer.garage_light
@@ -20,4 +20,4 @@
   action:
     service: switch.turn_off
     data:
-      entity_id: switch.sonoff2
+      entity_id: switch.sonoff_basic_1

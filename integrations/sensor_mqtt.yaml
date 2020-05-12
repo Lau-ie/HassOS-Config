@@ -40,22 +40,28 @@ sensor:
   state_topic: "zigbee2mqtt/bridge/permit_join_remaining"  
   name: "Permit Join Countdown"
 - platform: mqtt
-  state_topic: "uptime/washer"  
+  state_topic: "appliances/washer/uptime"
   name: "Washing Uptime"
 - platform: mqtt
-  state_topic: "uptime/dryer"  
+  state_topic: "appliances/dryer/uptime"
   name: "Dryer Uptime"
 - platform: mqtt
-  state_topic: "uptime/allosaurus"  
+  state_topic: "machines/allosaurus/uptime"
   name: "Allosaurus Uptime"
 - platform: mqtt
-  state_topic: "uptime/brontosaurus"  
+  state_topic: "machines/allosaurus/qmode"
+  name: "Allosaurus Qmode"
+- platform: mqtt
+  state_topic: "machines/velociraptor/qmode"
+  name: "Allosaurus Qmode"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/uptime"  
   name: "Brontosaurus Uptime"
 - platform: mqtt
-  state_topic: "uptime/velociraptor"  
+  state_topic: "machines/velociraptor/uptime"  
   name: "Velociraptor Uptime"
 - platform: mqtt
-  state_topic: "uptime/triceratops"  
+  state_topic: "machines/triceratops/uptime"  
   name: "Triceratops Uptime"
 - platform: mqtt
   state_topic: "machines/brontosaurus/pending"  
@@ -114,131 +120,128 @@ sensor:
   state_topic: "afval/rest/weekDay"
 - platform: mqtt
   name: nzbgetvpn_ontime
-  state_topic: "nzbget/ontime"
+  state_topic: "machines/brontosaurus/nzbget/ontime"
 - platform: mqtt
   name: drivepool_free
-  state_topic: "brontosaurus/drivepool/free"
+  state_topic: "machines/brontosaurus/drivepool/free"
   icon: mdi:harddisk
 - platform: mqtt
   name: drivepool_freepercent
-  state_topic: "brontosaurus/drivepool/freePercent"
+  state_topic: "machines/brontosaurus/drivepool/freePercent"
   icon: mdi:harddisk
 - platform: mqtt
   name: drivepool_used
-  state_topic: "brontosaurus/drivepool/used"
+  state_topic: "machines/brontosaurus/drivepool/used"
   icon: mdi:harddisk
 - platform: mqtt
   name: drivepool_usedpercent
-  state_topic: "brontosaurus/drivepool/usedPercent"
+  state_topic: "machines/brontosaurus/drivepool/usedPercent"
   icon: mdi:harddisk
 - platform: mqtt
   name: drivepool_usedpercentfloat
-  state_topic: "brontosaurus/drivepool/usedPercentFloat"
+  state_topic: "machines/brontosaurus/drivepool/usedPercentFloat"
   icon: mdi:harddisk
 - platform: mqtt
   name: drivepool_size
-  state_topic: "brontosaurus/drivepool/size"
+  state_topic: "machines/brontosaurus/drivepool/size"
   icon: mdi:harddisk
 - platform: mqtt
   name: quick_free
-  state_topic: "brontosaurus/quick/free"
+  state_topic: "machines/brontosaurus/quick/free"
   icon: mdi:harddisk
 - platform: mqtt
   name: quick_freepercent
-  state_topic: "brontosaurus/quick/freePercent"
+  state_topic: "machines/brontosaurus/quick/freePercent"
   unit_of_measurement: "%"
   icon: mdi:harddisk
 - platform: mqtt
   name: quick_used
-  state_topic: "brontosaurus/quick/used"
+  state_topic: "machines/brontosaurus/quick/used"
   icon: mdi:harddisk
 - platform: mqtt
   name: quick_usedpercent
-  state_topic: "brontosaurus/quick/usedPercent"
+  state_topic: "machines/brontosaurus/quick/usedPercent"
   icon: mdi:harddisk
 - platform: mqtt
   name: quick_usedpercentfloat
-  state_topic: "brontosaurus/quick/usedPercentFloat"
+  state_topic: "machines/brontosaurus/quick/usedPercentFloat"
   icon: mdi:harddisk
 - platform: mqtt
   name: quick_size
-  state_topic: "brontosaurus/quick/size"
+  state_topic: "machines/brontosaurus/quick/size"
   icon: mdi:harddisk
 - platform: mqtt
   name: brontosaurus_glances
-  state_topic: "brontosaurus/glances/status"
+  state_topic: "machines/brontosaurus/glances/status"
   icon: mdi:harddisk
 - platform: mqtt
   name: brontosaurus_docker_uptime
-  state_topic: "brontosaurus/uptime"
+  state_topic: "machines/brontosaurus/uptime"
   icon: mdi:progress-clock
 - platform: mqtt
   name: brontosaurus_docker_total_down
-  state_topic: "brontosaurus/docker/total_down"
+  state_topic: "machines/brontosaurus/docker/total_down"
   icon: mdi:download
 - platform: mqtt
   name: brontosaurus_nzbget_status
-  state_topic: "brontosaurus/nzbget/status"
+  state_topic: "machines/brontosaurus/nzbget/status"
 - platform: mqtt
   name: brontosaurus_qbt_status
-  state_topic: "brontosaurus/qbt/status"
-- platform: mqtt
-  name: brontosaurus_emby_status
-  state_topic: "brontosaurus/emby/status"
+  state_topic: "machines/brontosaurus/qbt/status"
 - platform: mqtt
   name: brontosaurus_plex_status
-  state_topic: "brontosaurus/plex/status"
-- platform: mqtt
-  name: brontosaurus_qbittorrentvpn
-  state_topic: "brontosaurus/qbittorrentvpn/status"
+  state_topic: "machines/brontosaurus/plex/status"
 - platform: mqtt
   name: brontosaurus_pia_vpn
-  state_topic: "brontosaurus/pia-vpn/status"
+  state_topic: "machines/brontosaurus/pia-vpn/status"
 - platform: mqtt
   name: brontosaurus_sonarr
-  state_topic: "brontosaurus/sonarr/status"
+  state_topic: "machines/brontosaurus/sonarr/status"
 - platform: mqtt
   name: brontosaurus_radarr
-  state_topic: "brontosaurus/radarr/status"
+  state_topic: "machines/brontosaurus/radarr/status"
 - platform: mqtt
   name: brontosaurus_hydra2
-  state_topic: "brontosaurus/hydra2/status"
+  state_topic: "machines/brontosaurus/hydra2/status"
 - platform: mqtt
   name: brontosaurus_jackett
-  state_topic: "brontosaurus/jackett/status"
+  state_topic: "machines/brontosaurus/jackett/status"
 - platform: mqtt
   name: brontosaurus_calibre
-  state_topic: "brontosaurus/calibre/status"
+  state_topic: "machines/brontosaurus/calibre/status"
 - platform: mqtt
   name: brontosaurus_portainer
-  state_topic: "brontosaurus/portainer/status"
+  state_topic: "machines/brontosaurus/portainer/status"
 - platform: mqtt
   name: powerflow_velociraptor
-  state_topic: "powerflow/velociraptor"
+  state_topic: "machines/velociraptor/powerflow"
 - platform: mqtt
   name: powerflow_brontosaurus
-  state_topic: "powerflow/brontosaurus"
+  state_topic: "machines/brontosaurus/powerflow"
 - platform: mqtt
   name: powerflow_allosaurus
-  state_topic: "powerflow/allosaurus"
+  state_topic: "machines/allosaurus/powerflow"
 - platform: mqtt
   name: power_velociraptor
-  state_topic: "power/velociraptor"
+  state_topic: "machines/velociraptor/power"
 - platform: mqtt
   name: power_brontosaurus
-  state_topic: "power/brontosaurus"
+  state_topic: "machines/brontosaurus/power"
 - platform: mqtt
   name: power_allosaurus
-  state_topic: "power/allosaurus"
+  state_topic: "machines/allosaurus/power"
 - platform: mqtt
   name: powerflow_brontosaurus_pending
-  state_topic: "powerflow/brontosaurus/pending"
+  state_topic: "machines/brontosaurus/powerflow/pending"
 - platform: mqtt
   name: powerflow_velociratpor_pending
-  state_topic: "powerflow/velociratpor/pending"
+  state_topic: "machines/velociratpor/powerflow/pending"
 - platform: mqtt
   name: power_coffeemachine
-  state_topic: "power/coffeemachine"
+  state_topic: "appliances/coffeemachine/power"
+- platform: mqtt
+  name: power_microwave
+  state_topic: "appliances/microwave/power"
 - platform: mqtt
   name: f1_quali_days_left
   state_topic: "f1/quali_days_left"

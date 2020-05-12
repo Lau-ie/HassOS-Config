@@ -81,25 +81,37 @@ script:
     - service: mqtt.publish
       data:
         payload: click
-        topic: powerflow/brontosaurus/button
+        topic: machines/brontosaurus/powerflow/button
   powerflow_velociraptor_button:
     sequence:
     - service: mqtt.publish
       data:
         payload: click
-        topic: powerflow/velociraptor/button
+        topic: machines/velociraptor/powerflow/button
   powerflow_allosaurus_button:
     sequence:
     - service: mqtt.publish
       data:
         payload: click
-        topic: powerflow/allosaurus/button
-  powerflow_resume_auto:
+        topic: machines/allosaurus/powerflow/button
+  powerflow_brontosaurus_resume_auto:
     sequence:
     - service: mqtt.publish
       data:
         payload: click
-        topic: powerflow/resume_auto
+        topic: machines/brontosaurus/powerflow/resume_auto
+  powerflow_velociraptor_resume_auto:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: machines/velociraptor/powerflow/resume_auto
+  powerflow_allosaurus_resume_auto:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: machines/allosaurus/powerflow/resume_auto
   brontosaurus_action_power:
     sequence:
     - service: mqtt.publish
@@ -291,19 +303,13 @@ script:
     - service: mqtt.publish
       data:
         payload: click
-        topic: hassiocontrol/homeassistant/restart
+        topic: machines/triceratops/homeassistant/restart
   hassiocontrol_nodered_restart:
     sequence:
     - service: mqtt.publish
       data:
         payload: click
-        topic: hassiocontrol/nodered/restart
-  hassiocontrol_zigbee2mqtt_restart:
-    sequence:
-    - service: mqtt.publish
-      data:
-        payload: click
-        topic: hassiocontrol/zigbee2mqtt/restart
+        topic: machines/triceratops/nodered/restart
   iotlink_allosaurus_refresh:
     alias: "Allosaurus - Refresh"
     sequence:
@@ -478,4 +484,11 @@ script:
       - service: mqtt.publish
         data:
           topic: "iotlink/workgroup/allosaurus/commands/run"
-          payload: '{ "command": "C:\\Batchfiles\\clean_up_now.bat", "path": "C:\\Batchfiles", "user": "", "visible": true, "fallback": true }'
+          payload: '{ "command": "C:\\Random Stuff\\Batchfiles\\forced_clean.bat", "path": "C:\\Random Stuff\\Batchfiles\\", "user": "", "visible": true, "fallback": true }'
+  iotlink_velociraptor_clean:
+    alias: "Clean Up"
+    sequence:
+      - service: mqtt.publish
+        data:
+          topic: "iotlink/workgroup/velociraptor/commands/run"
+          payload: '{ "command": "C:\\Random Stuff\\Batchfiles\\forced_clean.bat", "path": "C:\\Random Stuff\\Batchfiles\\", "user": "", "visible": true, "fallback": true }'

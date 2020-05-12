@@ -100,6 +100,8 @@ input_boolean:
     name: motion_kitchen
   motion_attic:
     name: motion_attic
+  motion_gangway:
+    name: motion_gangway
   motion_hallway_toggle:
     name: motion_hallway_toggle
   motion_bathroom_toggle:

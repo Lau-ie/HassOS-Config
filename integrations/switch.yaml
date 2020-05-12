@@ -31,10 +31,32 @@ switch:
   name: Triceratops
   host: !secret triceratops_host_ip
 - platform: mqtt
-  name: "Sonoff1"
-  state_topic: "stat/sonoff1/POWER"
-  command_topic: "cmnd/sonoff1/POWER"
-  availability_topic: "tele/sonoff1/LWT"
+  name: "Sonoff Basic 1"
+  state_topic: "tasmota/sonoff_basic_1/stat/POWER"
+  command_topic: "tasmota/sonoff_basic_1/cmnd/POWER"
+  availability_topic: "tasmota/sonoff_basic_1/tele/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+#- platform: mqtt
+#  name: "Sonoff Basic 2"
+#  state_topic: "tasmota/sonoff_basic_2/stat/POWER"
+#  command_topic: "tasmota/sonoff_basic_2/cmnd/POWER"
+#  availability_topic: "tasmota/sonoff_basic_2/tele/LWT"
+#  qos: 1
+#  payload_on: "ON"
+#  payload_off: "OFF"
+#  payload_available: "Online"
+#  payload_not_available: "Offline"
+#  retain: false
+- platform: mqtt
+  name: "Sonoff 4CH 1"
+  state_topic: "tasmota/sonoff_4ch/stat/POWER1"
+  command_topic: "tasmota/sonoff_4ch/cmnd/POWER1"
+  availability_topic: "tasmota/sonoff_4ch/tele/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
@@ -42,10 +64,43 @@ switch:
   payload_not_available: "Offline"
   retain: false
 - platform: mqtt
-  name: "Sonoff2"
-  state_topic: "stat/sonoff2/POWER"
-  command_topic: "cmnd/sonoff2/POWER"
-  availability_topic: "tele/sonoff2/LWT"
+  name: "Sonoff 4CH 2"
+  state_topic: "tasmota/sonoff_4ch/stat/POWER2"
+  command_topic: "tasmota/sonoff_4ch/cmnd/POWER2"
+  availability_topic: "tasmota/sonoff_4ch/tele/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Sonoff 4CH 3"
+  state_topic: "tasmota/sonoff_4ch/stat/POWER3"
+  command_topic: "tasmota/sonoff_4ch/cmnd/POWER3"
+  availability_topic: "tasmota/sonoff_4ch/tele/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Sonoff 4CH 4"
+  state_topic: "tasmota/sonoff_4ch/stat/POWER4"
+  command_topic: "tasmota/sonoff_4ch/cmnd/POWER4"
+  availability_topic: "tasmota/sonoff_4ch/tele/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
+  name: "Shelly 1"
+  state_topic: "tasmota/shelly_1/stat/POWER"
+  command_topic: "tasmota/shelly_1/cmnd/POWER"
+  availability_topic: "tasmota/shelly_1/tele/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"

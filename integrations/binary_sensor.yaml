@@ -19,3 +19,4 @@ binary_sensor:
   device_class: "connectivity"
   qos: 1
 - platform: huesensor
+
