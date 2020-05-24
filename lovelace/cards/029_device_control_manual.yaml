@@ -1,0 +1,78 @@
+type: custom:vertical-style-card
+title: Manual Control
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      name: Storageroom
+      color_type: icon
+      entity: switch.shelly_1
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:fan
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:fan
+    - type: "custom:button-card"
+      name: Guestroom
+      color_type: icon
+      entity: switch.osram_plug_fan
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:fan
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:fan
+    - type: "custom:button-card"
+      name: Washer
+      color_type: icon
+      entity: binary_sensor.xiaomi_vibrationsensor_1
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:vibrate
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:vibrate
+    - type: "custom:button-card"
+      name: Dryer
+      color_type: icon
+      entity: binary_sensor.xiaomi_vibrationsensor_2
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:vibrate
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:vibrate
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

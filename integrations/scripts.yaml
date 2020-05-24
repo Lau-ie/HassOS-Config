@@ -298,6 +298,18 @@ script:
       data:
         payload: click
         topic: thermostat/mode_button
+  washer_emptied_click:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: appliances/washer/emptied-button
+  dryer_emptied_click:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: click
+        topic: appliances/dryer/emptied-button
   hassiocontrol_homeassistant_restart:
     sequence:
     - service: mqtt.publish
@@ -484,11 +496,11 @@ script:
       - service: mqtt.publish
         data:
           topic: "iotlink/workgroup/allosaurus/commands/run"
-          payload: '{ "command": "C:\\Random Stuff\\Batchfiles\\forced_clean.bat", "path": "C:\\Random Stuff\\Batchfiles\\", "user": "", "visible": true, "fallback": true }'
+          payload: '{ "command": "C:\\Users\\Laure\\AppData\\Roaming\\Batchfiles\\forced_clean.bat", "path": "C:\\Users\\Laure\\AppData\\Roaming\\Batchfiles\\", "user": "", "visible": true, "fallback": true }'
   iotlink_velociraptor_clean:
     alias: "Clean Up"
     sequence:
       - service: mqtt.publish
         data:
           topic: "iotlink/workgroup/velociraptor/commands/run"
-          payload: '{ "command": "C:\\Random Stuff\\Batchfiles\\forced_clean.bat", "path": "C:\\Random Stuff\\Batchfiles\\", "user": "", "visible": true, "fallback": true }'
+          payload: '{ "command": "C:\\Users\\Laure\\AppData\\Roaming\\Batchfiles\\forced_clean.bat", "path": "C:\\Users\\Laure\\AppData\\Roaming\\Batchfiles\\", "user": "", "visible": true, "fallback": true }'

@@ -233,6 +233,30 @@ utility_meter:
     tariffs:
       - peak
       - offpeak
+  waterpump_power_hourly:
+    source: sensor.tp_link_waterpump_total_kwh
+    cycle: hourly
+    tariffs:
+      - peak
+      - offpeak
+  waterpump_power_daily:
+    source: sensor.tp_link_waterpump_total_kwh
+    cycle: daily
+    tariffs:
+      - peak
+      - offpeak
+  waterpump_power_weekly:
+    source: sensor.tp_link_waterpump_total_kwh
+    cycle: weekly
+    tariffs:
+      - peak
+      - offpeak
+  waterpump_power_monthly:
+    source: sensor.tp_link_waterpump_total_kwh
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
   corona_netherlands_daily:
     source: sensor.netherlands_coronavirus_confirmed
     cycle: daily

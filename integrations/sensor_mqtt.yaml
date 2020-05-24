@@ -53,7 +53,7 @@ sensor:
   name: "Allosaurus Qmode"
 - platform: mqtt
   state_topic: "machines/velociraptor/qmode"
-  name: "Allosaurus Qmode"
+  name: "Velociraptor Qmode"
 - platform: mqtt
   state_topic: "machines/brontosaurus/uptime"  
   name: "Brontosaurus Uptime"
@@ -236,6 +236,12 @@ sensor:
 - platform: mqtt
   name: powerflow_velociratpor_pending
   state_topic: "machines/velociratpor/powerflow/pending"
+- platform: mqtt
+  name: washer_status
+  state_topic: "appliances/washer/status"
+- platform: mqtt
+  name: dryer_status
+  state_topic: "appliances/dryer/status"
 - platform: mqtt
   name: power_coffeemachine
   state_topic: "appliances/coffeemachine/power"

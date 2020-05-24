@@ -125,7 +125,7 @@ cards:
     - type: "custom:button-card"
       name: Engineroom
       color_type: icon
-      entity: switch.sonoff4ch_1
+      entity: switch.sonoff_4ch_1
       action: more_info
       styles:
         card:
@@ -140,7 +140,7 @@ cards:
     - type: "custom:button-card"
       name: Serverroom
       color_type: icon
-      entity: switch.sonoff4ch_2
+      entity: switch.sonoff_4ch_2
       action: more_info
       styles:
         card:

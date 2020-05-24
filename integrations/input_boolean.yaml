@@ -14,6 +14,12 @@ input_boolean:
   alarm_invisible:
     name: Alarm Invisible
     icon: mdi:alarm-light
+  alarm_triggered:
+    name: Alarm Triggered
+    icon: mdi:alarm-light
+  alarm_flash_lights:
+    name: Alarm Flash Lights
+    icon: mdi:alarm-light
   light_schedule:
     name: Light Schedule
     icon: mdi:calendar
@@ -110,3 +116,7 @@ input_boolean:
     name: ventilation_after_shower
   volume_killer_pressed:
     name: volume_killer_pressed
+  prime_sleep_protocol:
+    name: Prime Sleep Protocol
+  execute_sleep_protocol:
+    name: Execute Sleep Protocol
