@@ -171,18 +171,15 @@ cards:
       entity: light.guestroom
       full_row: true
       hide_state: true
-    - type: custom:slider-entity-row
-      entity: light.placeholder
-      full_row: true
-      hide_state: true
-    - type: custom:slider-entity-row
-      entity: light.placeholder
-      full_row: true
-      hide_state: true
-    - type: custom:slider-entity-row
-      entity: light.placeholder
-      full_row: true
-      hide_state: true
+    - type: markdown
+      content: >
+        |
+    - type: markdown
+      content: >
+        |
+    - type: markdown
+      content: >
+        |
 - type: horizontal-stack
   cards:
   - type: picture

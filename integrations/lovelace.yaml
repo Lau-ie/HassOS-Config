@@ -1,8 +1,6 @@
 lovelace:
   mode: yaml
   resources:
-  - url: /hacsfiles/lovelace-card-mod/card-mod.js
-    type: module
   - url: /hacsfiles/lovelace-card-tools/card-tools.js
     type: module
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
@@ -21,7 +19,7 @@ lovelace:
     type: module
   - url: /hacsfiles/hass-bha-icons/hass-bha-icons.js
     type: js
-  - url: /hacsfiles/bar-card/bar-card.js
+  - url: /hacsfiles/bar-card/bar-card.js?v=1
     type: module
   - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=10
     type: module
