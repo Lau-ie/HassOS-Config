@@ -176,42 +176,42 @@ cards:
         cleaning:
           type: "custom:bignumber-card"
           title: Runtime
-          scale: 15px
+          scale: 13px
           entity: sensor.pachy_ontime
         docked:
           type: "custom:bignumber-card"
           title: Last Run
-          scale: 15px
+          scale: 13px
           entity: sensor.pachy_last_run
         returning:
           type: "custom:bignumber-card"
           title: Last Run
-          scale: 15px
+          scale: 13px
           entity: sensor.pachy_last_run
         idle:
           type: "custom:bignumber-card"
           title: Last Run
-          scale: 15px
+          scale: 13px
           entity: sensor.pachy_last_run
         error:
           type: "custom:bignumber-card"
           title: Last Run
-          scale: 15px
+          scale: 13px
           entity: sensor.pachy_last_run
         paused:
           type: "custom:bignumber-card"
           title: Runtime
-          scale: 15px
+          scale: 13px
           entity: sensor.pachy_ontime
     - type: "custom:bignumber-card"
       title: Area Cleaned
-      scale: 15px
+      scale: 13px
       entity: sensor.pachy_cleaned_area
       style:
       - text-transform: capitalize
     - type: "custom:bignumber-card"
       title: Battery
-      scale: 15px
+      scale: 13px
       entity: sensor.pachy_charge
       style:
       - text-transform: capitalize

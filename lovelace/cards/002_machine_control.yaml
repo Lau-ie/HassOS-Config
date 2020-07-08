@@ -380,6 +380,18 @@ cards:
       title: Freespace
       scale: 15px
       entity: sensor.drivepool_free
+    - type: "custom:bignumber-card"
+      title: Movies
+      scale: 15px
+      entity: sensor.brontosaurus_plex_moviecount
+    - type: "custom:bignumber-card"
+      title: TV-Shows
+      scale: 15px
+      entity: sensor.brontosaurus_plex_showcount
+    - type: "custom:bignumber-card"
+      title: Episodes
+      scale: 15px
+      entity: sensor.brontosaurus_plex_episodecount
 - type: horizontal-stack
   cards:
   - type: picture

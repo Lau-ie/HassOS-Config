@@ -98,6 +98,9 @@ input_boolean:
   vacuum_ran_today:
     name: vacuum_ran_today
     initial: off
+  waterpump_safeguard:
+    name: waterpump_safeguard
+    initial: on
   showering_bathroom:
     name: showering_bathroom
   motion_garage:
@@ -120,3 +123,5 @@ input_boolean:
     name: Prime Sleep Protocol
   execute_sleep_protocol:
     name: Execute Sleep Protocol
+  outside_floodlight:
+    name: Outside Floodlight

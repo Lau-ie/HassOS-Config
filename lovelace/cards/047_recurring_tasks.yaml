@@ -1,0 +1,68 @@
+type: custom:vertical-style-card
+title: Recurring tasks
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: 'custom:bar-card'
+      entity: sensor.rtasks_dryerfilter_days
+      positions:
+        icon: off
+        name: inside
+      unit_of_measurement: days remaining
+      name: Dryerfilter
+      min: 0
+      max: 30
+      direction: left
+      severity:
+        - color: Red
+          from: 0
+          to: 2
+        - color: Orange
+          from: 3
+          to: 6
+        - color: Green
+          from: 7
+          to: 30
+      style: |-
+        #states {
+          padding: 4px 0px;
+        }
+  - type: horizontal-stack
+    cards:
+    - type: 'custom:bar-card'
+      entity: sensor.rtasks_waterfilter_days
+      positions:
+        icon: off
+        name: inside
+      unit_of_measurement: days remaining
+      name: Waterfilter
+      min: 0
+      max: 30
+      direction: left
+      severity:
+        - color: Red
+          from: 0
+          to: 2
+        - color: Orange
+          from: 3
+          to: 6
+        - color: Green
+          from: 7
+          to: 180
+      style: |-
+        #states {
+          padding: 4px 0px;
+        }
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

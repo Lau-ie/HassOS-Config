@@ -1,18 +1,18 @@
 lovelace:
   mode: yaml
-  resources: 
-  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-    type: module
-  - url: /hacsfiles/button-card/button-card.js
-#    type: module
-#  - url: /hacsfiles/lovelace-card-mod/card-mod.js
-    type: module
-  - url: /hacsfiles/custom-header/custom-header.js
+  resources:
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
     type: module
   - url: /hacsfiles/lovelace-card-tools/card-tools.js
     type: module
-  - url: /hacsfiles/bar-card/bar-card.js?v=1
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /hacsfiles/button-card/button-card.js
+    type: module
+  - url: /hacsfiles/dual-gauge-card/dual-gauge-card.js
     type: js
+  - url: /hacsfiles/custom-header/custom-header.js
+    type: module
   - url: /hacsfiles/lovelace-valetudo-map-card/valetudo-map-card.js
     type: js
   - url: /hacsfiles/lovelace-state-switch/state-switch.js?v=0.1
@@ -21,17 +21,17 @@ lovelace:
     type: module
   - url: /hacsfiles/hass-bha-icons/hass-bha-icons.js
     type: js
-  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=0.9
+  - url: /hacsfiles/bar-card/bar-card.js
+    type: module
+  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=10
     type: module
   - url: /local/vertical-style-card.js?v=0.4
     type: js
-  - url: /local/singlevalue-card.js?v=0.1
+  - url: /local/singlevalue-card.js?v=0.2
     type: js
   - url: /local/doublevalue-card.js?v=0.0.1
     type: js
   - url: /local/triplevalue-card.js?v=0.0.6
-    type: js
-  - url: /local/bignumber-card.js
     type: js
   - url: /local/bignumber-card.js
     type: js

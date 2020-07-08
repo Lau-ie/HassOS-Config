@@ -40,10 +40,10 @@ cards:
         - font-size: 10px
     - type: "custom:singlevalue-card"
       entity: sensor.f1_quali_day
-      scale: 20px
+      scale: 15px
     - type: "custom:singlevalue-card"
       entity: sensor.f1_quali_time
-      scale: 20px
+      scale: 15px
   - type: horizontal-stack
     cards:
     - type: "custom:button-card"
@@ -65,10 +65,10 @@ cards:
         color: var(--icon-off-color)
     - type: "custom:singlevalue-card"
       entity: sensor.f1_race_day
-      scale: 20px
+      scale: 15px
     - type: "custom:singlevalue-card"
       entity: sensor.f1_race_time
-      scale: 20px
+      scale: 15px
 - type: horizontal-stack
   cards:
   - type: picture

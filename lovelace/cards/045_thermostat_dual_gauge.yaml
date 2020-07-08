@@ -1,0 +1,119 @@
+type: custom:vertical-style-card
+title: Thermostat
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: custom:dual-gauge-card
+    title: Livingroom
+    min: 0
+    max: 40
+    cardwidth: 250
+    outer:
+      entity: climate.woonkamer
+      attribute: current_temperature
+      label: "Current"
+      unit: "°C"
+    inner:
+      entity: climate.woonkamer
+      label: "Target"
+      attribute: temperature
+      unit: "°C"
+    colors:
+      - color: "var(--icon-color-red)"
+        value: 23
+      - color: "var(--icon-color-orange)"
+        value: 22
+      - color: "var(--icon-color-yellow)"
+        value: 20
+      - color: "var(--icon-color-green)"
+        value: 18
+      - color: "var(--icon-color-blue)"
+        value: 0
+  - type: custom:dual-gauge-card
+    title: Kitchen
+    min: 0
+    max: 40
+    cardwidth: 250
+    outer:
+      entity: climate.keuken
+      attribute: current_temperature
+      label: "Current"
+      unit: "°C"
+    inner:
+      entity: climate.keuken
+      label: "Target"
+      attribute: temperature
+      unit: "°C"
+    colors:
+      - color: "var(--icon-color-red)"
+        value: 23
+      - color: "var(--icon-color-orange)"
+        value: 22
+      - color: "var(--icon-color-yellow)"
+        value: 20
+      - color: "var(--icon-color-green)"
+        value: 18
+      - color: "var(--icon-color-blue)"
+- type: horizontal-stack
+  cards:
+  - type: custom:dual-gauge-card
+    title: Washroom
+    min: 0
+    max: 40
+    cardwidth: 250
+    outer:
+      entity: climate.berging
+      attribute: current_temperature
+      label: "Current"
+      unit: "°C"
+    inner:
+      entity: climate.berging
+      label: "Target"
+      attribute: temperature
+      unit: "°C"
+    colors:
+      - color: "var(--icon-color-red)"
+        value: 23
+      - color: "var(--icon-color-orange)"
+        value: 22
+      - color: "var(--icon-color-yellow)"
+        value: 20
+      - color: "var(--icon-color-green)"
+        value: 18
+      - color: "var(--icon-color-blue)"
+  - type: custom:dual-gauge-card
+    title: Bathroom
+    min: 0
+    max: 40
+    cardwidth: 250
+    outer:
+      entity: climate.badkamer_1v
+      attribute: current_temperature
+      label: "Current"
+      unit: "°C"
+    inner:
+      entity: climate.badkamer_1v
+      label: "Target"
+      attribute: temperature
+      unit: "°C"
+    colors:
+      - color: "var(--icon-color-red)"
+        value: 23
+      - color: "var(--icon-color-orange)"
+        value: 22
+      - color: "var(--icon-color-yellow)"
+        value: 20
+      - color: "var(--icon-color-green)"
+        value: 18
+      - color: "var(--icon-color-blue)"
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

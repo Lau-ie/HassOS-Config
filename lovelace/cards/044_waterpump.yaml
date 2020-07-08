@@ -1,0 +1,74 @@
+type: custom:vertical-style-card
+title: Waterpump
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:button-card"
+      icon: mdi:water-pump
+      show_name: false
+      show_label: false
+      color_type: card
+      entity: sensor.power_waterpump
+      tap_action:
+        action: more-info
+      state:
+      - value: 'on'
+        color: var(--icon-color-blue)
+        icon: mdi:water-pump
+      - value: 'off'
+        color: var(--icon-accent-color)
+        icon: mdi:water-pump
+    - type: "custom:button-card"
+      show_name: false
+      show_label: false
+      color_type: card
+      entity: input_boolean.waterpump_safeguard
+      tap_action:
+        action: more-info
+      state:
+      - value: 'on'
+        color: var(--icon-color-green)
+        icon: mdi:shield-check
+      - value: 'off'
+        color: var(--icon-color-red)
+        icon: mdi:shield-alert
+    - type: "custom:button-card"
+      icon: mdi:power
+      color: var(--icon-color-red)
+      show_name: false
+      show_label: false
+      color_type: card
+      entity: switch.tp_link_waterpump
+      tap_action:
+        action: more-info
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      title: Current Load
+      scale: 15px
+      entity: sensor.tp_link_waterpump_current_load
+    - type: "custom:bignumber-card"
+      title: Cost Today
+      scale: 15px
+      entity: sensor.tp_link_waterpump_daily_power_cost
+    - type: "custom:bignumber-card"
+      title: Uptime
+      scale: 15px
+      entity: sensor.waterpump_uptime
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png

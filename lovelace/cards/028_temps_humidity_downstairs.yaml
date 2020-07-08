@@ -40,3 +40,21 @@ cards:
         fill: true
       line_color: 
       - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: custom:compact-graph-card
+      entities:
+      - sensor.xiaomi_tempsensor_storageroom
+      name: Storageroom
+      show:
+        fill: true
+      line_color: 
+      - var(--icon-color-red)
+    - type: custom:compact-graph-card
+      entities:
+      - sensor.xiaomi_humiditysensor_storageroom
+      name: Storageroom
+      show:
+        fill: true
+      line_color: 
+      - var(--icon-color-blue)

@@ -97,6 +97,17 @@ switch:
   payload_not_available: "Offline"
   retain: false
 - platform: mqtt
+  name: "Sonoff POV R2 1"
+  state_topic: "tasmota/sonoff_pov_r2_1/stat/POWER"
+  command_topic: "tasmota/sonoff_pov_r2_1/cmnd/POWER"
+  availability_topic: "tasmota/sonoff_pov_r2_1/tele/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+- platform: mqtt
   name: "Shelly 1"
   state_topic: "tasmota/shelly_1/stat/POWER"
   command_topic: "tasmota/shelly_1/cmnd/POWER"

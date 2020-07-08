@@ -20,7 +20,7 @@ class SingleValueCard extends HTMLElement {
     style.textContent = `
       ha-card {
         box-shadow: none;
-        text-align: left;
+        text-align: center;
         --singlevalue-fill-color: var(--label-badge-blue);
         --singlevalue-percent: 100%;
         --singlevalue-direction: ${cardConfig.from};
@@ -29,7 +29,7 @@ class SingleValueCard extends HTMLElement {
         background: linear-gradient(to var(--singlevalue-direction), var(--paper-card-background-color) var(--singlevalue-percent), var(--singlevalue-fill-color) var(--singlevalue-percent));
       }
       #value {
-        font-size: calc(var(--base-unit) * 1.0);
+        font-size: calc(var(--base-unit) * 1.5);
         line-height: calc(var(--base-unit) * 1.0);
         color: var(--primary-text-color);
       }

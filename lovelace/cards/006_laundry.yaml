@@ -14,6 +14,7 @@ cards:
     cards:
     - type: "custom:button-card"
       icon: mdi:washing-machine
+      color: var(--element-accent-color)
       show_name: false
       show_label: false
       tap_action: 
@@ -26,11 +27,12 @@ cards:
       - value: 'done'
         color: var(--element-accent-color)
       - value: 'full'
-        color: var(--element-accent-color)
+        color: var(--icon-color-orange)
       - value: 'empty'
         color: var(--element-accent-color)
     - type: "custom:button-card"
       icon: mdi:tumble-dryer
+      color: var(--element-accent-color)
       show_name: false
       show_label: false
       tap_action: 
@@ -43,7 +45,7 @@ cards:
       - value: 'done'
         color: var(--element-accent-color)
       - value: 'full'
-        color: var(--element-accent-color)
+        color: var(--icon-color-orange)
       - value: 'empty'
         color: var(--element-accent-color)
   - type: horizontal-stack
@@ -112,13 +114,13 @@ cards:
             service: script.washer_emptied_click
           state:
           - value: 'running'
-            color: var(--element-accent-color)
+            color: var(--icon-off-color)
           - value: 'done'
-            color: var(--element-accent-color)
+            color: var(--icon-off-color)
           - value: 'full'
             color: var(--icon-color-blue)
           - value: 'empty'
-            color: var(--element-accent-color)
+            color: var(--accent-color)
         - type: "custom:button-card"
           color_type: card
           show_name: false
@@ -129,13 +131,13 @@ cards:
             service: script.dryer_emptied_click
           state:
           - value: 'running'
-            color: var(--element-accent-color)
+            color: var(--icon-off-color)
           - value: 'done'
-            color: var(--element-accent-color)
+            color: var(--icon-off-color)
           - value: 'full'
             color: var(--icon-color-blue)
           - value: 'empty'
-            color: var(--element-accent-color)
+            color: var(--icon-off-color)
   - type: horizontal-stack
     cards:
     - type: picture

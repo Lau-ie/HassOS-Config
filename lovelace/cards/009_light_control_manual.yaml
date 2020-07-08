@@ -16,7 +16,6 @@ cards:
       name: Livingroom
       color_type: icon
       entity: light.livingroom
-      action: more_info
       styles:
         card:
         - font-size: 10px
@@ -31,7 +30,6 @@ cards:
       name: Divide
       color_type: icon
       entity: light.divide
-      action: more_info
       styles:
         card:
         - font-size: 10px
@@ -46,7 +44,6 @@ cards:
       name: Diningarea
       color_type: icon
       entity: light.diningarea
-      action: more_info
       styles:
         card:
         - font-size: 10px
@@ -61,7 +58,6 @@ cards:
       name: Master Bedroom
       color_type: icon
       entity: light.master_bedroom
-      action: more_info
       styles:
         card:
         - font-size: 10px
@@ -111,7 +107,6 @@ cards:
       name: Guestroom
       color_type: icon
       entity: light.guestroom
-      action: more_info
       styles:
         card:
         - font-size: 10px
@@ -126,13 +121,12 @@ cards:
       name: Engineroom
       color_type: icon
       entity: switch.sonoff_4ch_1
-      action: more_info
       styles:
         card:
         - font-size: 10px
       state:
       - value: 'on'
-        color: auto
+        color: var(--icon-color-amber)
         icon: mdi:lightbulb-on
       - value: 'off'
         color: var(--icon-off-color)
@@ -141,13 +135,28 @@ cards:
       name: Serverroom
       color_type: icon
       entity: switch.sonoff_4ch_2
-      action: more_info
       styles:
         card:
         - font-size: 10px
       state:
       - value: 'on'
-        color: auto
+        color: var(--icon-color-amber)
+        icon: mdi:lightbulb-on
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:lightbulb
+    - type: "custom:button-card"
+      name: Floodlight
+      color_type: icon
+      entity: input_boolean.outside_floodlight
+      tap_action: 
+        action: more-info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
         icon: mdi:lightbulb-on
       - value: 'off'
         color: var(--icon-off-color)
@@ -160,6 +169,10 @@ cards:
       hide_state: true
     - type: custom:slider-entity-row
       entity: light.guestroom
+      full_row: true
+      hide_state: true
+    - type: custom:slider-entity-row
+      entity: light.placeholder
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row

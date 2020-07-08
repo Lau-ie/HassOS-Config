@@ -17,6 +17,18 @@ script:
       data:
         addon: core_rpc_shutdown
         input: Allosaurus
+  rtasks_dryerfilter_reset:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: reset
+        topic: tasks/dryerfilter/action
+  rtasks_waterfilter_reset:
+    sequence:
+    - service: mqtt.publish
+      data:
+        payload: reset
+        topic: tasks/waterfilter/action
   harmony_pc:
     sequence:
     - service: mqtt.publish

@@ -46,6 +46,9 @@ sensor:
   state_topic: "appliances/dryer/uptime"
   name: "Dryer Uptime"
 - platform: mqtt
+  state_topic: "appliances/waterpump/uptime"
+  name: "Waterpump Uptime"
+- platform: mqtt
   state_topic: "machines/allosaurus/uptime"
   name: "Allosaurus Uptime"
 - platform: mqtt
@@ -63,6 +66,15 @@ sensor:
 - platform: mqtt
   state_topic: "machines/triceratops/uptime"  
   name: "Triceratops Uptime"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/auto-shutdown/pending"  
+  name: "Brontosaurus Auto Shutdown Pending"
+- platform: mqtt
+  state_topic: "machines/velociraptor/auto-shutdown/pending"  
+  name: "Velociraptor Auto Shutdown Pending"
+- platform: mqtt
+  state_topic: "machines/brontosaurus/pending"  
+  name: "Brontosaurus Pending"
 - platform: mqtt
   state_topic: "machines/brontosaurus/pending"  
   name: "Brontosaurus Pending"
@@ -192,6 +204,15 @@ sensor:
   name: brontosaurus_plex_status
   state_topic: "machines/brontosaurus/plex/status"
 - platform: mqtt
+  name: brontosaurus_plex_moviecount
+  state_topic: "machines/brontosaurus/plex/moviecount"
+- platform: mqtt
+  name: brontosaurus_plex_showcount
+  state_topic: "machines/brontosaurus/plex/showcount"
+- platform: mqtt
+  name: brontosaurus_plex_episodecount
+  state_topic: "machines/brontosaurus/plex/episodecount"
+- platform: mqtt
   name: brontosaurus_pia_vpn
   state_topic: "machines/brontosaurus/pia-vpn/status"
 - platform: mqtt
@@ -249,6 +270,9 @@ sensor:
   name: power_microwave
   state_topic: "appliances/microwave/power"
 - platform: mqtt
+  name: power_waterpump
+  state_topic: "appliances/waterpump/power"
+- platform: mqtt
   name: f1_quali_days_left
   state_topic: "f1/quali_days_left"
 - platform: mqtt
@@ -285,6 +309,36 @@ sensor:
   name: f1_quali_str
   state_topic: "f1/qualifying_str"
 - platform: mqtt
+  name: rtasks_dryerfilter_timestamp
+  state_topic: "tasks/dryerfilter/timestamp"
+- platform: mqtt
+  name: rtasks_dryerfilter_taskname
+  state_topic: "tasks/dryerfilter/taskname"
+- platform: mqtt
+  name: rtasks_dryerfilter_daysremaining
+  state_topic: "tasks/dryerfilter/daysremaining"
+- platform: mqtt
+  name: rtasks_dryerfilter_interval
+  state_topic: "tasks/dryerfilter/interval"
+- platform: mqtt
+  name: rtasks_dryerfilter_days
+  state_topic: "tasks/dryerfilter/days"
+- platform: mqtt
+  name: rtasks_waterfilter_timestamp
+  state_topic: "tasks/waterfilter/timestamp"
+- platform: mqtt
+  name: rtasks_waterfilter_taskname
+  state_topic: "tasks/waterfilter/taskname"
+- platform: mqtt
+  name: rtasks_waterfilter_daysremaining
+  state_topic: "tasks/waterfilter/daysremaining"
+- platform: mqtt
+  name: rtasks_waterfilter_interval
+  state_topic: "tasks/waterfilter/interval"
+- platform: mqtt
+  name: rtasks_waterfilter_days
+  state_topic: "tasks/waterfilter/days"
+- platform: mqtt
   name: pachy_last_run
   state_topic: "vacuum/last_run"
 - platform: mqtt
@@ -298,3 +352,18 @@ sensor:
   json_attributes_topic: "valetudo/pachy/map_data_parsed"
   name: pachy_map
   value_template: 'OK'
+- platform: mqtt
+  name: Sonoff POW R2 1 Current
+  state_topic: "tasmota/sonoff_pov_r2_1/tele/SENSOR"
+  value_template: "{{ value_json.ENERGY.Current }}"
+  unit_of_measurement: 'amps'
+- platform: mqtt
+  name: Sonoff POW R2 1 Power
+  state_topic: "tasmota/sonoff_pov_r2_1/tele/SENSOR"
+  value_template: "{{ value_json.ENERGY.Power }}"
+  unit_of_measurement: 'watts'
+- platform: mqtt
+  name: Sonoff POW R2 1 total
+  state_topic: "tasmota/sonoff_pov_r2_1/tele/SENSOR"
+  value_template: "{{ value_json.ENERGY.Total }}"
+  unit_of_measurement: 'kWh'

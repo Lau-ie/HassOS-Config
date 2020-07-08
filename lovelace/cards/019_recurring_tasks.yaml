@@ -1,0 +1,66 @@
+type: custom:vertical-style-card
+title: Recurring tasks
+style:
+  font_size: 24px
+  border: true
+cards:
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:singlevalue-card"
+      entity: sensor.rtasks_dryerfilter_taskname
+      scale: 12px
+    - type: "custom:singlevalue-card"
+      entity: sensor.rtasks_dryerfilter_daysremaining
+      scale: 12px
+    - type: "custom:button-card"
+      icon: mdi:restart
+      show_name: false
+      tap_action:
+        action: call-service
+        service: script.rtasks_dryerfilter_reset
+      color_type: icon
+      size: 20%
+      entity: sensor.rtasks_dryerfilter_daysremaining
+      state:
+      - value: 'today'
+        color: var(--icon-color-blue)
+      - value: 'off'
+        color: var(--icon-off-color)
+      styles:
+        card:
+        - font-size: 10px
+  - type: horizontal-stack
+    cards:
+    - type: "custom:singlevalue-card"
+      entity: sensor.rtasks_waterfilter_taskname
+      scale: 12px
+    - type: "custom:singlevalue-card"
+      entity: sensor.rtasks_waterfilter_daysremaining
+      scale: 12px
+    - type: "custom:button-card"
+      icon: mdi:restart
+      show_name: false
+      tap_action:
+        action: call-service
+        service: script.rtasks_waterfilter_reset
+      color_type: icon
+      size: 20%
+      entity: sensor.rtasks_waterfilter_daysremaining
+      state:
+      - value: 'today'
+        color: var(--icon-color-blue)
+      - value: 'off'
+        color: var(--icon-off-color)
+      styles:
+        card:
+        - font-size: 10px
+- type: horizontal-stack
+  cards:
+  - type: picture
+    image: /local/divider.png

@@ -28,9 +28,9 @@ cards:
         color: var(--icon-off-color)
         icon: mdi:fan
     - type: "custom:button-card"
-      name: Guestroom
+      name: Small Bedroom
       color_type: icon
-      entity: switch.osram_plug_fan
+      entity: switch.osram_plug_fan_small_bedroom
       action: more_info
       styles:
         card:
@@ -72,6 +72,21 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:vibrate
+    - type: "custom:button-card"
+      name: Microwave
+      color_type: icon
+      entity: sensor.power_microwave
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:microwave
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:microwave
 - type: horizontal-stack
   cards:
   - type: picture
