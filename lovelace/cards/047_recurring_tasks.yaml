@@ -34,7 +34,7 @@ cards:
           to: 30
       style: |-
         #states {
-          padding: 4px 0px;
+          padding: 0px 0px 0px 0px;
         }
   - type: horizontal-stack
     cards:
@@ -60,7 +60,7 @@ cards:
           to: 180
       style: |-
         #states {
-          padding: 4px 0px;
+          padding: 0px 0px 0px 0px;
         }
 - type: horizontal-stack
   cards:

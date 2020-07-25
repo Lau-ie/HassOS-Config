@@ -11,3 +11,5 @@ cards:
   - !include cards/037_temps_humidity_upstairs.yaml
   - !include cards/030_temps_humidity_cabinet.yaml
   - !include cards/044_waterpump.yaml
+  - !include cards/047_recurring_tasks.yaml
+  - !include cards/012_aquarium.yaml

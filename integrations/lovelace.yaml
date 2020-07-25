@@ -1,6 +1,8 @@
 lovelace:
   mode: yaml
   resources:
+  - url: /hacsfiles/stack-in-card/stack-in-card.js
+    type: module
   - url: /hacsfiles/lovelace-card-tools/card-tools.js
     type: module
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
@@ -13,15 +15,15 @@ lovelace:
     type: module
   - url: /hacsfiles/lovelace-valetudo-map-card/valetudo-map-card.js
     type: js
-  - url: /hacsfiles/lovelace-state-switch/state-switch.js?v=0.1
+  - url: /hacsfiles/lovelace-state-switch/state-switch.js
     type: module
   - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
     type: module
   - url: /hacsfiles/hass-bha-icons/hass-bha-icons.js
     type: js
-  - url: /hacsfiles/bar-card/bar-card.js?v=1
+  - url: /hacsfiles/bar-card/bar-card.js
     type: module
-  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js?v=10
+  - url: /local/flex-horseshoe-card/flex-horseshoe-card.js
     type: module
   - url: /local/vertical-style-card.js?v=0.4
     type: js
@@ -31,7 +33,7 @@ lovelace:
     type: js
   - url: /local/triplevalue-card.js?v=0.0.6
     type: js
-  - url: /local/bignumber-card.js
+  - url: /hacsfiles/bignumber-card/bignumber-card.js
     type: js
   - url: /local/weather-card.js?v=7.3
     type: module

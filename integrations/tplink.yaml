@@ -11,3 +11,7 @@ tplink:
   - host: !secret tplink_host_ip_08
   - host: !secret tplink_host_ip_09
   - host: !secret tplink_host_ip_10
+  - host: !secret tplink_host_ip_11
+  - host: !secret tplink_host_ip_12
+  - host: !secret tplink_host_ip_13
+  - host: !secret tplink_host_ip_14

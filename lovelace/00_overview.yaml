@@ -14,4 +14,3 @@ cards:
   - !include cards/006_laundry.yaml
   - !include cards/008_sensors.yaml
   - !include cards/039_thermostat_flex_horseshoe.yaml
-  - !include cards/047_recurring_tasks.yaml

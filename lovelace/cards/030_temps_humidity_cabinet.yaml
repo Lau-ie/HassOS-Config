@@ -8,24 +8,6 @@ cards:
   cards:
     - type: custom:compact-graph-card
       entities:
-      - sensor.xiaomi_tempsensor_ps4
-      name: PS4
-      show:
-        fill: true
-      line_color: 
-      - var(--icon-color-red)
-    - type: custom:compact-graph-card
-      entities:
-      - sensor.xiaomi_humiditysensor_ps4
-      name: PS4
-      show:
-        fill: true
-      line_color: 
-      - var(--icon-color-blue)
-- type: horizontal-stack
-  cards:
-    - type: custom:compact-graph-card
-      entities:
       - sensor.xiaomi_tempsensor_velo
       name: Velociraptor
       show:

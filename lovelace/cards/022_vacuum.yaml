@@ -102,8 +102,6 @@ cards:
             tap_action:
               action: call-service
               service: script.pachy_clean
-            style:
-            - color: var(--icon-off-color)
           error:
             type: "custom:button-card"
             icon: mdi:alert-circle
@@ -155,8 +153,6 @@ cards:
         entity: input_boolean.vacuum_autorun
         tap_action:
             action: toggle
-        style:
-          - color: var(--icon-off-color)
         state:
         - value: 'on'
           color: var(--icon-color-green)
@@ -207,14 +203,10 @@ cards:
       title: Area Cleaned
       scale: 13px
       entity: sensor.pachy_cleaned_area
-      style:
-      - text-transform: capitalize
     - type: "custom:bignumber-card"
       title: Battery
       scale: 13px
       entity: sensor.pachy_charge
-      style:
-      - text-transform: capitalize
   - type: horizontal-stack
     cards:
     - type: picture

@@ -1,11 +1,87 @@
 light:
-  platform: group
-  name: Lightgroup Livingroom
-  entities:
-    - light.hue_floorlight_livingroom
-    - light.hue_livingroom_spot_1
-    - light.hue_livingroom_spot_2
-    - light.hue_livingroom_spot_3
-    - light.hue_livingroom_spot_4
-    - light.hue_divide_spot_1
-    - light.hue_divide_spot_2
+  - platform: flux_led
+    devices:
+      192.168.1.186:
+        name: aquariumlight
+        mode: "w"
+  - platform: group
+    name: group_bathroom
+    entities:
+      - light.hue_bathroom_1
+      - light.hue_bathroom_2
+  - platform: group
+    name: group_guestroom
+    entities:
+      - light.hue_guestroom
+  - platform: group
+    name: group_small_bedroom
+    entities:
+      - light.hue_small_bedroom
+      - light.hue_desk
+  - platform: group
+    name: group_master_bedroom
+    entities:
+      - light.hue_master_bedroom
+  - platform: group
+    name: group_attic
+    entities:
+      - light.hue_attic
+  - platform: group
+    name: group_gangway
+    entities:
+      - light.hue_gangway_1
+      - light.hue_gangway_2
+      - light.hue_gangway_wall
+  - platform: group
+    name: group_livingroom
+    entities:
+      - light.hue_livingroom_spot_1
+      - light.hue_livingroom_spot_2
+      - light.hue_livingroom_spot_3
+      - light.hue_livingroom_spot_4
+  - platform: group
+    name: group_divide
+    entities:
+      - light.hue_divide_spot_1
+      - light.hue_divide_spot_2
+  - platform: group
+    name: group_diningarea
+    entities:
+      - light.hue_diningarea
+      - light.hue_floorlight_livingroom
+  - platform: group
+    name: group_hallway
+    entities:
+      - light.hue_hallway_spot_1
+      - light.hue_hallway_spot_2
+  - platform: group
+    name: group_entree
+    entities:
+      - light.hue_entree
+      - light.tradfri_entree_spots
+  - platform: group
+    name: group_kitchen
+    entities:
+      - light.tradfri_kitchen_builtin_1
+      - light.tradfri_kitchen_builtin_2
+      - light.hue_kitchen_spot_1
+      - light.hue_kitchen_spot_2
+      - light.hue_kitchen_ceiling_1
+  - platform: group
+    name: group_outside
+    entities:
+      - light.hue_outside_front
+      - light.hue_outside_back
+  - platform: group
+    name: group_toilet
+    entities:
+      - light.hue_toilet
+  - platform: group
+    name: group_washroom
+    entities:
+      - light.hue_washroom
+
+
+
+
+

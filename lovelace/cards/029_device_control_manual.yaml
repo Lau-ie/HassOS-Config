@@ -28,9 +28,24 @@ cards:
         color: var(--icon-off-color)
         icon: mdi:fan
     - type: "custom:button-card"
+      name: Guestroom
+      color_type: icon
+      entity: switch.tp_link_guestroom_fan
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:fan
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:fan
+    - type: "custom:button-card"
       name: Small Bedroom
       color_type: icon
-      entity: switch.osram_plug_fan_small_bedroom
+      entity: switch.tp_link_study_fan
       action: more_info
       styles:
         card:

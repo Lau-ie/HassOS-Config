@@ -6,6 +6,9 @@ sensor:
   name: mc_activity
   state_topic: "harmony/activity/"
 - platform: mqtt
+  name: mc_source
+  state_topic: "harmony/source/"
+- platform: mqtt
   name: mc_activity_readable
   state_topic: "harmony/activity/readable"
 - platform: mqtt

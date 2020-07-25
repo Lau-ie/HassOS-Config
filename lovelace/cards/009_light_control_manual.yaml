@@ -15,7 +15,7 @@ cards:
     - type: "custom:button-card"
       name: Livingroom
       color_type: icon
-      entity: light.livingroom
+      entity: light.group_livingroom
       styles:
         card:
         - font-size: 10px
@@ -29,7 +29,7 @@ cards:
     - type: "custom:button-card"
       name: Divide
       color_type: icon
-      entity: light.divide
+      entity: light.group_divide
       styles:
         card:
         - font-size: 10px
@@ -43,7 +43,7 @@ cards:
     - type: "custom:button-card"
       name: Diningarea
       color_type: icon
-      entity: light.diningarea
+      entity: light.group_diningarea
       styles:
         card:
         - font-size: 10px
@@ -57,7 +57,7 @@ cards:
     - type: "custom:button-card"
       name: Master Bedroom
       color_type: icon
-      entity: light.master_bedroom
+      entity: light.group_master_bedroom
       styles:
         card:
         - font-size: 10px
@@ -71,115 +71,114 @@ cards:
   - type: horizontal-stack
     cards:
     - type: custom:slider-entity-row
-      entity: light.livingroom
+      entity: light.group_livingroom
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row
-      entity: light.divide
+      entity: light.group_divide
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row
-      entity: light.diningarea
+      entity: light.group_diningarea
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row
-      entity: light.master_bedroom
+      entity: light.group_master_bedroom
       full_row: true
       hide_state: true
   - type: horizontal-stack
     cards:
-    - type: "custom:button-card"
-      name: Small Bedroom
-      color_type: icon
-      entity: light.small_bedroom
-      action: more_info
-      styles:
-        card:
-        - font-size: 10px
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:lightbulb-on
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:lightbulb
-    - type: "custom:button-card"
-      name: Guestroom
-      color_type: icon
-      entity: light.guestroom
-      styles:
-        card:
-        - font-size: 10px
-      state:
-      - value: 'on'
-        color: auto
-        icon: mdi:lightbulb-on
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:lightbulb
-    - type: "custom:button-card"
-      name: Engineroom
-      color_type: icon
-      entity: switch.sonoff_4ch_1
-      styles:
-        card:
-        - font-size: 10px
-      state:
-      - value: 'on'
-        color: var(--icon-color-amber)
-        icon: mdi:lightbulb-on
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:lightbulb
-    - type: "custom:button-card"
-      name: Serverroom
-      color_type: icon
-      entity: switch.sonoff_4ch_2
-      styles:
-        card:
-        - font-size: 10px
-      state:
-      - value: 'on'
-        color: var(--icon-color-amber)
-        icon: mdi:lightbulb-on
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:lightbulb
-    - type: "custom:button-card"
-      name: Floodlight
-      color_type: icon
-      entity: input_boolean.outside_floodlight
-      tap_action: 
-        action: more-info
-      styles:
-        card:
-        - font-size: 10px
-      state:
-      - value: 'on'
-        color: var(--icon-color-amber)
-        icon: mdi:lightbulb-on
-      - value: 'off'
-        color: var(--icon-off-color)
-        icon: mdi:lightbulb
-  - type: horizontal-stack
-    cards:
-    - type: custom:slider-entity-row
-      entity: light.small_bedroom
-      full_row: true
-      hide_state: true
-    - type: custom:slider-entity-row
-      entity: light.guestroom
-      full_row: true
-      hide_state: true
-    - type: markdown
-      content: >
-        |
-    - type: markdown
-      content: >
-        |
-    - type: markdown
-      content: >
-        |
+    - type: vertical-stack
+      cards:
+      - type: "custom:button-card"
+        name: Small Bedroom
+        color_type: icon
+        entity: light.group_small_bedroom
+        action: more_info
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: auto
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:lightbulb
+      - type: custom:slider-entity-row
+        entity: light.group_small_bedroom
+        full_row: true
+        hide_state: true
+    - type: vertical-stack
+      cards:
+      - type: "custom:button-card"
+        name: Guestroom
+        color_type: icon
+        entity: light.group_guestroom
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: auto
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:lightbulb
+      - type: custom:slider-entity-row
+        entity: light.group_guestroom
+        full_row: true
+        hide_state: true
+    - type: vertical-stack
+      cards:
+      - type: "custom:button-card"
+        name: Engineroom
+        color_type: icon
+        entity: switch.sonoff_4ch_1
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:lightbulb
+    - type: vertical-stack
+      cards:
+      - type: "custom:button-card"
+        name: Serverroom
+        color_type: icon
+        entity: switch.sonoff_4ch_2
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:lightbulb
+    - type: vertical-stack
+      cards:
+      - type: "custom:button-card"
+        name: Floodlight
+        color_type: icon
+        entity: input_boolean.outside_floodlight
+        tap_action: 
+          action: more-info
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: var(--icon-color-amber)
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:lightbulb
 - type: horizontal-stack
   cards:
   - type: picture

@@ -4,151 +4,89 @@ style:
   font_size: 24px
   border: true
 cards:
-  - type: vertical-stack
+- type: vertical-stack
+  cards:
+  - type: horizontal-stack
     cards:
-    - type: horizontal-stack
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: vertical-stack
       cards:
-      - type: picture
-        image: /local/divider.png
-    - type: horizontal-stack
+      - type: "custom:button-card"
+        name: Aquarium
+        color_type: icon
+        entity: light.aquariumlight
+        icon: mdi:lightbulb
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: auto
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: auto
+          icon: mdi:lightbulb
+      - type: custom:slider-entity-row
+        entity: light.aquariumlight
+        full_row: true
+        hide_state: true
+    - type: vertical-stack
       cards:
-        - type: "custom:button-card"
-          show_name: false
-          show_label: false
-          icon: mdi:white-balance-sunny
-          color_type: card
-          color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.aquarium_daylight_state
-          tap_action: 
-           action: more-info
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:palette
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-orange)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.aquarium_rgblight_state
-          tap_action: 
-           action: more-info
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:weather-night
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-blue)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.aquarium_moonlight_state
-          tap_action: 
-           action: more-info
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:periodic-table-co2
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-green)
-          color_off: var(--element-accent-color)
-          entity: switch.0x7cb03eaa0a010fc8_switch
-          tap_action: 
-           action: more-info
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:bignumber-card"
-          entity: sensor.temperature_aquarium
-          scale: 15px
-    - type: horizontal-stack
+      - type: custom:compact-graph-card
+        entities:
+        - sensor.aquarium_temperature
+        name: Temperature
+        font_size: 60
+        show:
+          name: true
+          icon: false
+          state: true
+        line_color: 
+        - var(--icon-color-red)
+        hours_to_show: 24
+        decimals: 1
+        hour24: true
+      - type: "custom:bignumber-card"
+        title: Cost Today
+        scale: 15px
+        entity: sensor.tp_link_aquarium_current_load
+    - type: vertical-stack
       cards:
-      - type: picture
-        image: /local/divider.png
-    - type: horizontal-stack
-      cards:
-        - type: "custom:button-card"
-          icon: mdi:white-balance-sunny
-          show_name: false
-          show_label: false
-          color_type: card
+      - type: custom:compact-graph-card
+        name: Power
+        font_size: 60
+        entities:
+        - entity: sensor.tp_link_aquarium_daily_power
+          name: Power_daily
+          show_state: true
+          show_graph: false
+          show_line: false
+          show_points: false
+          show_legend: false
+          show_fill: false
+        - entity: sensor.tp_link_aquarium_hourly_power
+          name: Power
+          show_state: false
           color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.always_off
-          tap_action:
-            action: call-service
-            service: script.aquarium_light_day
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:plus
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.always_off
-          tap_action:
-            action: call-service
-            service: script.aquarium_light_day_increase
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:minus
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.always_off
-          tap_action:
-            action: call-service
-            service: script.aquarium_light_day_decrease
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:weather-night
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.always_off
-          tap_action:
-            action: call-service
-            service: script.aquarium_light_moonlight
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:power
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.always_off
-          action: service
-          tap_action:
-            action: call-service
-            service: script.aquarium_light_rgb
-          style:
-           - color: var(--icon-off-color)
-        - type: "custom:button-card"
-          icon: mdi:palette
-          show_name: false
-          show_label: false
-          color_type: card
-          color: var(--icon-color-amber)
-          color_off: var(--element-accent-color)
-          entity: input_boolean.always_off
-          tap_action:
-            action: call-service
-            service: script.aquarium_light_orange
-          style:
-           - color: var(--icon-off-color)
-    - type: horizontal-stack
-      cards:
-      - type: picture
-        image: /local/divider.png
+        line_color: var(--icon-color-amber)
+        icon: mdi:flash
+        aggregate_func: max
+        group_by: hour
+        show:
+          graph: bar
+          name: true
+          icon: false
+        hours_to_show: 24
+        decimals: 2
+        hour24: true
+      - type: "custom:bignumber-card"
+        title: Current Load
+        scale: 15px
+        entity: sensor.tp_link_aquarium_daily_power_cost
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
