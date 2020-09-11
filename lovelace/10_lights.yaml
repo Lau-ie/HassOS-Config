@@ -1,0 +1,8 @@
+title: Lights & Sensors
+id: lights_sensors
+theme: dark-mode
+icon: mdi:lightbulb
+cards:
+  - !include cards/009_light_control_manual.yaml
+  - !include cards/010_light_control_automated.yaml
+  - !include cards/029_device_control_manual.yaml
