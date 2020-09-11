@@ -38,3 +38,27 @@ cards:
   cards:
    - type: picture
      image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: custom:compact-graph-card
+    entities:
+    - sensor.netatmo_home_outside_temperature
+    graph: line
+    name: Outside
+    show:
+      fill: true
+    line_color: 
+    - var(--icon-color-red)
+  - type: custom:compact-graph-card
+    entities:
+    - sensor.netatmo_home_outside_humidity
+    graph: line
+    name: Outside
+    show:
+      fill: true
+    line_color: 
+    - var(--icon-color-blue)
+- type: horizontal-stack
+  cards:
+    - type: picture
+      image: /local/divider.png

@@ -8,6 +8,7 @@ cards:
   - !include cards/034_netatmo_inside.yaml
   - !include cards/005_media_center.yaml
   - !include cards/022_vacuum.yaml
+  - !include cards/012_aquarium.yaml
   - !include cards/011_weather.yaml
   - !include cards/027_f1_times_v2.yaml
   - !include cards/007_trash_pickup.yaml

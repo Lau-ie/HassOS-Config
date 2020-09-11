@@ -35,6 +35,23 @@ cards:
         hide_state: true
     - type: vertical-stack
       cards:
+      - type: "custom:button-card"
+        name: CO2
+        color_type: icon
+        entity: switch.tp_link_co2
+        icon: mdi:molecule-co2
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: var(--icon-color-yellow)
+          icon: mdi:molecule-co2
+        - value: 'off'
+          color: var(--element-accent-color)
+          icon: mdi:molecule-co2
+    - type: vertical-stack
+      cards:
       - type: custom:compact-graph-card
         entities:
         - sensor.aquarium_temperature
@@ -50,7 +67,7 @@ cards:
         decimals: 1
         hour24: true
       - type: "custom:bignumber-card"
-        title: Cost Today
+        title: Current Load
         scale: 15px
         entity: sensor.tp_link_aquarium_current_load
     - type: vertical-stack
@@ -83,7 +100,7 @@ cards:
         decimals: 2
         hour24: true
       - type: "custom:bignumber-card"
-        title: Current Load
+        title: Cost Today
         scale: 15px
         entity: sensor.tp_link_aquarium_daily_power_cost
   - type: horizontal-stack

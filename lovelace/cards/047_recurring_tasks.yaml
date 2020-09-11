@@ -36,6 +36,27 @@ cards:
         #states {
           padding: 0px 0px 0px 0px;
         }
+    - type: "custom:button-card"
+      name: Reset
+      color_type: icon
+      entity: sensor.rtasks_dryerfilter_days
+      show_name: false
+      show_label: false
+      tap_action:
+        action: call-service
+        service: script.rtasks_dryerfilter_reset
+      state:
+      - value: '0'
+        operator: '<='
+        color: var(--icon-color-red)
+        icon: mdi:restart
+      - value: '0'
+        operator: '>'
+        color: var(--icon-off-color)
+        icon: mdi:restart
+      styles:
+        card:
+        - font-size: 10px
   - type: horizontal-stack
     cards:
     - type: 'custom:bar-card'
@@ -46,7 +67,7 @@ cards:
       unit_of_measurement: days remaining
       name: Waterfilter
       min: 0
-      max: 30
+      max: 180
       direction: left
       severity:
         - color: Red

@@ -10,7 +10,7 @@
   action:
   - service: light.turn_on
     data:
-      entity_id: light.attic
+      entity_id: light.group_attic
       brightness: 255
   - service: timer.start
     data:
@@ -28,7 +28,7 @@
   action:
   - service: light.turn_on
     data:
-      entity_id: light.attic
+      entity_id: light.group_attic
       brightness: 178
   - service: timer.start
     data:
@@ -42,4 +42,4 @@
       entity_id: timer.attic_light
   action:
     service: light.turn_off
-    entity_id: light.attic
+    entity_id: light.group_attic

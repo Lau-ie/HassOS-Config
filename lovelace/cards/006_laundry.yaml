@@ -114,13 +114,13 @@ cards:
             service: script.washer_emptied_click
           state:
           - value: 'running'
-            color: var(--icon-off-color)
+            color: var(--element-accent-color)
           - value: 'done'
-            color: var(--icon-off-color)
+            color: var(--element-accent-color)
           - value: 'full'
             color: var(--icon-color-blue)
           - value: 'empty'
-            color: var(--accent-color)
+            color: var(--element-accent-color)
         - type: "custom:button-card"
           color_type: card
           show_name: false
@@ -131,13 +131,13 @@ cards:
             service: script.dryer_emptied_click
           state:
           - value: 'running'
-            color: var(--icon-off-color)
+            color: var(--element-accent-color)
           - value: 'done'
-            color: var(--icon-off-color)
+            color: var(--element-accent-color)
           - value: 'full'
             color: var(--icon-color-blue)
           - value: 'empty'
-            color: var(--icon-off-color)
+            color: var(--element-accent-color)
   - type: horizontal-stack
     cards:
     - type: picture

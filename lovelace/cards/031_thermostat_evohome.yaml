@@ -31,23 +31,5 @@ cards:
       - background-color: var(--element-accent-color)
   - type: horizontal-stack
     cards:
-    - type: thermostat
-      name: Washroom
-      entity: climate.berging
-      style:
-      - font-size: 10px
-      - text-color
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
-    - type: thermostat
-      name: Bathroom
-      entity: climate.badkamer_1v
-      style:
-      - font-size: 10px
-      - text-color
-      - text-transform: capitalize
-      - background-color: var(--element-accent-color)
-  - type: horizontal-stack
-    cards:
      - type: picture
        image: /local/divider.png

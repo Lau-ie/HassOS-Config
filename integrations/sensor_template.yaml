@@ -95,6 +95,10 @@ sensor:
       friendly_name: "DarkSky Temp Humidity"
       value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
       unit_of_measurement: '%'
+    darksky_temp_today_high:
+      friendly_name: "DarkSky Temp Today High"
+      value_template: "{{ state_attr('weather.dark_sky', 'forecast[0].temperature') }}"
+      unit_of_measurement: '°C'
     climate_livingroom_target_temperature:
       friendly_name: "Climate Livingroom Target Temperature"
       value_template: "{{ state_attr('climate.woonkamer', 'temperature') }}"

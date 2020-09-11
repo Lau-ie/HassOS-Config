@@ -10,7 +10,7 @@
   action:
   - service: light.turn_on
     data:
-      entity_id: light.entree_2
+      entity_id: light.group_entree
       brightness: 255
 
 - alias: Turn on entree dimmed
@@ -25,7 +25,7 @@
   action:
   - service: light.turn_on
     data:
-      entity_id: light.entree_2
+      entity_id: light.group_entree
       brightness: 178
 
 - alias: Turn off entree light 3 minutes after last movement
@@ -37,4 +37,4 @@
       minutes: 3
   action:
     service: light.turn_off
-    entity_id: light.entree_2
+    entity_id: light.group_entree

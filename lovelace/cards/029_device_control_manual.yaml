@@ -42,21 +42,41 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:fan
+#    - type: "custom:button-card"
+#      name: Small Bedroom
+#      color_type: icon
+#      entity: switch.tp_link_study_fan
+#      action: more_info
+#      styles:
+#        card:
+#        - font-size: 10px
+#      state:
+#      - value: 'on'
+#        color: var(--icon-color-amber)
+#        icon: mdi:fan
+#      - value: 'off'
+#        color: var(--icon-off-color)
+#        icon: mdi:fan
     - type: "custom:button-card"
-      name: Small Bedroom
+      name: Fountain
       color_type: icon
-      entity: switch.tp_link_study_fan
-      action: more_info
+      entity: switch.tp_link_fountain
       styles:
         card:
         - font-size: 10px
       state:
       - value: 'on'
-        color: var(--icon-color-amber)
-        icon: mdi:fan
+        color: var(--icon-color-blue)
+        icon: mdi:fountain
       - value: 'off'
         color: var(--icon-off-color)
-        icon: mdi:fan
+        icon: mdi:fountain
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
     - type: "custom:button-card"
       name: Washer
       color_type: icon
@@ -102,6 +122,21 @@ cards:
       - value: 'off'
         color: var(--icon-off-color)
         icon: mdi:microwave
+    - type: "custom:button-card"
+      name: Coffee
+      color_type: icon
+      entity: sensor.power_coffeemachine
+      action: more_info
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-amber)
+        icon: mdi:coffee-maker
+      - value: 'off'
+        color: var(--icon-off-color)
+        icon: mdi:coffee-maker
 - type: horizontal-stack
   cards:
   - type: picture

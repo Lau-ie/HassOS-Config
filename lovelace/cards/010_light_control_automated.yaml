@@ -58,9 +58,9 @@ cards:
         color: var(--icon-off-color)
         icon: mdi:lightbulb
     - type: "custom:button-card"
-      name: Washroom
+      name: Toilet
       color_type: icon
-      entity: light.group_washroom
+      entity: light.group_toilet
       action: more_info
       styles:
         card:
@@ -87,11 +87,32 @@ cards:
       full_row: true
       hide_state: true
     - type: custom:slider-entity-row
-      entity: light.group_washroom
+      entity: light.group_toilet
       full_row: true
       hide_state: true
   - type: horizontal-stack
     cards:
+    - type: vertical-stack
+      cards:
+      - type: "custom:button-card"
+        name: Washroom
+        color_type: icon
+        entity: light.group_washroom
+        action: more_info
+        styles:
+          card:
+          - font-size: 10px
+        state:
+        - value: 'on'
+          color: auto
+          icon: mdi:lightbulb-on
+        - value: 'off'
+          color: var(--icon-off-color)
+          icon: mdi:lightbulb
+      - type: custom:slider-entity-row
+        entity: light.group_washroom
+        full_row: true
+        hide_state: true
     - type: vertical-stack
       cards:
       - type: "custom:button-card"

@@ -61,6 +61,8 @@ cards:
         color: var(--element-accent-color)
       - value: 'Extended Away'
         color: var(--icon-color-light-amber)
+      - value: 'At Work'
+        color: var(--icon-color-blue)
       styles:
         card:
         - font-size: 12px
@@ -172,3 +174,17 @@ cards:
   cards:
   - type: picture
     image: /local/divider.png
+- type: horizontal-stack
+  cards:
+  - type: map
+    aspect_ratio: 16:9
+    default_zoom: 13
+    entities:
+      - device_tracker.redmi_k20_pro
+    hours_to_show: 24
+  - type: map
+    aspect_ratio: 16:9
+    default_zoom: 13
+    entities:
+      - device_tracker.sm_a405fn
+    hours_to_show: 24

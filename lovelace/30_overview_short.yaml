@@ -8,7 +8,7 @@ cards:
   - !include cards/018_temps_humidity.yaml
   - !include cards/028_temps_humidity_downstairs.yaml
   - !include cards/037_temps_humidity_upstairs.yaml
-  - !include cards/001_presence_alarm.yaml
+  - !include cards/049_presence_alarm_no_map.yaml
   - !include cards/005_media_center.yaml
   - !include cards/039_thermostat_flex_horseshoe.yaml
   - !include cards/022_vacuum.yaml

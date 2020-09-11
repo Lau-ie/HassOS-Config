@@ -26,17 +26,31 @@ cards:
         state:
         - value: 'docked'
           color: var(--icon-color-amber)
+        - value: 'Docked'
+          color: var(--icon-color-amber)
         - value: 'cleaning'
+          color: var(--icon-color-green)
+        - value: 'Cleaning'
           color: var(--icon-color-green)
         - value: 'paused'
           color: var(--icon-color-orange)
+        - value: 'Paused'
+          color: var(--icon-color-orange)
         - value: 'returning'
+          color: var(--icon-color-light-blue)
+        - value: 'Returning'
           color: var(--icon-color-light-blue)
         - value: 'idle'
           color: var(--icon-color-orange)
+        - value: 'Idle'
+          color: var(--icon-color-orange)
         - value: 'unavailable'
           color: var(--icon-off-color)
+        - value: 'Unavailable'
+          color: var(--icon-off-color)
         - value: 'error'
+          color: var(--icon-color-red)
+        - value: 'Error'
           color: var(--icon-color-red)
       - type: "custom:button-card"
         icon: mdi:gas-station
@@ -56,15 +70,23 @@ cards:
         - value: 'charging'
           color: var(--element-accent-color)
         - value: 'paused'
-          color: var(--element-accent-color)
+          color: var(--icon-color-orange)
+        - value: 'Paused'
+          color: var(--icon-color-orange)
         - value: 'returning'
           color: var(--icon-color-light-blue)
           icon: mdi:ev-station
         - value: 'idle'
-          color: var(--element-accent-color)
+          color: var(--icon-color-orange)
+        - value: 'Idle'
+          color: var(--icon-color-orange)
         - value: 'unavailable'
-          color: var(--element-accent-color)
+          color: var(--icon-off-color)
+        - value: 'Unavailable'
+          color: var(--icon-off-color)
         - value: 'error'
+          color: var(--icon-color-red)
+        - value: 'Error'
           color: var(--icon-color-red)
       - type: custom:state-switch
         entity: vacuum.pachy
@@ -102,7 +124,28 @@ cards:
             tap_action:
               action: call-service
               service: script.pachy_clean
+          Idle:
+            type: "custom:button-card"
+            icon: mdi:broom
+            show_name: false
+            show_label: false
+            color_type: card
+            color: var(--element-accent-color)
+            entity: vacuum.pachy
+            tap_action:
+              action: call-service
+              service: script.pachy_clean
           error:
+            type: "custom:button-card"
+            icon: mdi:alert-circle
+            color_type: card
+            color: var(--element-accent-color)
+            show_name: false
+            show_label: false
+            entity: vacuum.pachy
+            tap_action:
+              action: more-info
+          Error:
             type: "custom:button-card"
             icon: mdi:alert-circle
             color_type: card
