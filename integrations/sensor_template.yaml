@@ -8,7 +8,11 @@ sensor:
     database_size_gb:
       friendly_name: "Database_size_GB"
       unit_of_measurement: 'GB'
-      value_template: "{{ (states('sensor.database_size_mb')|float / 1024)| round(1)}}"
+      value_template: "{{ (states('sensor.database_size_mb')|float / 1024)| round(1) }}"
+    light_aquarium_brightness:
+      friendly_name: "Light Aquarium Brightness"
+      unit_of_measurement: '%'
+      value_template: "{{ (state_attr('light.aquariumlight', 'brightness')|float / 2.54)| round(0) }}"
     gas_max_30:
       friendly_name: "Gas Max 30"
       unit_of_measurement: 'm3'
@@ -340,7 +344,7 @@ sensor:
     tp_link_quooker_hourly_power_cost:
       friendly_name: Quooker Hourly Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.quooker_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.quooker_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.quooker_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_quooker_daily_power:
       friendly_name: Quooker Daily Power
       unit_of_measurement: kWh
@@ -348,7 +352,7 @@ sensor:
     tp_link_quooker_daily_power_cost:
       friendly_name: Quooker Daily Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.quooker_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.quooker_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.quooker_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_quooker_current_load:
       friendly_name: "Quooker Current Load"
       value_template: "{{ state_attr('switch.tp_link_quooker', 'current_power_w')|round(0) }}"
@@ -373,7 +377,7 @@ sensor:
     tp_link_triceratops_hourly_power_cost:
       friendly_name: Triceratops Hourly Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.triceratops_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.triceratops_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.triceratops_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_triceratops_daily_power:
       friendly_name: Triceratops Daily Power
       unit_of_measurement: kWh
@@ -381,7 +385,7 @@ sensor:
     tp_link_triceratops_daily_power_cost:
       friendly_name: Triceratops Daily Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.triceratops_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.triceratops_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.triceratops_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_triceratops_current_load:
       friendly_name: "Triceratops Current Load"
       value_template: "{{ state_attr('switch.tp_link_triceratops', 'current_power_w')|round(0) }}"
@@ -406,7 +410,7 @@ sensor:
     tp_link_microwave_hourly_power_cost:
       friendly_name: Microwave Hourly Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.microwave_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.microwave_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.microwave_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_microwave_daily_power:
       friendly_name: Microwave Daily Power
       unit_of_measurement: kWh
@@ -414,7 +418,7 @@ sensor:
     tp_link_microwave_daily_power_cost:
       friendly_name: Microwave Daily Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.microwave_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.microwave_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.microwave_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_microwave_current_load:
       friendly_name: Microwave Current Load
       value_template: "{{ state_attr('switch.tp_link_microwave', 'current_power_w')|round(0) }}"
@@ -439,7 +443,7 @@ sensor:
     tp_link_waterpump_hourly_power_cost:
       friendly_name: Waterpump Hourly Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.waterpump_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.waterpump_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.waterpump_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_waterpump_daily_power:
       friendly_name: Waterpump Daily Power
       unit_of_measurement: kWh
@@ -447,7 +451,7 @@ sensor:
     tp_link_waterpump_daily_power_cost:
       friendly_name: Waterpump Daily Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.waterpump_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.waterpump_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.waterpump_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_waterpump_current_load:
       friendly_name: Waterpump Current Load
       value_template: "{{ state_attr('switch.tp_link_waterpump', 'current_power_w')|round(0) }}"
@@ -472,15 +476,15 @@ sensor:
     tp_link_aquarium_hourly_power_cost:
       friendly_name: Aquarium Hourly Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.aquarium_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.aquarium_power_hourly_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.aquarium_power_hourly_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_aquarium_daily_power:
       friendly_name: Aquarium Daily Power
       unit_of_measurement: kWh
       value_template: "{{ states('sensor.aquarium_power_daily_peak')|float + states('sensor.aquarium_power_daily_offpeak')|float }}"
     tp_link_aquarium_daily_power_cost:
-      friendly_name: Aquarium Daily Power Cost
+      friendly_name: Triceratops Daily Power Cost
       unit_of_measurement: €
-      value_template: "{{ ((states('sensor.aquarium_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.humidifier_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
+      value_template: "{{ ((states('sensor.aquarium_power_daily_peak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_2')|float) + (states('sensor.aquarium_power_daily_offpeak')|float * states('sensor.dsmr_day_consumption_energy_supplier_price_electricity_delivered_1')|float))|round(2) }}"
     tp_link_aquarium_current_load:
       friendly_name: Aquarium Current Load
       value_template: "{{ state_attr('switch.tp_link_aquarium', 'current_power_w')|round(0) }}"

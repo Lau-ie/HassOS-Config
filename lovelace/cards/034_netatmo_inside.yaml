@@ -12,24 +12,24 @@ cards:
   cards:
   - type: custom:compact-graph-card
     entities:
-    - sensor.netatmo_home_inside_temperature
-    name: Temperature
+    - sensor.netatmo_home_temperature
+    name: Inside
     show:
       fill: true
     line_color: 
     - var(--icon-color-red)
   - type: custom:compact-graph-card
     entities:
-    - sensor.netatmo_home_inside_humidity
-    name: Humidity
+    - sensor.netatmo_home_humidity
+    name: Inside
     show:
       fill: true
     line_color: 
     - var(--icon-color-blue)
   - type: custom:compact-graph-card
     entities:
-    - sensor.netatmo_home_inside_co2
-    name: CO2
+    - sensor.netatmo_home_co2
+    name: Inside
     show:
       fill: true
     line_color: 

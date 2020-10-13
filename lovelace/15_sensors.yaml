@@ -1,5 +1,8 @@
 title: Lights & Sensors
 id: lights_sensors
+visible:
+  - user: 10467e6785074fdd832e93051380cf27
+  - user: d905f668df5f4ce5931b1e686c5f0a13
 theme: dark-mode
 icon: mdi:thermometer-lines
 cards:

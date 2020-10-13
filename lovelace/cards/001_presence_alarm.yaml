@@ -174,17 +174,3 @@ cards:
   cards:
   - type: picture
     image: /local/divider.png
-- type: horizontal-stack
-  cards:
-  - type: map
-    aspect_ratio: 16:9
-    default_zoom: 13
-    entities:
-      - device_tracker.redmi_k20_pro
-    hours_to_show: 24
-  - type: map
-    aspect_ratio: 16:9
-    default_zoom: 13
-    entities:
-      - device_tracker.sm_a405fn
-    hours_to_show: 24

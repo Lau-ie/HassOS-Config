@@ -28,7 +28,7 @@ cards:
   cards:
   - type: custom:compact-graph-card
     entities:
-    - sensor.netatmo_home_inside_temperature
+    - sensor.netatmo_home_temperature
     name: Livingroom
     graph: line
     show:
@@ -37,7 +37,7 @@ cards:
     - var(--icon-color-red)
   - type: custom:compact-graph-card
     entities:
-    - sensor.netatmo_home_inside_humidity
+    - sensor.netatmo_home_humidity
     name: Livingroom
     graph: line
     show:

@@ -1,5 +1,7 @@
 title: Overview
 id: overview
+visible:
+  - user: d905f668df5f4ce5931b1e686c5f0a13
 icon: mdi:view-dashboard-variant
 cards:
   - !include cards/034_netatmo_inside.yaml

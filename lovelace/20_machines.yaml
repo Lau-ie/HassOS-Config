@@ -1,5 +1,7 @@
 title: Machines
 id: machines
+visible:
+  - user: 10467e6785074fdd832e93051380cf27
 theme: dark-mode
 icon: mdi:desktop-classic
 cards:

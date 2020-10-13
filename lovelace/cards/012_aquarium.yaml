@@ -12,97 +12,118 @@ cards:
       image: /local/divider.png
   - type: horizontal-stack
     cards:
-    - type: vertical-stack
-      cards:
-      - type: "custom:button-card"
-        name: Aquarium
-        color_type: icon
-        entity: light.aquariumlight
+    - type: "custom:button-card"
+      name: Aquarium
+      color_type: icon
+      entity: light.aquariumlight
+      tap_action: 
+        action: more-info
+      icon: mdi:lightbulb
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: auto
+        icon: mdi:lightbulb-on
+      - value: 'off'
+        color: auto
         icon: mdi:lightbulb
-        styles:
-          card:
-          - font-size: 10px
-        state:
-        - value: 'on'
-          color: auto
-          icon: mdi:lightbulb-on
-        - value: 'off'
-          color: auto
-          icon: mdi:lightbulb
-      - type: custom:slider-entity-row
-        entity: light.aquariumlight
-        full_row: true
-        hide_state: true
-    - type: vertical-stack
-      cards:
-      - type: "custom:button-card"
-        name: CO2
-        color_type: icon
-        entity: switch.tp_link_co2
+    - type: "custom:button-card"
+      name: CO2
+      color_type: icon
+      entity: switch.tuya_aquarium_co2
+      icon: mdi:molecule-co2
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-yellow)
         icon: mdi:molecule-co2
-        styles:
-          card:
-          - font-size: 10px
-        state:
-        - value: 'on'
-          color: var(--icon-color-yellow)
-          icon: mdi:molecule-co2
-        - value: 'off'
-          color: var(--element-accent-color)
-          icon: mdi:molecule-co2
-    - type: vertical-stack
-      cards:
-      - type: custom:compact-graph-card
-        entities:
-        - sensor.aquarium_temperature
-        name: Temperature
-        font_size: 60
-        show:
-          name: true
-          icon: false
-          state: true
-        line_color: 
-        - var(--icon-color-red)
-        hours_to_show: 24
-        decimals: 1
-        hour24: true
-      - type: "custom:bignumber-card"
-        title: Current Load
-        scale: 15px
-        entity: sensor.tp_link_aquarium_current_load
-    - type: vertical-stack
-      cards:
-      - type: custom:compact-graph-card
+      - value: 'off'
+        color: var(--element-accent-color)
+        icon: mdi:molecule-co2
+    - type: "custom:button-card"
+      name: Leak
+      color_type: icon
+      entity: binary_sensor.xiaomi_watersensor_aquarium
+      icon: mdi:water-outline
+      styles:
+        card:
+        - font-size: 10px
+      state:
+      - value: 'on'
+        color: var(--icon-color-blue)
+        icon: mdi:water-alert
+      - value: 'off'
+        color: var(--element-accent-color)
+        icon: mdi:water-outline
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: custom:compact-graph-card
+      entities:
+      - sensor.aquarium_temperature
+      name: Temperature
+      font_size: 60
+      show:
+        name: false
+        icon: false
+        state: true
+      line_color: 
+      - var(--icon-color-red)
+      hours_to_show: 24
+      decimals: 1
+      hour24: true
+    - type: custom:compact-graph-card
+      name: Power
+      font_size: 60
+      entities:
+      - entity: sensor.tp_link_aquarium_daily_power
+        name: Power_daily
+        show_state: true
+        show_graph: false
+        show_line: false
+        show_points: false
+        show_legend: false
+        show_fill: false
+      - entity: sensor.tp_link_aquarium_hourly_power
         name: Power
-        font_size: 60
-        entities:
-        - entity: sensor.tp_link_aquarium_daily_power
-          name: Power_daily
-          show_state: true
-          show_graph: false
-          show_line: false
-          show_points: false
-          show_legend: false
-          show_fill: false
-        - entity: sensor.tp_link_aquarium_hourly_power
-          name: Power
-          show_state: false
-          color: var(--icon-color-amber)
-        line_color: var(--icon-color-amber)
-        icon: mdi:flash
-        aggregate_func: max
-        group_by: hour
-        show:
-          graph: bar
-          name: true
-          icon: false
-        hours_to_show: 24
-        decimals: 2
-        hour24: true
-      - type: "custom:bignumber-card"
-        title: Cost Today
-        scale: 15px
-        entity: sensor.tp_link_aquarium_daily_power_cost
+        show_state: false
+        color: var(--icon-color-amber)
+      line_color: var(--icon-color-amber)
+      icon: mdi:flash
+      aggregate_func: max
+      group_by: hour
+      show:
+        graph: bar
+        name: false
+        icon: false
+      hours_to_show: 24
+      decimals: 2
+      hour24: true
+  - type: horizontal-stack
+    cards:
+    - type: picture
+      image: /local/divider.png
+  - type: horizontal-stack
+    cards:
+    - type: "custom:bignumber-card"
+      title: Brightness
+      scale: 15px
+      entity: sensor.light_aquarium_brightness
+    - type: "custom:bignumber-card"
+      title: Current Load
+      scale: 15px
+      entity: sensor.tp_link_aquarium_current_load
+    - type: "custom:bignumber-card"
+      title: Cost Today
+      scale: 15px
+      entity: sensor.tp_link_aquarium_daily_power_cost
   - type: horizontal-stack
     cards:
     - type: picture

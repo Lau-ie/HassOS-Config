@@ -9,20 +9,12 @@ lovelace:
     type: module
   - url: /hacsfiles/button-card/button-card.js
     type: module
-  - url: /hacsfiles/dual-gauge-card/dual-gauge-card.js
-    type: js
-  - url: /hacsfiles/custom-header/custom-header.js
-    type: module
-  - url: /hacsfiles/lovelace-valetudo-map-card/valetudo-map-card.js
-    type: js
   - url: /hacsfiles/lovelace-state-switch/state-switch.js
     type: module
   - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
     type: module
   - url: /hacsfiles/hass-bha-icons/hass-bha-icons.js
     type: js
-  - url: /hacsfiles/bar-card/bar-card.js
-    type: module
   - url: /local/flex-horseshoe-card/flex-horseshoe-card.js
     type: module
   - url: /local/vertical-style-card.js?v=0.4
@@ -39,3 +31,13 @@ lovelace:
     type: module
   - url: /local/compact-graph-card-bundle.js?v=1
     type: module
+preload:
+  - state-switch
+  - button-card
+  - flex-horseshoe-card
+  - compact-graph-card
+  - singlevalue-card
+  - doublevalue-card
+  - triplevalue-card
+  - vertical-style-card
+  - bignumber-card

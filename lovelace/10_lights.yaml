@@ -1,8 +1,12 @@
 title: Lights & Sensors
 id: lights_sensors
+visible:
+  - user: 10467e6785074fdd832e93051380cf27
+  - user: d905f668df5f4ce5931b1e686c5f0a13
 theme: dark-mode
 icon: mdi:lightbulb
 cards:
+  - !include cards/008_sensors.yaml
   - !include cards/009_light_control_manual.yaml
   - !include cards/010_light_control_automated.yaml
   - !include cards/029_device_control_manual.yaml
